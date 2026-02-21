@@ -2,35 +2,38 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useCart } from '../../contexts/CartContext';
 
-// Mock data since we are avoiding Firestore reads for now to focus on UI
+// Mock data mapped to actual uploaded product media
 const MOCK_FEATURED = [
     {
         id: "tiger-prawns-1",
         name: "Jumbo Black Tiger Prawns",
-        price: 1099,
-        weight: "1kg",
-        image: "https://images.unsplash.com/photo-1559742811-82287c2fbdf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        price: 24.99,
+        weight: "1 lb",
+        image: "/images/black tiger.jpeg"
     },
     {
         id: "pomfret-1",
-        name: "Fresh Silver Pomfret",
-        price: 1450,
-        weight: "500g",
-        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        name: "Fresh Butter Prawns",
+        price: 28.50,
+        weight: "1 lb",
+        image: "/images/butter prawns .jpeg"
     },
     {
         id: "salmon-1",
-        name: "Norwegian Salmon Steak",
-        price: 1850,
-        weight: "250g",
-        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        name: "Ocean Skewers",
+        price: 18.99,
+        weight: "4 Skewers",
+        image: "/images/skewers.jpeg"
     }
 ];
 
 export default function FeaturedProducts() {
+    const { addToCart } = useCart();
+
     return (
-        <section className="py-24 bg-ocean-dark relative z-20">
+        <section className="py-24 bg-sky-light relative z-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16">
@@ -39,7 +42,7 @@ export default function FeaturedProducts() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-3xl md:text-4xl font-heading font-bold text-text-light mb-4"
+                        className="text-3xl md:text-5xl font-heading font-black text-ocean-deep mb-4"
                     >
                         Today's Fresh Catch
                     </motion.h2>
@@ -48,7 +51,7 @@ export default function FeaturedProducts() {
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="w-24 h-1 bg-gold mx-auto"
+                        className="w-24 h-1 bg-oceanic-blue mx-auto"
                     />
                 </div>
 
@@ -60,12 +63,12 @@ export default function FeaturedProducts() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, delay: idx * 0.15 }}
-                            className="group flex flex-col rounded-xl overflow-hidden bg-linear-to-br from-ocean-teal/95 to-ocean-dark/98 border border-wob-gold/15 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:border-wob-gold/40 hover:-translate-y-2 transition-all duration-400"
+                            className="group flex flex-col rounded-xl overflow-hidden bg-white border border-oceanic-blue/10 shadow-lg hover:shadow-2xl hover:border-oceanic-blue/30 hover:-translate-y-2 transition-all duration-400"
                         >
                             {/* Product Image Wrapper */}
-                            <div className="relative h-64 overflow-hidden bg-[#05141e]">
+                            <div className="relative h-64 overflow-hidden bg-sky-light/50">
                                 <div
-                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-70"
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                     style={{ backgroundImage: `url(${product.image})` }}
                                 />
                             </div>
@@ -73,12 +76,15 @@ export default function FeaturedProducts() {
                             {/* Product Details */}
                             <div className="p-6 flex flex-col grow">
                                 <div className="flex justify-between items-start mb-2">
-                                    <h3 className="text-xl font-heading font-semibold text-text-light">{product.name}</h3>
-                                    <span className="text-gold font-medium bg-wob-gold/10 px-2 py-1 rounded text-sm">{product.weight}</span>
+                                    <h3 className="text-xl font-heading font-bold text-ocean-deep">{product.name}</h3>
+                                    <span className="text-oceanic-blue font-bold bg-sky-blue px-2 py-1 rounded text-sm">{product.weight}</span>
                                 </div>
-                                <p className="text-2xl font-bold text-text-light mb-6 mt-auto">₹{product.price}</p>
+                                <p className="text-2xl font-black text-ocean-deep mb-6 mt-auto">${product.price}</p>
 
-                                <button className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-gold/10 border border-gold text-gold font-semibold py-3 px-4 rounded transition-all group-hover:shadow-[0_0_15px_rgba(201,169,98,0.2)]">
+                                <button
+                                    onClick={() => addToCart(product)}
+                                    className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-oceanic-blue/10 border-2 border-oceanic-blue text-oceanic-blue font-bold py-3 px-4 rounded transition-all group-hover:shadow-[0_4px_12px_rgba(14,165,233,0.15)]"
+                                >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                                     Add to Cart
                                 </button>
@@ -90,7 +96,7 @@ export default function FeaturedProducts() {
                 <div className="text-center">
                     <Link
                         href="/products"
-                        className="inline-flex items-center gap-2 text-gold hover:text-gold-light font-medium tracking-wide transition-colors"
+                        className="inline-flex items-center gap-2 text-oceanic-blue hover:text-ocean-deep font-bold tracking-wide transition-colors"
                     >
                         View Full Catalog
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

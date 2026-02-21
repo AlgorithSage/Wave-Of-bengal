@@ -7,28 +7,28 @@ const badges = [
         title: "100% Fresh",
         description: "Caught daily from the deep sea",
         icon: (
-            <svg className="w-8 h-8 text-gold mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>
+            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>
         )
     },
     {
         title: "Same Day Delivery",
         description: "Ice-packed & temperature controlled",
         icon: (
-            <svg className="w-8 h-8 text-gold mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         )
     },
     {
         title: "Certified Safe",
         description: "Tested and approved for consumption",
         icon: (
-            <svg className="w-8 h-8 text-gold mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
         )
     },
     {
         title: "Eco Friendly",
         description: "Sustainable fishing practices",
         icon: (
-            <svg className="w-8 h-8 text-gold mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         )
     }
 ];
@@ -55,7 +55,7 @@ const itemVariants = {
 
 export default function TrustBadges() {
     return (
-        <section className="py-20 bg-ocean-teal relative z-20 border-t border-b border-wob-gold/10">
+        <section className="py-20 bg-sky-light relative z-20 border-t border-b border-oceanic-blue/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
@@ -68,11 +68,11 @@ export default function TrustBadges() {
                         <motion.div
                             key={idx}
                             variants={itemVariants}
-                            className="text-center p-6 rounded-xl bg-linear-to-br from-ocean-dark/80 to-ocean-dark/40 border border-wob-gold/10 shadow-lg hover:border-wob-gold/30 transition-colors duration-300"
+                            className="text-center p-6 rounded-xl bg-white border border-oceanic-blue/10 shadow-sm hover:shadow-md hover:border-oceanic-blue/30 transition-all duration-300"
                         >
                             {badge.icon}
-                            <h3 className="text-xl font-heading font-semibold text-text-light mb-2">{badge.title}</h3>
-                            <p className="text-text-muted text-sm leading-relaxed">{badge.description}</p>
+                            <h3 className="text-xl font-heading font-semibold text-ocean-deep mb-2">{badge.title}</h3>
+                            <p className="text-ocean-muted text-sm leading-relaxed">{badge.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>

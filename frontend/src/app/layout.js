@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { CartProvider } from '../contexts/CartContext';
+import CartSlideOut from '@/components/cart/CartSlideOut';
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -23,15 +25,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${inter.variable} font-body bg-ocean-dark text-text-light antialiased flex flex-col min-h-screen`}
+        className={`${playfair.variable} ${inter.variable} font-body bg-sky-light text-ocean-deep antialiased flex flex-col min-h-screen selection:bg-oceanic-blue/20`}
         suppressHydrationWarning
       >
         <AuthProvider>
-          <Navbar />
-          <main className="grow">
-            {children}
-          </main>
-          <Footer />
+          <CartProvider>
+            <Navbar />
+            <CartSlideOut />
+            <main className="grow">
+              {children}
+            </main>
+            <Footer />
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>

@@ -1,91 +1,100 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function HeroSection() {
     const { scrollY } = useScroll();
-    const [mounted, setMounted] = useState(false);
+    const containerRef = useRef(null);
+    const videoRef = useRef(null);
 
-    // Parallax effects
-    const bgY = useTransform(scrollY, [0, 800], ['0%', '20%']);
-    const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
-    const textY = useTransform(scrollY, [0, 300], ['0%', '50%']);
+    // Track scroll specifically for the Hero section
+    // The container is 250vh high. Let's start the transition a bit after we start scrolling.
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    // Scrub video based on scroll progress
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        if (videoRef.current && Number.isFinite(videoRef.current.duration)) {
+            // Scrub from 0 to full duration
+            videoRef.current.currentTime = latest * videoRef.current.duration;
+        }
+    });
+
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    if (!mounted) return null; // Prevent hydration errors with framer-motion
+    // Animations based on container scroll progress
+    const textOpacity = useTransform(scrollYProgress, [0.2, 0.5, 0.9], [0, 0, 1]); // Fades in smoothly towards the end
+    const textY = useTransform(scrollYProgress, [0.2, 0.5, 0.9], [150, 50, 0]); // Slides up smoothly
+    const overlayOpacity = useTransform(scrollYProgress, [0.1, 0.9], [0, 0.85]); // Dim the video to reveal text
+    const indicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]); // Fade out "scroll" indicator early
 
     return (
-        <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <section ref={containerRef} className="relative h-[250vh] w-full bg-ocean-deep">
+            <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+                {/* Background Image/Video Container */}
+                <div className="absolute inset-0 w-full h-full z-0">
+                    {/* Dynamic overlay to ensure text is readable when it appears */}
+                    <motion.div
+                        style={{ opacity: overlayOpacity }}
+                        className="absolute inset-0 bg-sky-light z-10"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-sky-light z-10 pointer-events-none opacity-50"></div>
 
-            {/* Background Image/Video Container with Parallax */}
-            <motion.div
-                style={{ y: bgY }}
-                className="absolute inset-0 w-full h-[120%] -top-[10%] z-0"
-            >
-                <div className="absolute inset-0 bg-ocean-dark/40 z-10"></div>
-                <div className="absolute inset-0 bg-linear-to-b from-ocean-dark/60 via-transparent to-ocean-dark z-10"></div>
-
-                {/* Placeholder for high-quality video or image */}
-                <div className="w-full h-full bg-linear-to-tr from-[#05141e] to-[#0a2530]" />
-            </motion.div>
-
-            {/* Hero Content */}
-            <motion.div
-                style={{ opacity: textOpacity, y: textY }}
-                className="relative z-20 text-center px-4 max-w-4xl mx-auto mt-[-10vh]"
-            >
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: 'easeOut' }}
-                    className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-text-light tracking-tight mb-6 drop-shadow-lg"
-                >
-                    Fresh From Ocean to <br className="hidden md:block" />
-                    <span className="text-gold italic">Your Doorstep</span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-                    className="text-lg md:text-xl text-text-light/90 mb-10 max-w-2xl mx-auto font-light"
-                >
-                    Premium, wild-caught and sustainably sourced seafood. Delivered exactly how you want it, exactly when you need it.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-                >
-                    <Link
-                        href="/products"
-                        className="inline-block bg-gold hover:bg-gold-light text-ocean-dark font-semibold py-4 px-10 rounded uppercase tracking-widest transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(201,169,98,0.2)] hover:shadow-[0_0_30px_rgba(201,169,98,0.4)]"
+                    <video
+                        ref={videoRef}
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover opacity-90"
                     >
-                        Explore Fresh Catch
-                    </Link>
-                </motion.div>
-            </motion.div>
+                        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+                    </video>
+                </div>
 
-            {/* Scroll indicator down arrow */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
-            >
-                <span className="text-xs uppercase tracking-widest text-gold mb-2 font-medium">Scroll</span>
+                {/* Hero Content */}
                 <motion.div
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                    className="w-px h-12 bg-linear-to-b from-gold to-transparent"
-                />
-            </motion.div>
+                    style={{ opacity: textOpacity, y: textY }}
+                    className="relative z-20 text-center px-4 max-w-4xl mx-auto"
+                >
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black text-ocean-deep tracking-tight mb-6">
+                        Fresh From Ocean to <br className="hidden md:block" />
+                        <span className="text-oceanic-blue italic">Your Doorstep</span>
+                    </h1>
+
+                    <p className="text-lg md:text-2xl text-ocean-deep/90 mb-10 max-w-2xl mx-auto font-medium">
+                        Premium, wild-caught and sustainably sourced seafood. Delivered exactly how you want it, exactly when you need it.
+                    </p>
+
+                    <div>
+                        <Link
+                            href="/products"
+                            className="inline-block bg-ocean-deep hover:bg-oceanic-blue text-sky-light font-bold py-4 px-10 rounded-md uppercase tracking-widest transition-all hover:shadow-[0_8px_20px_rgba(14,165,233,0.3)] hover:-translate-y-1"
+                        >
+                            Explore Fresh Catch
+                        </Link>
+                    </div>
+                </motion.div>
+
+                {/* Scroll indicator down arrow */}
+                <motion.div
+                    style={{ opacity: indicatorOpacity }}
+                    className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
+                >
+                    <span className="text-xs uppercase tracking-widest text-sky-light mb-2 font-bold drop-shadow-md">Scroll</span>
+                    <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="w-[2px] h-12 bg-linear-to-b from-sky-light to-transparent drop-shadow-md"
+                    />
+                </motion.div>
+            </div>
         </section>
     );
 }

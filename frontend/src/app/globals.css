@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ocean-dark: #0a1f2e;
-  --color-ocean-teal: #0d2b3a;
+  --color-sky-light: #f0f8ff;
+  /* Alice Blue - Main Background */
+  --color-sky-blue: #e0f2fe;
+  /* Light Blue - Cards/Sections */
+  --color-oceanic-blue: #0ea5e9;
+  /* Vibrant Blue - Buttons/Highlights */
+  --color-ocean-deep: #082f49;
+  /* Very Dark Blue - Main Text/Headings */
+  --color-ocean-muted: #64748b;
+  /* Slate - Secondary Text */
   --color-gold: #c9a962;
+  /* Kept for luxury accents */
   --color-gold-light: #d4b978;
-  --color-text-light: #f0ead6;
-  --color-text-muted: #8a9bae;
-  --color-wob-green: #2d8a4e;
+  --color-wob-green: #059669;
+  /* Kept for sustainability badges */
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
@@ -15,11 +23,17 @@
 
 @layer base {
   body {
-    background-color: var(--color-ocean-dark);
-    color: var(--color-text-light);
+    background-color: var(--color-sky-light);
+    color: var(--color-ocean-deep);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
+    color: var(--color-ocean-deep);
   }
 }
