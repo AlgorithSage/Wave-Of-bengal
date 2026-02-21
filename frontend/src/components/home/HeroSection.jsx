@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
+import Background from './background';
 
 export default function HeroSection() {
     const { scrollY } = useScroll();
@@ -48,14 +49,7 @@ export default function HeroSection() {
                     />
                     <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-sky-light z-10 pointer-events-none opacity-50"></div>
 
-                    <video
-                        ref={videoRef}
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover opacity-90"
-                    >
-                        <source src="/videos/hero-bg.mp4" type="video/mp4" />
-                    </video>
+                    <Background />
                 </div>
 
                 {/* Hero Content */}
