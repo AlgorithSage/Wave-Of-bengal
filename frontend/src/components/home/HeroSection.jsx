@@ -48,8 +48,6 @@ export default function HeroSection() {
                         className="absolute inset-0 bg-sky-light z-10"
                     />
                     <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-sky-light z-10 pointer-events-none opacity-50"></div>
-
-                    <Background />
                 </div>
 
                 {/* Hero Content */}
