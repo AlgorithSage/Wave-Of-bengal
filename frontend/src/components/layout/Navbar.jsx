@@ -1,12 +1,36 @@
 'use client'
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { useAuth } from '../../hooks/useAuth';
 import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
     const { user, profile, isAdmin, logout } = useAuth();
     const router = useRouter();
+
+    const navLinks = [
+        { name: 'Products', href: '/products', className: 'text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm font-medium transition-colors' },
+        { name: 'Our Story', href: '/our-story', className: 'text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors' },
+        { name: 'Sustainability', href: '/sustainability', className: 'text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors' },
+        { name: 'Certifications', href: '/certifications', className: 'text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors' },
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2,
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: -10, scale: 0.95 },
+        show: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 24 } }
+    };
 
     const handleLogout = async () => {
         try {
@@ -29,20 +53,20 @@ export default function Navbar() {
                     </div>
 
                     <div className="hidden md:block">
-                        <div className="flex items-baseline space-x-8">
-                            <Link href="/products" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                                Products
-                            </Link>
-                            <Link href="/our-story" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors">
-                                Our Story
-                            </Link>
-                            <Link href="/sustainability" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors">
-                                Sustainability
-                            </Link>
-                            <Link href="/certifications" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors">
-                                Certifications
-                            </Link>
-                        </div>
+                        <motion.div 
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="show"
+                            className="flex items-baseline space-x-8"
+                        >
+                            {navLinks.map((link) => (
+                                <motion.div key={link.name} variants={itemVariants}>
+                                    <Link href={link.href} className={link.className}>
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
 
                     <div className="flex items-center space-x-4">
