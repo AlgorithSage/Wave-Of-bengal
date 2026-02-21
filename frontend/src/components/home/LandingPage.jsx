@@ -29,16 +29,17 @@ export default function LandingPage({ onEnter }) {
                 className="relative z-20 w-full h-full max-w-7xl max-h-[95vh] p-6 sm:p-12 lg:p-20 flex flex-col items-center justify-center"
             >
                 {/* Main Brand Content */}
-                <div className="flex flex-col items-center justify-center text-center space-y-6 mt-16 sm:mt-12 mb-12 relative z-30 w-full">
-                    
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-30 pointer-events-none">
                     {/* The Official Wave of Bengal Logo */}
-                    <div className="mb-6 w-full max-w-lg md:max-w-2xl px-4 flex justify-center">
+                    <div className="w-full max-w-3xl md:max-w-5xl lg:max-w-6xl px-4 flex justify-center items-center pointer-events-auto">
                         <Image 
                             src="/images/Wave of Bengal Logo.png" 
                             alt="Wave of Bengal Logo" 
-                            width={800} 
-                            height={400} 
-                            className="object-contain w-auto h-auto max-h-[35vh] sm:max-h-[45vh]"
+                            width={1920} 
+                            height={1080} 
+                            quality={100}
+                            unoptimized
+                            className="object-contain w-full h-auto max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] mix-blend-screen"
                             priority
                         />
                     </div>
