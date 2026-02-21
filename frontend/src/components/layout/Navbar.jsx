@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link';
-import { useAuth } from '../../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 import { useRouter } from 'next/navigation';
 
 export default function Navbar() {

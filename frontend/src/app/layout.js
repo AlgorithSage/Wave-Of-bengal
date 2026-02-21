@@ -21,9 +21,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${playfair.variable} ${inter.variable} font-body bg-ocean-dark text-text-light antialiased flex flex-col min-h-screen`}
+        suppressHydrationWarning
       >
         <AuthProvider>
           <Navbar />
