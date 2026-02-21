@@ -30,16 +30,16 @@ export default function Navbar() {
 
                     <div className="hidden md:block">
                         <div className="flex items-baseline space-x-8">
-                            <Link href="/products" className="text-text-light hover:text-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            <Link href="/products" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                                 Products
                             </Link>
-                            <Link href="/our-story" className="text-text-muted hover:text-gold px-3 py-2 rounded-md text-sm transition-colors">
+                            <Link href="/our-story" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors">
                                 Our Story
                             </Link>
-                            <Link href="/sustainability" className="text-text-muted hover:text-gold px-3 py-2 rounded-md text-sm transition-colors">
+                            <Link href="/sustainability" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors">
                                 Sustainability
                             </Link>
-                            <Link href="/certifications" className="text-text-muted hover:text-gold px-3 py-2 rounded-md text-sm transition-colors">
+                            <Link href="/certifications" className="text-gold hover:text-gold/80 px-3 py-2 rounded-md text-sm transition-colors">
                                 Certifications
                             </Link>
                         </div>
