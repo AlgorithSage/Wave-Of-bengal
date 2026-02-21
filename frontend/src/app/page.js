@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import LandingPage from '@/components/home/LandingPage';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 export default function Splash() {
   const router = useRouter();
@@ -10,5 +11,9 @@ export default function Splash() {
     router.push('/home');
   };
 
-  return <LandingPage onEnter={handleEnter} />;
+  return (
+    <AuthProvider>
+      <LandingPage onEnter={handleEnter} />
+    </AuthProvider>
+  );
 }
