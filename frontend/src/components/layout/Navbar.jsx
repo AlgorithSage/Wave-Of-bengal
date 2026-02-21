@@ -12,10 +12,10 @@ export default function Navbar() {
     const router = useRouter();
 
     const navLinks = [
-        { name: 'Products', href: '/products', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-md text-sm font-bold transition-colors' },
-        { name: 'Our Story', href: '/our-story', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-sm font-semibold transition-colors' },
-        { name: 'Sustainability', href: '/sustainability', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-sm font-semibold transition-colors' },
-        { name: 'Certifications', href: '/certifications', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-sm font-semibold transition-colors' },
+        { name: 'Products', href: '/products', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-bold transition-colors' },
+        { name: 'Our Story', href: '/our-story', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
+        { name: 'Sustainability', href: '/sustainability', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
+        { name: 'Certifications', href: '/certifications', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
     ];
 
     const containerVariants = {
@@ -83,17 +83,17 @@ export default function Navbar() {
 
                         {user ? (
                             <div className="flex items-center space-x-4">
-                                <Link href="/account" className="text-sm font-bold text-ocean-deep hover:text-oceanic-blue transition-colors hidden sm:block">
+                                <Link href="/account" className="text-base font-bold text-ocean-deep hover:text-oceanic-blue transition-colors hidden sm:block">
                                     {profile?.name || user.displayName || user.email.split('@')[0]}
                                 </Link>
                                 {isAdmin && (
-                                    <Link href="/admin" className="text-xs font-bold uppercase tracking-wider text-sky-light bg-oceanic-blue px-2 py-1 rounded">
+                                    <Link href="/admin" className="text-sm font-bold uppercase tracking-wider text-sky-light bg-oceanic-blue px-2 py-1 rounded">
                                         Admin
                                     </Link>
                                 )}
                                 <button
                                     onClick={handleLogout}
-                                    className="text-sm border border-ocean-muted/40 text-ocean-deep font-semibold hover:bg-oceanic-blue/10 px-4 py-2 rounded-md transition-colors"
+                                    className="text-base border border-ocean-muted/40 text-ocean-deep font-semibold hover:bg-oceanic-blue/10 px-4 py-2 rounded-md transition-colors"
                                 >
                                     Logout
                                 </button>
@@ -101,7 +101,7 @@ export default function Navbar() {
                         ) : (
                             <Link
                                 href="/auth/login"
-                                className="text-sm bg-ocean-deep text-sky-light hover:bg-oceanic-blue font-bold px-5 py-2.5 rounded-md transition-all hover:shadow-[0_4px_12px_rgba(14,165,233,0.3)] hover:-translate-y-0.5"
+                                className="text-base bg-ocean-deep text-sky-light hover:bg-oceanic-blue font-bold px-5 py-2.5 rounded-md transition-all hover:shadow-[0_4px_12px_rgba(14,165,233,0.3)] hover:-translate-y-0.5"
                             >
                                 Sign In
                             </Link>
