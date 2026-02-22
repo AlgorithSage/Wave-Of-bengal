@@ -30,19 +30,19 @@ const mockAnalyticsData = {
 
 const StatCard = ({ title, value, icon, delay }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ delay, duration: 0.5, ease: "easeOut" }}
-    className="bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2e] border border-[#c9a962]/15 rounded-2xl p-6 shadow-xl relative overflow-hidden group"
+    transition={{ delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    className="bg-gradient-to-br from-[#0a1f2e]/70 to-[#0d2b3a]/70 backdrop-blur-xl border border-[#c9a962]/20 rounded-3xl p-7 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden group"
   >
-    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+    <div className="absolute top-0 right-0 p-5 opacity-20 group-hover:opacity-40 transition-opacity duration-500 text-[#c9a962]">
       {icon}
     </div>
-    <h3 className="text-[#8a9bae] font-body text-sm uppercase tracking-widest font-semibold mb-2">{title}</h3>
-    <p className="text-[32px] text-[#f0ead6] font-heading font-medium tracking-wide">
+    <h3 className="text-[#8a9bae] font-body text-xs uppercase tracking-[0.15em] font-semibold mb-3">{title}</h3>
+    <p className="text-4xl text-[#f0ead6] font-heading font-medium tracking-wide drop-shadow-md">
       {value}
     </p>
-    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#c9a962]/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+    <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#c9a962]/60 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
   </motion.div>
 );
 
@@ -80,8 +80,8 @@ export default function SearchAnalyticsAdmin() {
           priority
           unoptimized
         />
-        {/* Deep luxury oceanic overlay to ensure perfect text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f2e]/90 via-[#0a1f2e]/80 to-[#0a1f2e]/95 backdrop-blur-[4px]" />
+        {/* Lighter, strictly color-based overlay to let the image shine completely through without blurring */}
+        <div className="absolute inset-0 bg-[#06111a]/40" />
       </div>
 
       {/* Main Content Pane */}
@@ -118,12 +118,12 @@ export default function SearchAnalyticsAdmin() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Trend Chart (CSS Bar Chart using Framer Motion) */}
         <motion.div 
-           initial={{ opacity: 0, scale: 0.95 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ delay: 0.4, duration: 0.5 }}
-           className="lg:col-span-2 bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2e] border border-[#c9a962]/15 rounded-2xl p-6 shadow-2xl"
+           initial={{ opacity: 0, scale: 0.95, y: 20 }}
+           animate={{ opacity: 1, scale: 1, y: 0 }}
+           transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+           className="lg:col-span-2 bg-gradient-to-br from-[#0a1f2e]/70 to-[#0d2b3a]/70 backdrop-blur-xl border border-[#c9a962]/20 rounded-3xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)]"
         >
-          <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-8">Weekly Search Velocity</h3>
+          <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-8 drop-shadow-sm">Weekly Search Velocity</h3>
           
           <div className="flex justify-between items-end h-[280px] pb-4 border-b border-[#c9a962]/10 gap-2">
             {data.trends.map((trend, i) => {
@@ -151,12 +151,13 @@ export default function SearchAnalyticsAdmin() {
 
         {/* Top Keywords Table */}
         <motion.div 
-           initial={{ opacity: 0, x: 20 }}
-           animate={{ opacity: 1, x: 0 }}
-           transition={{ delay: 0.5, duration: 0.6 }}
-           className="bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2e] border border-[#c9a962]/15 rounded-2xl p-6 shadow-2xl overflow-hidden"
+           initial={{ opacity: 0, x: 20, y: 20 }}
+           animate={{ opacity: 1, x: 0, y: 0 }}
+           transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+           className="bg-gradient-to-br from-[#0a1f2e]/70 to-[#0d2b3a]/70 backdrop-blur-xl border border-[#c9a962]/20 rounded-3xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-between"
         >
-          <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-6">Top Sea-to-Table Queries</h3>
+          <div>
+            <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-6 drop-shadow-sm">Top Sea Queries</h3>
           
           <div className="space-y-4">
             <div className="flex justify-between text-[#8a9bae] text-xs uppercase tracking-widest font-semibold pb-2 border-b border-[#c9a962]/10">
@@ -172,17 +173,18 @@ export default function SearchAnalyticsAdmin() {
                 transition={{ delay: 0.6 + (index * 0.1) }}
                 className="group relative"
               >
-                <div className="flex justify-between items-center py-2 relative z-10">
-                  <span className="text-[#f0ead6] text-sm tracking-wide font-medium">{item.query}</span>
-                  <span className="text-[#c9a962] text-sm font-semibold">{item.count.toLocaleString()}</span>
+                <div className="flex justify-between items-center py-2 relative z-10 transition-colors duration-300 group-hover:text-[#c9a962]">
+                  <span className="text-[#f0ead6] group-hover:text-[#c9a962] text-[15px] tracking-wide font-medium transition-colors">{item.query}</span>
+                  <span className="text-[#c9a962] font-semibold tracking-wider drop-shadow-md">{item.count.toLocaleString()}</span>
                 </div>
                 {/* Horizontal Progress Bar Background */}
-                <div className="absolute bottom-0 left-0 h-full bg-[#c9a962]/5 rounded-md z-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 h-full bg-[#c9a962]/10 rounded-md z-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none" />
               </motion.div>
             ))}
           </div>
+          </div>
           
-          <button className="w-full mt-8 font-body text-xs uppercase tracking-widest font-semibold py-3 border border-[#c9a962]/20 text-[#c9a962] hover:bg-[#c9a962]/10 transition-colors rounded">
+          <button className="w-full mt-6 font-body text-xs uppercase tracking-[0.2em] font-bold py-3.5 border border-[#c9a962]/30 text-[#c9a962] bg-[#c9a962]/5 hover:bg-[#c9a962]/20 hover:border-[#c9a962]/80 transition-all rounded-xl shadow-[0_0_15px_rgba(201,169,98,0.1)] hover:shadow-[0_0_20px_rgba(201,169,98,0.3)]">
             View Expanded Report
           </button>
         </motion.div>
