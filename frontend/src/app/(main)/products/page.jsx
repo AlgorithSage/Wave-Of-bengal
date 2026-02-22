@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '@/contexts/CartContext';
 import Image from 'next/image';
@@ -76,53 +76,7 @@ export default function ProductsPage() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Video Ping-Pong Logic
-    const videoRef = useRef(null);
-    const [isPlayingForward, setIsPlayingForward] = useState(true);
-
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        let reverseInterval;
-
-        const handleTimeUpdate = () => {
-            if (isPlayingForward && video.currentTime >= video.duration - 0.1) {
-                // Video reached the end playing forward, switch to reverse
-                video.pause();
-                setIsPlayingForward(false);
-            } else if (!isPlayingForward && video.currentTime <= 0.1) {
-                // Video reached the start playing backward, switch to forward
-                setIsPlayingForward(true);
-                video.play().catch(e => console.error("Error auto-playing forward:", e));
-            }
-        };
-
-        if (!isPlayingForward) {
-            // Manually step the video backward using requestAnimationFrame or setInterval
-            // Browsers don't reliably support playbackRate = -1
-            reverseInterval = setInterval(() => {
-                if (video.currentTime > 0) {
-                    video.currentTime -= 0.05; // Adjust step size for smoothness vs performance (50ms step)
-                }
-            }, 50); // Run 20 times a second
-        } else {
-            // Make sure interval is cleared if we are playing forward
-            clearInterval(reverseInterval);
-            // Ensure video is playing if it was paused
-            if (video.paused && video.currentTime > 0) {
-                video.play().catch(e => console.error("Error resuming forward play:", e));
-            }
-        }
-
-        video.addEventListener('timeupdate', handleTimeUpdate);
-
-        return () => {
-            video.removeEventListener('timeupdate', handleTimeUpdate);
-            clearInterval(reverseInterval);
-        };
-    }, [isPlayingForward]);
-
+    // Using native HTML video loop attribute for performance and stability
 
     const filteredProducts = MOCK_PRODUCTS.filter(product => {
         const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
@@ -133,11 +87,11 @@ export default function ProductsPage() {
 
     return (
         <div className="relative min-h-screen pt-24 pb-20 overflow-hidden">
-            {/* Ping-Pong Loop Background Video (No native loop attribute, handled by react) */}
+            {/* Standard Background Video Loop */}
             <video
-                ref={videoRef}
                 autoPlay
                 muted
+                loop
                 playsInline
                 className="fixed inset-0 w-full h-full object-cover z-0"
             >
