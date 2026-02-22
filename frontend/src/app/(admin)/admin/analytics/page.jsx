@@ -91,16 +91,19 @@ export default function SearchAnalyticsAdmin() {
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 border-b border-[#c9a962]/15 pb-6"
-      >
-        <div>
-          <h1 className="text-4xl text-[#c9a962] font-heading font-light tracking-wide mb-2">Search Analytics</h1>
-          <p className="text-[#8a9bae] text-sm tracking-wide">Monitor customer intent and discover real-time seafood demand.</p>
-        </div>
-        <button className="mt-4 md:mt-0 font-body text-xs uppercase tracking-widest font-semibold py-2 px-6 rounded-md border border-[#c9a962]/40 text-[#c9a962] hover:bg-[#c9a962]/10 transition-colors">
-          Export CSV
-        </button>
-      </motion.div>
+          className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 border-b border-[#c9a962]/15 pb-6"
+        >
+          <div>
+            <h1 className="text-4xl text-[#c9a962] font-heading font-light tracking-wide mb-4 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">Search Analytics</h1>
+            <div className="inline-flex items-center bg-black/30 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 shadow-xl">
+              <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse mr-3"></span>
+              <p className="text-[#f0ead6] text-sm tracking-wider font-medium drop-shadow-md">Monitor customer intent and discover real-time seafood demand.</p>
+            </div>
+          </div>
+          <button className="mt-6 md:mt-0 font-body text-xs uppercase tracking-[0.15em] font-bold py-3 px-8 rounded-xl border border-[#c9a962]/30 text-[#c9a962] bg-black/20 hover:bg-[#c9a962]/20 backdrop-blur-md transition-all shadow-[0_8px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_25px_rgba(201,169,98,0.2)]">
+            Export CSV
+          </button>
+        </motion.div>
 
       {/* Top Level Metric Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
