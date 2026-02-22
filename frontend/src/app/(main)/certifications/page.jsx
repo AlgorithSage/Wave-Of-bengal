@@ -157,7 +157,7 @@ export default function Certifications() {
                                             className="flex flex-col sm:flex-row gap-8 glass-card p-10 hover:border-gold/25 hover:-translate-y-2 transition-all duration-500 group"
                                         >
                                             <div className="shrink-0">
-                                                <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-white/15 via-white/5 to-transparent border border-white/15 flex items-center justify-center group-hover:border-gold/30 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-500">
+                                                <div className="w-32 h-32 rounded-2xl bg-linear-to-br from-white/15 via-white/5 to-transparent border border-white/15 flex items-center text-6xl justify-center group-hover:border-gold/30 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-500">
                                                     {item.icon}
                                                 </div>
                                             </div>
