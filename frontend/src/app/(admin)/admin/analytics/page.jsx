@@ -67,6 +67,42 @@ export default function SearchAnalyticsAdmin() {
   // Find max searches for chart scaling
   const maxDaySearches = Math.max(...data.trends.map(t => t.searches));
 
+  const exportToCSV = () => {
+    if (!data) return;
+    
+    // Create CSV content from data
+    const headers = ['Metric', 'Value'];
+    const summaryData = [
+      ['Total Searches', data.totalSearches],
+      ['Unique Queries', data.uniqueQueries],
+      ['Conversion Rate', data.conversionRate]
+    ];
+    
+    const queryHeaders = ['\nKeyword', 'Search Volume', 'Conversions'];
+    const queryData = data.topQueries.map(q => [q.query, q.count, q.conversions]);
+    
+    const trendHeaders = ['\nDay', 'Search Volume'];
+    const trendData = data.trends.map(t => [t.day, t.searches]);
+    
+    // Combine everything
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += headers.join(",") + "\n";
+    summaryData.forEach(row => csvContent += row.join(",") + "\n");
+    csvContent += queryHeaders.join(",") + "\n";
+    queryData.forEach(row => csvContent += row.join(",") + "\n");
+    csvContent += trendHeaders.join(",") + "\n";
+    trendData.forEach(row => csvContent += row.join(",") + "\n");
+    
+    // Download
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `WaveOfBengal_SearchAnalytics_${new Date().toISOString().split('T')[0]}.csv`);
+    document.body.appendChild(link); // Required for FF
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="relative min-h-screen text-[#f0ead6] font-body overflow-hidden">
       
@@ -100,7 +136,10 @@ export default function SearchAnalyticsAdmin() {
               <p className="text-[#f0ead6] text-sm tracking-wider font-medium drop-shadow-md">Monitor customer intent and discover real-time seafood demand.</p>
             </div>
           </div>
-          <button className="mt-6 md:mt-0 font-body text-xs uppercase tracking-[0.15em] font-bold py-3 px-8 rounded-xl border border-[#c9a962]/30 text-[#c9a962] bg-black/20 hover:bg-[#c9a962]/20 backdrop-blur-md transition-all shadow-[0_8px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_25px_rgba(201,169,98,0.2)]">
+          <button 
+            onClick={exportToCSV}
+            className="mt-6 md:mt-0 font-body text-xs uppercase tracking-[0.15em] font-bold py-3 px-8 rounded-xl border border-[#c9a962]/30 text-[#c9a962] bg-black/20 hover:bg-[#c9a962]/20 backdrop-blur-md transition-all shadow-[0_8px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_25px_rgba(201,169,98,0.2)]"
+          >
             Export CSV
           </button>
         </motion.div>
