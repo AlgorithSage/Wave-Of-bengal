@@ -68,10 +68,13 @@ export default function TrustBadges() {
                         <motion.div
                             key={idx}
                             variants={itemVariants}
-                            className="group text-center px-16 py-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/20 border-t-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/10 hover:border-white/40 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-500 relative overflow-hidden"
+                            className="group text-center px-16 py-10 rounded-[20px] bg-white/17 backdrop-blur-[7px] border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(255,255,255,0.1),inset_0_0_18px_9px_rgba(255,255,255,0.9)] hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.6),inset_0_-1px_0_rgba(255,255,255,0.2),inset_0_0_24px_12px_rgba(255,255,255,1)] transition-all duration-500 relative overflow-hidden"
                         >
-                            {/* Subtle inner top highlight */}
-                            <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            {/* Matches .glass-card::before (Top gradient highlight) */}
+                            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/80 to-transparent"></div>
+
+                            {/* Matches .glass-card::after (Left vertical gradient highlight) */}
+                            <div className="absolute top-0 left-0 bottom-0 w-px bg-linear-to-b from-white/80 via-transparent to-white/30"></div>
 
                             {/* Icon container with background glow on hover */}
                             <div className="relative inline-block mb-3">
