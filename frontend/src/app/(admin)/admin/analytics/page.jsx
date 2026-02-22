@@ -106,18 +106,43 @@ export default function SearchAnalyticsAdmin() {
   return (
     <div className="relative min-h-screen text-[#f0ead6] font-body overflow-hidden">
       
-      {/* Immersive Ocean Background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/bg/Underwater Image 4.jpeg"
-          alt="Underwater Ocean Background"
-          fill
-          className="object-cover object-center scale-105"
-          priority
-          unoptimized
+      {/* Immersive Ocean Background Architecture */}
+      <div className="absolute inset-0 z-0 bg-[#02070e] overflow-hidden">
+        
+        {/* 1. Base Image - Kept intact and visible but naturally blended into the depth */}
+        <div className="absolute inset-0 opacity-85">
+          <Image
+            src="/images/bg/Underwater Image 4.jpeg"
+            alt="Underwater Ocean Background"
+            fill
+            className="object-cover object-center scale-105"
+            priority
+            unoptimized
+          />
+        </div>
+
+        {/* 2. Deep Ocean Gradient Overlay (Navy -> Teal -> Aqua) to provide luxurious oceanic color parity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#06111f]/80 via-[#0a2333]/40 to-[#184454]/30" />
+
+        {/* 3. Extremely Slow Ambient Movement (Calm majestic sunset shimmer & deep current) */}
+        <motion.div 
+          animate={{ opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 14, ease: "easeInOut", repeat: Infinity }}
+          className="absolute -top-20 -right-20 w-[80vw] h-[80vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#e5d099]/15 via-[#c9a962]/5 to-transparent pointer-events-none"
         />
-        {/* Crystal clear edge vignette. Center is completely pristine, unleashing the full vibrant coral reef! */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020b14]/80 via-[#020b14]/10 to-[#020b14]/90" />
+        <motion.div 
+          animate={{ backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'] }}
+          transition={{ duration: 60, ease: "linear", repeat: Infinity }}
+          className="absolute inset-0 opacity-40 bg-gradient-to-tr from-transparent via-[#1d4659]/30 to-transparent pointer-events-none"
+          style={{ backgroundSize: '150% 150%' }}
+        />
+
+        {/* 4. Subtle Glassmorphism Layer Effect in sections (Backdrop Blur + Transparency on the edges) */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_40%,_rgba(6,17,31,0.5)_110%)] backdrop-blur-[4px] pointer-events-none" />
+
+        {/* 5. Depth Zones & Vignette for absolute foreground readability */}
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#020b14] to-transparent opacity-95 pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-[20%] bg-gradient-to-b from-[#020b14]/70 to-transparent pointer-events-none" />
       </div>
 
       {/* Main Content Pane */}
