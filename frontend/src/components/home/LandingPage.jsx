@@ -43,7 +43,7 @@ export default function LandingPage({ onEnter }) {
     };
 
     return (
-        <section className="fixed inset-0 z-100 w-full min-h-screen bg-[#050B14] flex flex-col items-center justify-center p-4 overflow-hidden font-heading text-white">
+        <section className="fixed inset-0 z-100 w-full min-h-screen bg-[#050B14] flex flex-col items-center justify-center p-4 overflow-hidden font-landing-heading text-white">
 
             {/* Background Video */}
             <div className="absolute inset-0 z-0 overflow-hidden">
@@ -164,7 +164,7 @@ export default function LandingPage({ onEnter }) {
 
                             <p className="mt-6 text-center text-white/40 text-sm font-body">
                                 New here?{' '}
-                                <a href="/auth/register" className="text-[#d97736] hover:text-[#f0a060] font-semibold transition-colors">
+                                <a href="/register" className="text-[#d97736] hover:text-[#f0a060] font-semibold transition-colors">
                                     Create an account
                                 </a>
                             </p>
