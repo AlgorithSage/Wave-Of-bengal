@@ -5,43 +5,63 @@ import Image from 'next/image';
 
 const certifications = [
     {
-        category: "Safety & Hygiene",
+        category: "Certifications",
         items: [
             {
-                name: "FSSAI Registered",
-                desc: "Food Safety and Standards Authority of India certified for hygienic processing and packaging. Our facilities meet the highest standards of food safety compliance.",
-                icon: (
-                    <svg className="w-12 h-12 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
-                )
+                name: "Marine Stewardship Council",
+                subtitle: "Sustainable Fishing Certification",
+                desc: "The MSC blue fish label is the world's most recognized certification for sustainable seafood. It guarantees that our fish comes from well-managed, sustainable fisheries.",
+                icon: "🐟",
+                features: ["Sustainable fish stocks maintained", "Minimal environmental impact", "Effective fishery management", "Full chain of custody traceability"]
             },
             {
-                name: "HACCP Certified",
-                desc: "Hazard Analysis Critical Control Point system applied across our entire cold chain logistics flow. Every step is monitored and documented rigorously.",
-                icon: (
-                    <svg className="w-12 h-12 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                )
-            }
-        ]
-    },
-    {
-        category: "Quality Assurance",
-        items: [
-            {
-                name: "Antibiotic Free",
-                desc: "Our catch is 100% wild and free from any synthetic antibiotics or growth hormones often found in farmed fish. Pure ocean, pure nutrition.",
-                icon: (
-                    <svg className="w-12 h-12 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
-                )
+                name: "Food Safety & Standards Authority",
+                subtitle: "Government Food Safety Certification",
+                desc: "FSSAI certification ensures that all our products meet the food safety and hygiene standards mandated by the Government of India. Your health is our priority.",
+                icon: "🛡️",
+                features: ["Safe for human consumption", "No harmful contaminants", "Proper labeling standards", "Regular quality audits"]
             },
             {
-                name: "Lab Tested Batches",
-                desc: "Randomized batches are sent for heavy metal and toxin testing to ensure absolute consumption safety. Your health is our priority.",
-                icon: (
-                    <svg className="w-12 h-12 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" /></svg>
-                )
+                name: "Hazard Analysis Critical Control",
+                subtitle: "International Quality Management",
+                desc: "HACCP certification demonstrates our commitment to identifying and preventing hazards throughout the food production process, from catch to delivery.",
+                icon: "🔬",
+                features: ["Systematic hazard prevention", "Critical control point monitoring", "Documentation & verification", "Continuous improvement"]
+            },
+            {
+                name: "International Food Safety Standard",
+                subtitle: "Global Quality Management",
+                desc: "ISO 22000 integrates food safety management with business processes, ensuring that food safety is embedded in every aspect of our operations.",
+                icon: "🏆",
+                features: ["Interactive communication", "System management", "Prerequisite programs", "HACCP principles integrated"]
             }
         ]
     }
+];
+
+const qualityNumbers = [
+    { number: "98%", label: "Freshness Score", text: "Average freshness rating based on lab tests" },
+    { number: "0-4°C", label: "Cold Chain", text: "Temperature maintained from catch to delivery" },
+    { number: "24hr", label: "Catch to Table", text: "Maximum time from ocean to your doorstep" },
+    { number: "100%", label: "Traceable", text: "Every product tracked from source" }
+];
+
+const traceSteps = [
+    { icon: "📅", title: "Catch Date & Time", desc: "Know exactly when your seafood was caught — often the same morning it reaches you." },
+    { icon: "📍", title: "Catch Location", desc: "GPS coordinates of the fishing zone, including the specific waters of the Bay of Bengal." },
+    { icon: "🎣", title: "Fishing Method", desc: "Details on whether it was line-caught, net-caught, or harvested — and always sustainable." },
+    { icon: "🚢", title: "Vessel Information", desc: "Licensed boat details and crew information for complete transparency." },
+    { icon: "🧊", title: "Storage Conditions", desc: "Temperature logs throughout the journey ensuring cold chain integrity." },
+    { icon: "🔬", title: "Lab Test Results", desc: "Bacterial counts, freshness scores, and safety verification for every batch." }
+];
+
+const labTests = [
+    { icon: "🦠", title: "Bacterial Count", desc: "Testing for harmful bacteria levels" },
+    { icon: "⚗️", title: "Heavy Metals", desc: "Mercury, lead, and cadmium screening" },
+    { icon: "💊", title: "Antibiotics", desc: "Zero antibiotic residue guaranteed" },
+    { icon: "🧪", title: "Freshness Index", desc: "TVB-N and other freshness markers" },
+    { icon: "🌡️", title: "Temperature Log", desc: "Continuous cold chain verification" },
+    { icon: "✅", title: "Final QC Check", desc: "Visual & sensory quality approval" }
 ];
 
 export default function Certifications() {
@@ -88,7 +108,7 @@ export default function Certifications() {
                             transition={{ duration: 0.9, delay: 0.15 }}
                             className="text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-8 drop-shadow-lg leading-[0.95]"
                         >
-                            Uncompromising <span className="text-[#FFFDD0] italic">Quality</span>
+                            Uncompromised <span className="text-[#FFFDD0] italic">Quality</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -96,8 +116,8 @@ export default function Certifications() {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-medium drop-shadow-md italic leading-relaxed"
                         >
-                            Trust isn&apos;t given; it&apos;s earned. We back our commitment to premium seafood with
-                            rigorous testing, industry-leading certifications, and absolute transparency.
+                            Industry-leading standards that guarantee quality, safety, and sustainability in every product.
+                            <p>At Wave of Bengal, we don't just promise quality — we prove it. Every product we deliver meets rigorous international standards, verified by independent certification bodies.</p>
                         </motion.p>
                         <motion.div
                             initial={{ scaleX: 0 }}
@@ -142,8 +162,20 @@ export default function Certifications() {
                                                 </div>
                                             </div>
                                             <div>
-                                                <h3 className="text-2xl font-heading font-bold text-[#FFFDD0] mb-3 group-hover:text-[#FFFDD0]/80 transition-colors">{item.name}</h3>
-                                                <p className="text-white/60 text-base leading-relaxed group-hover:text-white/75 transition-colors">{item.desc}</p>
+                                                <h3 className="text-2xl font-heading font-bold text-[#FFFDD0] mb-1 group-hover:text-[#FFFDD0]/80 transition-colors">{item.name}</h3>
+                                                {item.subtitle && <p className="text-sm text-gold italic mb-3">{item.subtitle}</p>}
+                                                <p className="text-white/60 text-base leading-relaxed group-hover:text-white/75 transition-colors mb-4">{item.desc}</p>
+
+                                                {item.features && item.features.length > 0 && (
+                                                    <ul className="space-y-2">
+                                                        {item.features.map((feature, fIdx) => (
+                                                            <li key={fIdx} className="flex items-start gap-2 text-sm text-white/60 group-hover:text-white/75 transition-colors">
+                                                                <span className="text-gold shrink-0 mt-0.5">✓</span>
+                                                                <span>{feature}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </div>
                                         </motion.div>
                                     ))}
@@ -152,8 +184,126 @@ export default function Certifications() {
                         ))}
                     </div>
 
+                    {/* ═══════════ QUALITY BY NUMBERS ═══════════ */}
+                    <div className="relative py-20 mt-20">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="flex items-center gap-6 mb-16"
+                        >
+                            <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Quality by Numbers</h2>
+                            <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {qualityNumbers.map((stat, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                                    className="glass-card p-8 text-center"
+                                >
+                                    <h4 className="text-5xl font-heading font-black text-gold mb-3">{stat.number}</h4>
+                                    <p className="text-lg font-bold text-[#FFFDD0] mb-2">{stat.label}</p>
+                                    <p className="text-sm text-white/60">{stat.text}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* ═══════════ FULL TRACEABILITY ═══════════ */}
+                    <div className="relative py-20 mt-10">
+                        <div className="mb-16">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="flex items-center gap-6 mb-4"
+                            >
+                                <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Full Traceability</h2>
+                                <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
+                            </motion.div>
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="text-lg text-white/70 italic"
+                            >
+                                Every product comes with complete traceability information. Know exactly where your seafood comes from.
+                            </motion.p>
+                        </div>
+
+                        <div className="space-y-6 max-w-4xl mx-auto">
+                            {traceSteps.map((step, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: idx * 0.1 }}
+                                    className="flex flex-col sm:flex-row gap-6 glass-card p-6 md:p-8 items-start sm:items-center"
+                                >
+                                    <div className="w-16 h-16 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(245,158,11,0.15)] text-3xl">
+                                        {step.icon}
+                                    </div>
+                                    <div>
+                                        <h4 className="text-xl font-bold text-gold mb-2">{step.title}</h4>
+                                        <p className="text-white/70">{step.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* ═══════════ LAB TESTING STANDARDS ═══════════ */}
+                    <div className="relative py-24 mt-16 bg-white/5 backdrop-blur-md border-y border-white/10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+                        <div className="max-w-6xl mx-auto">
+                            <div className="mb-16">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    className="flex items-center gap-6 mb-4"
+                                >
+                                    <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Lab Testing Standards</h2>
+                                    <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
+                                </motion.div>
+                                <motion.p
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 }}
+                                    className="text-lg text-white/70 italic"
+                                >
+                                    Every batch undergoes rigorous laboratory testing before it reaches you.
+                                </motion.p>
+                            </div>
+
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                                {labTests.map((test, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                                        className="glass-card p-6 text-center hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
+                                    >
+                                        <div className="text-4xl mb-4">{test.icon}</div>
+                                        <h4 className="text-gold font-bold mb-2 text-sm uppercase tracking-wider">{test.title}</h4>
+                                        <p className="text-xs text-white/60 leading-relaxed">{test.desc}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
                     {/* ═══════════ GUARANTEE SECTION ═══════════ */}
-                    <div className="relative py-24 mt-20 overflow-hidden">
+                    <div className="relative py-24 mt-10 overflow-hidden">
                         <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-gold/15 rounded-3xl" />
                         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.06)_0%,transparent_70%)] rounded-3xl" />
 
@@ -166,13 +316,11 @@ export default function Certifications() {
                         >
                             <span className="text-[#FFFDD0] uppercase tracking-[0.25em] text-sm font-bold mb-6 block">Our Promise</span>
                             <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-white mb-6 drop-shadow-lg">
-                                The Wave of Bengal <span className="text-[#FFFDD0] italic">Guarantee</span>
+                                Quality You Can <span className="text-[#FFFDD0] italic">Trust</span>
                             </h3>
                             <div className="w-20 h-[3px] bg-linear-to-r from-gold via-gold-light to-gold mx-auto rounded-full mb-8" />
                             <p className="text-white/65 text-xl max-w-3xl mx-auto leading-relaxed">
-                                If you are ever unsatisfied with the freshness or quality of our catch,
-                                contact us within 12 hours of delivery for a complete replacement or refund.
-                                <span className="block mt-3 text-gold-light font-heading font-bold text-lg tracking-wide">No questions asked.</span>
+                                Experience the difference that certified quality makes. Taste the freshness, feel the assurance.
                             </p>
                         </motion.div>
                     </div>
