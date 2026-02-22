@@ -68,7 +68,7 @@ export default function TrustBadges() {
                         <motion.div
                             key={idx}
                             variants={itemVariants}
-                            className="group text-center p-10 rounded-3xl bg-linear-to-b from-white/10 to-black/30 backdrop-blur-xl border border-white/20 border-t-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:from-white/15 hover:to-black/20 hover:border-white/40 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-500 relative overflow-hidden"
+                            className="group text-center px-16 py-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/20 border-t-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.4)] hover:bg-white/10 hover:border-white/40 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.5)] transition-all duration-500 relative overflow-hidden"
                         >
                             {/* Subtle inner top highlight */}
                             <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

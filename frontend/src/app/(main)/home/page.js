@@ -18,19 +18,18 @@ export default function Home() {
 
       {/* Post-hero content with bg3 background */}
       <div className="relative">
-        {/* Fixed Background Video */}
+        {/* Fixed Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-black/90">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-80"
-          >
-            <source src="/bg/bg3.mp4" type="video/mp4" />
-          </video>
+          <Image
+            src="/bg/bg3.png"
+            alt="Ocean Background"
+            fill
+            className="object-cover opacity-80"
+            quality={90}
+            priority
+          />
           {/* Subtle dark overlay for text legibility and glass aesthetic */}
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
         </div>
 
         {/* Content Layer */}
