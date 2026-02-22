@@ -85,7 +85,7 @@ export default function Sustainability() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.6, delay: idx * 0.2 }}
-                                className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl hover:bg-white/15 hover:border-white/30 hover:shadow-emerald-500/10 transition-all duration-300 group"
+                                className="glass-card hover:border-white/30 p-8 hover:shadow-emerald-500/10 transition-all duration-300 group"
                             >
                                 <div className="flex justify-center transform group-hover:-translate-y-2 transition-transform duration-300">
                                     {pillar.icon}

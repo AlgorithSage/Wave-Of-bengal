@@ -134,7 +134,7 @@ export default function Certifications() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true, margin: "-50px" }}
                                             transition={{ duration: 0.7, delay: itemIdx * 0.15 }}
-                                            className="flex flex-col sm:flex-row gap-8 bg-white/6 backdrop-blur-2xl border border-white/12 p-10 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-white/10 hover:border-gold/25 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(245,158,11,0.1)] transition-all duration-500 group"
+                                            className="flex flex-col sm:flex-row gap-8 glass-card p-10 hover:border-gold/25 hover:-translate-y-2 transition-all duration-500 group"
                                         >
                                             <div className="shrink-0">
                                                 <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-white/15 via-white/5 to-transparent border border-white/15 flex items-center justify-center group-hover:border-gold/30 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-500">
