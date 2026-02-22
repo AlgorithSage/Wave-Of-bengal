@@ -163,14 +163,14 @@ export default function Certifications() {
                                             </div>
                                             <div>
                                                 <h3 className="text-2xl font-heading font-bold text-[#FFFDD0] mb-1 group-hover:text-[#FFFDD0]/80 transition-colors">{item.name}</h3>
-                                                {item.subtitle && <p className="text-sm text-gold italic mb-3">{item.subtitle}</p>}
+                                                {item.subtitle && <p className="text-sm text-white italic mb-3">{item.subtitle}</p>}
                                                 <p className="text-white/60 text-base leading-relaxed group-hover:text-white/75 transition-colors mb-4">{item.desc}</p>
 
                                                 {item.features && item.features.length > 0 && (
                                                     <ul className="space-y-2">
                                                         {item.features.map((feature, fIdx) => (
                                                             <li key={fIdx} className="flex items-start gap-2 text-sm text-white/60 group-hover:text-white/75 transition-colors">
-                                                                <span className="text-gold shrink-0 mt-0.5">✓</span>
+                                                                <span className="text-white shrink-0 mt-0.5">✓</span>
                                                                 <span>{feature}</span>
                                                             </li>
                                                         ))}
@@ -206,7 +206,7 @@ export default function Certifications() {
                                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                                     className="glass-card p-8 text-center"
                                 >
-                                    <h4 className="text-5xl font-heading font-black text-gold mb-3">{stat.number}</h4>
+                                    <h4 className="text-5xl font-heading font-black text-white mb-3">{stat.number}</h4>
                                     <p className="text-lg font-bold text-[#FFFDD0] mb-2">{stat.label}</p>
                                     <p className="text-sm text-white/60">{stat.text}</p>
                                 </motion.div>
@@ -251,7 +251,7 @@ export default function Certifications() {
                                         {step.icon}
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold text-gold mb-2">{step.title}</h4>
+                                        <h4 className="text-xl font-bold text-white mb-2">{step.title}</h4>
                                         <p className="text-white/70">{step.desc}</p>
                                     </div>
                                 </motion.div>
@@ -294,7 +294,7 @@ export default function Certifications() {
                                         className="glass-card p-6 text-center hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
                                     >
                                         <div className="text-4xl mb-4">{test.icon}</div>
-                                        <h4 className="text-gold font-bold mb-2 text-sm uppercase tracking-wider">{test.title}</h4>
+                                        <h4 className="text-white font-bold mb-2 text-sm uppercase tracking-wider">{test.title}</h4>
                                         <p className="text-xs text-white/60 leading-relaxed">{test.desc}</p>
                                     </motion.div>
                                 ))}
