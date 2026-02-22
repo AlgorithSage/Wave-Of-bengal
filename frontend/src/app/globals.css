@@ -19,8 +19,8 @@
   /* Kept for sustainability badges */
 
   --font-space: var(--font-space);
-  --font-heading: "Helvetica Inserat", "Helvetica", var(--font-space), sans-serif;
-  --font-body: "Radio Grotesk", var(--font-space), sans-serif;
+  --font-heading: var(--font-heading), "Georgia", serif;
+  --font-body: var(--font-space), sans-serif;
   --font-accent: var(--font-space), sans-serif;
 }
 

@@ -126,9 +126,9 @@ export default function HeroSection() {
                     style={{ y: textY, opacity: textOpacity }}
                     className="relative z-20 text-center px-6 max-w-5xl"
                 >
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-normal text-white mb-6 leading-tight drop-shadow-lg">
                         Fresh From Ocean to <br />
-                        <span className="text-sky-400 italic">Your Doorstep</span>
+                        <span className="text-sky-400">Your Doorstep</span>
                     </h1>
                     <p className="text-lg md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto font-medium drop-shadow-md">
                         Premium, wild-caught and sustainably sourced seafood.

@@ -18,29 +18,27 @@ export default function Home() {
 
       {/* Post-hero content with bg3 background */}
       <div className="relative">
-        {/* Fixed Background Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <Image
-            src="/images/bg/newb.png"
-            alt="Background"
-            fill
-            className="object-cover"
-            quality={90}
-          />
-          <div className="absolute inset-0 backdrop-blur-sm" />
+        {/* Fixed Background Video */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-black/90">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-80"
+          >
+            <source src="/bg/bg3.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle dark overlay for text legibility and glass aesthetic */}
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         {/* Content Layer */}
         <div className="relative z-10">
 
-          {/* Top sections with dark overlay for readability */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-transparent pointer-events-none" />
-            <div className="relative z-10">
-              <TrustBadges />
-              <FeaturedProducts />
-            </div>
-          </div>
+          {/* Top sections */}
+          <TrustBadges />
+          <FeaturedProducts />
 
           {/* Our Story Teaser Section */}
           <section className="py-24 relative z-20 overflow-hidden border-y border-white/20">

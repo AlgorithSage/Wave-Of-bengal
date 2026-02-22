@@ -173,8 +173,10 @@ export default function OurStory() {
                     </motion.div>
 
                     <div className="relative py-8">
-                        {/* Vertical line */}
-                        <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-gold via-gold/40 to-transparent -translate-x-[1px]"></div>
+                        <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-white/20"></div>
+
+                        {/* Center Node */}
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gold border-4 border-[#0a192f] z-10 hidden md:block group-hover:scale-150 transition-transform duration-500"></div>
 
                         <div className="space-y-24">
                             {timeline.map((item, idx) => (
@@ -187,7 +189,7 @@ export default function OurStory() {
                                     className={`relative flex flex-col md:flex-row items-center justify-between ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                                 >
                                     {/* Glowing node marker */}
-                                    <div className="absolute left-[18px] md:left-1/2 w-5 h-5 bg-gold rounded-full -translate-x-[1px] shadow-[0_0_20px_rgba(245,158,11,0.6),0_0_40px_rgba(245,158,11,0.2)] z-10 border-2 border-white/40"></div>
+                                    <div className="absolute left-[18px] md:left-1/2 w-5 h-5 bg-gold rounded-full -translate-x-px shadow-[0_0_20px_rgba(245,158,11,0.6),0_0_40px_rgba(245,158,11,0.2)] z-10 border-2 border-white/40"></div>
 
                                     {/* Spacing */}
                                     <div className="hidden md:block md:w-5/12"></div>
