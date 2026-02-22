@@ -196,7 +196,7 @@ export default function OurStory() {
 
                                     {/* Content Card */}
                                     <div className="w-full pl-14 md:pl-0 md:w-5/12">
-                                        <div className={`bg-white/8 backdrop-blur-2xl border border-white/15 p-10 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/12 hover:border-gold/30 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(245,158,11,0.15)] transition-all duration-500 group ${idx % 2 === 0 ? 'md:mr-10 text-left md:text-right' : 'md:ml-10 text-left'}`}>
+                                        <div className={`glass-card p-10 hover:border-gold/30 hover:-translate-y-2 group ${idx % 2 === 0 ? 'md:mr-10 text-left md:text-right' : 'md:ml-10 text-left'}`}>
                                             <span className="text-[#FFFDD0]/60 uppercase tracking-[0.2em] text-xs font-bold mb-3 block group-hover:text-[#FFFDD0]/90 transition-colors">{item.highlight}</span>
                                             <span className="text-[#FFFDD0] font-heading text-4xl md:text-5xl font-black mb-3 block">{item.year}</span>
                                             <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-gold-light transition-colors">{item.title}</h3>

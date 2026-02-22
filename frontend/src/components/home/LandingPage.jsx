@@ -110,7 +110,7 @@ export default function LandingPage({ onEnter }) {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                            className="absolute z-40 w-full max-w-md mx-auto bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl p-8"
+                            className="absolute z-40 w-full max-w-md mx-auto glass-card p-8"
                         >
                             <button onClick={() => setShowLogin(false)} className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>

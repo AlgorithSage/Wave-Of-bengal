@@ -136,7 +136,7 @@ export default function HeroSection() {
                     </p>
                     <Link
                         href="/products"
-                        className="inline-block bg-white/10 backdrop-blur-md border border-white/25 hover:bg-white/20 hover:border-white/40 text-white font-bold py-4 px-12 rounded-full uppercase tracking-widest transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(14,165,233,0.25)]"
+                        className="inline-block glass-card py-4 px-12 rounded-[50px] uppercase tracking-widest transition-all duration-300 hover:-translate-y-1 font-bold text-white hover:text-white/90 hover:shadow-[0_8px_30px_rgba(14,165,233,0.3)]"
                     >
                         Explore Fresh Catch
                     </Link>
