@@ -221,7 +221,7 @@ export default function ProductsPage() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{ duration: 0.5 }}
-                                        className="group flex flex-col rounded-3xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:bg-white/15 hover:border-gold/50 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(245,158,11,0.15)] transition-all duration-500"
+                                        className="group flex flex-col glass-card hover:border-gold/50 hover:-translate-y-2 z-10"
                                     >
                                         {/* Image Area - Glass styling */}
                                         <div className="relative h-72 overflow-hidden bg-black/20">

@@ -63,7 +63,7 @@ export default function FeaturedProducts() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, delay: idx * 0.15 }}
-                            className="group flex flex-col rounded-2xl overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl hover:bg-white/15 hover:border-white/30 hover:-translate-y-2 transition-all duration-400"
+                            className="group flex flex-col glass-card hover:border-white/30 z-10"
                         >
                             {/* Product Image Wrapper */}
                             <div className="relative h-64 overflow-hidden bg-white/5">

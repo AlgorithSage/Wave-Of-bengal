@@ -58,7 +58,7 @@ export default function Testimonials() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.7, delay: idx * 0.2 }}
-                            className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-2xl hover:bg-white/15 hover:border-white/30 transition-all duration-300 relative"
+                            className="glass-card hover:border-white/30 p-8"
                         >
                             <div className="flex gap-1 mb-6">
                                 {[...Array(testimonial.rating)].map((_, i) => (
