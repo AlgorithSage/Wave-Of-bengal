@@ -43,7 +43,7 @@ export default function LandingPage({ onEnter }) {
     };
 
     return (
-        <section className="fixed inset-0 z-100 w-full min-h-screen bg-[#050B14] flex flex-col items-center justify-center p-4 overflow-hidden font-heading text-white">
+        <section className="fixed inset-0 z-100 w-full min-h-screen bg-[#050B14] flex flex-col items-center justify-center p-4 overflow-hidden font-landing-heading text-white">
 
             {/* Background Video */}
             <div className="absolute inset-0 z-0 overflow-hidden">

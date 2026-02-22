@@ -22,6 +22,8 @@
   --font-heading: var(--font-heading), "Georgia", serif;
   --font-body: var(--font-space), sans-serif;
   --font-accent: var(--font-space), sans-serif;
+  --font-landing-heading: var(--font-playfair), "Georgia", serif;
+  --font-landing-body: var(--font-inter), sans-serif;
 }
 
 @layer base {
