@@ -33,7 +33,7 @@ const StatCard = ({ title, value, icon, delay }) => (
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-    className="bg-black/10 backdrop-blur-2xl border border-white/5 hover:bg-black/20 hover:border-[#c9a962]/20 rounded-3xl p-7 shadow-2xl relative overflow-hidden group transition-all duration-500"
+    className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 hover:border-white/30 hover:bg-[#0a1f2e]/40 rounded-3xl p-7 shadow-[0_16px_40px_rgba(0,0,0,0.6)] relative overflow-hidden group transition-all duration-500"
   >
     <div className="absolute top-0 right-0 p-5 opacity-10 group-hover:opacity-30 transition-opacity duration-500 text-[#c9a962]">
       {icon}
@@ -109,15 +109,15 @@ export default function SearchAnalyticsAdmin() {
       {/* Immersive Ocean Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/bg/Underwater Image 5.jpeg.avif"
+          src="/images/bg/Underwater Image 4.jpeg"
           alt="Underwater Ocean Background"
           fill
           className="object-cover object-center scale-105"
           priority
           unoptimized
         />
-        {/* Lighter, strictly color-based overlay to let the image shine completely through without blurring */}
-        <div className="absolute inset-0 bg-[#06111a]/40" />
+        {/* Crystal clear edge vignette. Center is completely pristine, unleashing the full vibrant coral reef! */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020b14]/80 via-[#020b14]/10 to-[#020b14]/90" />
       </div>
 
       {/* Main Content Pane */}
@@ -131,7 +131,7 @@ export default function SearchAnalyticsAdmin() {
         >
           <div>
             <h1 className="text-4xl text-[#c9a962] font-heading font-light tracking-wide mb-4 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">Search Analytics</h1>
-            <div className="inline-flex items-center bg-black/30 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 shadow-xl">
+            <div className="inline-flex items-center bg-gradient-to-r from-white/10 to-[#0a1f2e]/40 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 shadow-xl">
               <span className="w-2 h-2 rounded-full bg-[#c9a962] animate-pulse mr-3"></span>
               <p className="text-[#f0ead6] text-sm tracking-wider font-medium drop-shadow-md">Monitor customer intent and discover real-time seafood demand.</p>
             </div>
@@ -163,7 +163,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, scale: 0.95, y: 20 }}
            animate={{ opacity: 1, scale: 1, y: 0 }}
            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="lg:col-span-2 bg-black/10 backdrop-blur-2xl border border-white/5 rounded-3xl p-8 shadow-2xl"
+           className="lg:col-span-2 bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
         >
           <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-8 drop-shadow-sm">Weekly Search Velocity</h3>
           
@@ -196,7 +196,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, x: 20, y: 20 }}
            animate={{ opacity: 1, x: 0, y: 0 }}
            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="bg-black/10 backdrop-blur-2xl border border-white/5 rounded-3xl p-8 shadow-2xl overflow-hidden flex flex-col justify-between"
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-between"
         >
           <div>
             <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-6 drop-shadow-sm">Top Sea Queries</h3>
