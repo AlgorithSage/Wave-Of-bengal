@@ -7,28 +7,28 @@ const badges = [
         title: "100% Fresh",
         description: "Caught daily from the deep sea",
         icon: (
-            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>
+            <svg className="w-10 h-10 text-white mx-auto mb-5 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>
         )
     },
     {
         title: "Same Day Delivery",
         description: "Ice-packed & temperature controlled",
         icon: (
-            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg className="w-10 h-10 text-white mx-auto mb-5 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         )
     },
     {
         title: "Certified Safe",
         description: "Tested and approved for consumption",
         icon: (
-            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            <svg className="w-10 h-10 text-white mx-auto mb-5 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
         )
     },
     {
         title: "Eco Friendly",
         description: "Sustainable fishing practices",
         icon: (
-            <svg className="w-8 h-8 text-oceanic-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg className="w-10 h-10 text-white mx-auto mb-5 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         )
     }
 ];
@@ -55,24 +55,34 @@ const itemVariants = {
 
 export default function TrustBadges() {
     return (
-        <section className="py-20 bg-sky-light relative z-20 border-t border-b border-oceanic-blue/10">
+        <section className="py-20 relative z-20 border-t border-b border-white/20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"
                 >
                     {badges.map((badge, idx) => (
                         <motion.div
                             key={idx}
                             variants={itemVariants}
-                            className="text-center p-6 rounded-xl bg-white border border-oceanic-blue/10 shadow-sm hover:shadow-md hover:border-oceanic-blue/30 transition-all duration-300"
+                            className="group text-center p-10 rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:bg-white/15 hover:border-white/30 hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,0.25)] transition-all duration-500 relative overflow-hidden"
                         >
-                            {badge.icon}
-                            <h3 className="text-xl font-heading font-semibold text-ocean-deep mb-2">{badge.title}</h3>
-                            <p className="text-ocean-muted text-sm leading-relaxed">{badge.description}</p>
+                            {/* Subtle inner top highlight */}
+                            <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            {/* Icon container with background glow on hover */}
+                            <div className="relative inline-block mb-3">
+                                <div className="absolute inset-0 bg-white/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150"></div>
+                                <div className="relative z-10">
+                                    {badge.icon}
+                                </div>
+                            </div>
+
+                            <h3 className="text-2xl lg:text-3xl font-heading font-black text-[#FFFDD0] tracking-wide mb-4 opacity-90 group-hover:opacity-100 transition-opacity">{badge.title}</h3>
+                            <p className="text-white/75 text-base md:text-lg font-medium leading-relaxed max-w-[200px] mx-auto group-hover:text-white transition-colors">{badge.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>

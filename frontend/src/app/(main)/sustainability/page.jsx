@@ -41,7 +41,7 @@ export default function Sustainability() {
                     priority
                     quality={90}
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
             </div>
 
             {/* Content Layer */}

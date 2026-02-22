@@ -2,38 +2,120 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 export default function HeroSection() {
     const containerRef = useRef(null)
+    const videoRef = useRef(null)
+    const canvasRef = useRef(null)
+    const durationRef = useRef(0)
+    const seekingRef = useRef(false)
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end start"]
     })
 
-    // Text visible at start, fades out on scroll
-    const textOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
-    const textY = useTransform(scrollYProgress, [0, 0.4], [0, -60])
-    const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.25, 0.7])
+    // Text fades out together with video — both start at scroll 0
+    const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+    const textY = useTransform(scrollYProgress, [0, 0.5], [0, -100])
+    const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.3, 0.75])
+
+    // Draw current video frame to canvas
+    const drawFrame = () => {
+        const video = videoRef.current
+        const canvas = canvasRef.current
+        if (!video || !canvas) return
+
+        const ctx = canvas.getContext('2d')
+        if (!ctx) return
+
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+    }
+
+    // Setup video and canvas
+    useEffect(() => {
+        const video = videoRef.current
+        const canvas = canvasRef.current
+        if (!video || !canvas) return
+
+        // Match canvas to viewport
+        const updateCanvasSize = () => {
+            canvas.width = window.innerWidth
+            canvas.height = window.innerHeight
+            drawFrame()
+        }
+
+        const handleLoaded = () => {
+            durationRef.current = video.duration
+            video.currentTime = video.duration
+            updateCanvasSize()
+        }
+
+        const handleSeeked = () => {
+            drawFrame()
+            seekingRef.current = false
+        }
+
+        if (video.readyState >= 2) {
+            handleLoaded()
+        } else {
+            video.addEventListener('loadeddata', handleLoaded)
+        }
+
+        video.addEventListener('seeked', handleSeeked)
+        window.addEventListener('resize', updateCanvasSize)
+
+        return () => {
+            video.removeEventListener('loadeddata', handleLoaded)
+            video.removeEventListener('seeked', handleSeeked)
+            window.removeEventListener('resize', updateCanvasSize)
+        }
+    }, [])
+
+    // Scroll-driven video seeking — synced with text fade (0% → 50% scroll)
+    useEffect(() => {
+        const unsubscribe = scrollYProgress.on('change', (value) => {
+            const video = videoRef.current
+            const duration = durationRef.current
+            if (!video || !duration) return
+
+            // Video scrubs across FULL scroll range — responds immediately
+            const targetTime = duration * (1 - value)
+
+            if (video.fastSeek) {
+                video.fastSeek(targetTime)
+            } else {
+                video.currentTime = targetTime
+            }
+        })
+
+        return () => unsubscribe()
+    }, [scrollYProgress])
 
     return (
-        <section ref={containerRef} className="relative h-[200vh] w-full">
+        <section ref={containerRef} className="relative h-[300vh] w-full">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
-                {/* Background Video */}
+                {/* Hidden video element for seeking */}
                 <video
-                    autoPlay
+                    ref={videoRef}
                     muted
-                    loop
                     playsInline
-                    className="absolute inset-0 w-full h-full object-cover z-0"
-                    style={{ transform: 'translateZ(0)' }}
+                    preload="auto"
+                    className="hidden"
                 >
-                    <source src="/videos/underwater-ocean.mp4" type="video/mp4" />
+                    <source src="/videos/hero_scrub.mp4" type="video/mp4" />
                 </video>
 
-                {/* Overlay */}
+                {/* Canvas renders video frames — much faster than video element */}
+                <canvas
+                    ref={canvasRef}
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    style={{ transform: 'translateZ(0)' }}
+                />
+
+                {/* Dark Overlay — intensifies on scroll */}
                 <motion.div
                     style={{ opacity: overlayOpacity }}
                     className="absolute inset-0 bg-linear-to-b from-black/30 via-black/20 to-black/60 z-10"
@@ -63,7 +145,7 @@ export default function HeroSection() {
                 {/* Scroll indicator */}
                 <motion.div
                     className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center"
-                    style={{ opacity: useTransform(scrollYProgress, [0, 0.15], [1, 0]) }}
+                    style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
                 >
                     <span className="text-xs uppercase tracking-widest text-white/70 mb-2 font-bold drop-shadow-md">Scroll</span>
                     <motion.div

@@ -1,24 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-sky-light: #f0f8ff;
-  /* Alice Blue - Main Background */
+  --color-sky-light: #f0f9ff;
+  /* Ice Blue - Main Background */
   --color-sky-blue: #e0f2fe;
-  /* Light Blue - Cards/Sections */
-  --color-oceanic-blue: #0ea5e9;
-  /* Vibrant Blue - Buttons/Highlights */
-  --color-ocean-deep: #082f49;
-  /* Very Dark Blue - Main Text/Headings */
-  --color-ocean-muted: #64748b;
-  /* Slate - Secondary Text */
-  --color-gold: #c9a962;
-  /* Kept for luxury accents */
-  --color-gold-light: #d4b978;
+  /* Sky Blue - Cards/Sections */
+  --color-oceanic-blue: #38bdf8;
+  /* Sky Blue - Buttons/Highlights */
+  --color-ocean-deep: #0a0a0a;
+  /* Obsidian Black - Main Text/Headings */
+  --color-ocean-muted: #525252;
+  /* Dark Gray - Secondary Text */
+  --color-gold: #f59e0b;
+  /* Amber Yellow - Accent */
+  --color-gold-light: #fbbf24;
+  /* Light Amber - Hover Accent */
   --color-wob-green: #059669;
   /* Kept for sustainability badges */
 
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
+  --font-space: var(--font-space);
+  --font-heading: "Helvetica Inserat", "Helvetica", var(--font-space), sans-serif;
+  --font-body: "Radio Grotesk", var(--font-space), sans-serif;
+  --font-accent: var(--font-space), sans-serif;
 }
 
 @layer base {
@@ -42,6 +45,7 @@
   0% {
     transform: translateX(-100%) skewX(12deg);
   }
+
   100% {
     transform: translateX(200%) skewX(12deg);
   }
