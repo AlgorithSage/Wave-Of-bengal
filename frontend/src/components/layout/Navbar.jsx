@@ -17,6 +17,7 @@ export default function Navbar() {
         { name: 'Our Story', href: '/our-story', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
         { name: 'Sustainability', href: '/sustainability', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
         { name: 'Certifications', href: '/certifications', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
+        { name: 'Admin', href: '/admin', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-bold transition-colors' },
     ];
 
     const containerVariants = {
