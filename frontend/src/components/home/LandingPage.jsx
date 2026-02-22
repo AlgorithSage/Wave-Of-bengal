@@ -164,7 +164,7 @@ export default function LandingPage({ onEnter }) {
 
                             <p className="mt-6 text-center text-white/40 text-sm font-body">
                                 New here?{' '}
-                                <a href="/auth/register" className="text-[#d97736] hover:text-[#f0a060] font-semibold transition-colors">
+                                <a href="/register" className="text-[#d97736] hover:text-[#f0a060] font-semibold transition-colors">
                                     Create an account
                                 </a>
                             </p>
