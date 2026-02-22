@@ -1,0 +1,194 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+// Faking backend request for the initial UI mockup 
+// Later, this connects to the FastAPI backend `/api/admin/search-stats`
+const mockAnalyticsData = {
+  totalSearches: 4192,
+  uniqueQueries: 843,
+  conversionRate: '12.4%',
+  topQueries: [
+    { query: 'Tiger Prawns', count: 1204, conversions: 180 },
+    { query: 'Crab Meat', count: 856, conversions: 110 },
+    { query: 'Salmon fillet', count: 642, conversions: 85 },
+    { query: 'Jumbo Shrimp', count: 421, conversions: 40 },
+    { query: 'Lobster tails', count: 310, conversions: 25 },
+  ],
+  trends: [
+    { day: 'Mon', searches: 400 },
+    { day: 'Tue', searches: 520 },
+    { day: 'Wed', searches: 480 },
+    { day: 'Thu', searches: 610 },
+    { day: 'Fri', searches: 800 },
+    { day: 'Sat', searches: 950 },
+    { day: 'Sun', searches: 432 },
+  ]
+};
+
+const StatCard = ({ title, value, icon, delay }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay, duration: 0.5, ease: "easeOut" }}
+    className="bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2e] border border-[#c9a962]/15 rounded-2xl p-6 shadow-xl relative overflow-hidden group"
+  >
+    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+      {icon}
+    </div>
+    <h3 className="text-[#8a9bae] font-body text-sm uppercase tracking-widest font-semibold mb-2">{title}</h3>
+    <p className="text-[32px] text-[#f0ead6] font-heading font-medium tracking-wide">
+      {value}
+    </p>
+    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#c9a962]/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+  </motion.div>
+);
+
+export default function SearchAnalyticsAdmin() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Simulate API fetch delay
+    const timer = setTimeout(() => setData(mockAnalyticsData), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-[#0a1f2e] flex flex-col items-center justify-center">
+        <div className="w-12 h-12 border-2 border-[#c9a962]/20 border-t-[#c9a962] rounded-full animate-spin mb-4" />
+        <p className="text-[#8a9bae] font-body text-sm tracking-widest uppercase animate-pulse">Loading Analytics Matrix...</p>
+      </div>
+    );
+  }
+
+  // Find max searches for chart scaling
+  const maxDaySearches = Math.max(...data.trends.map(t => t.searches));
+
+  return (
+    <div className="relative min-h-screen text-[#f0ead6] font-body overflow-hidden">
+      
+      {/* Immersive Ocean Background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/bg/Underwater Image 5.jpeg.avif"
+          alt="Underwater Ocean Background"
+          fill
+          className="object-cover object-center scale-105"
+          priority
+          unoptimized
+        />
+        {/* Deep luxury oceanic overlay to ensure perfect text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f2e]/90 via-[#0a1f2e]/80 to-[#0a1f2e]/95 backdrop-blur-[4px]" />
+      </div>
+
+      {/* Main Content Pane */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto p-4 md:p-10">
+      
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 border-b border-[#c9a962]/15 pb-6"
+      >
+        <div>
+          <h1 className="text-4xl text-[#c9a962] font-heading font-light tracking-wide mb-2">Search Analytics</h1>
+          <p className="text-[#8a9bae] text-sm tracking-wide">Monitor customer intent and discover real-time seafood demand.</p>
+        </div>
+        <button className="mt-4 md:mt-0 font-body text-xs uppercase tracking-widest font-semibold py-2 px-6 rounded-md border border-[#c9a962]/40 text-[#c9a962] hover:bg-[#c9a962]/10 transition-colors">
+          Export CSV
+        </button>
+      </motion.div>
+
+      {/* Top Level Metric Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <StatCard delay={0.1} title="Total Search Volume" value={parseInt(data.totalSearches).toLocaleString()} icon={
+          <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+        } />
+        <StatCard delay={0.2} title="Unique Product Queries" value={data.uniqueQueries} icon={
+          <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+        } />
+        <StatCard delay={0.3} title="Search-to-Cart Conversion" value={data.conversionRate} icon={
+          <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+        } />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Trend Chart (CSS Bar Chart using Framer Motion) */}
+        <motion.div 
+           initial={{ opacity: 0, scale: 0.95 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ delay: 0.4, duration: 0.5 }}
+           className="lg:col-span-2 bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2e] border border-[#c9a962]/15 rounded-2xl p-6 shadow-2xl"
+        >
+          <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-8">Weekly Search Velocity</h3>
+          
+          <div className="flex justify-between items-end h-[280px] pb-4 border-b border-[#c9a962]/10 gap-2">
+            {data.trends.map((trend, i) => {
+              const heightPercent = (trend.searches / maxDaySearches) * 100;
+              return (
+                <div key={trend.day} className="flex flex-col items-center justify-end h-full w-full group relative">
+                  {/* Tooltip */}
+                  <div className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#0a1f2e] border border-[#c9a962]/20 text-[#c9a962] text-xs py-1 px-3 rounded shadow-lg pointer-events-none">
+                    {trend.searches}
+                  </div>
+                  {/* Bar */}
+                  <motion.div 
+                    initial={{ height: 0 }}
+                    animate={{ height: `${heightPercent}%` }}
+                    transition={{ delay: 0.5 + (i * 0.1), duration: 0.8, type: "spring" }}
+                    className="w-full max-w-[40px] bg-gradient-to-t from-[#c9a962]/20 to-[#c9a962]/80 hover:to-[#d4b978] rounded-t-sm transition-colors cursor-pointer"
+                  />
+                  {/* Label */}
+                  <span className="text-[#8a9bae] text-xs font-medium tracking-wider mt-4">{trend.day}</span>
+                </div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Top Keywords Table */}
+        <motion.div 
+           initial={{ opacity: 0, x: 20 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ delay: 0.5, duration: 0.6 }}
+           className="bg-gradient-to-br from-[#0d2b3a] to-[#0a1f2e] border border-[#c9a962]/15 rounded-2xl p-6 shadow-2xl overflow-hidden"
+        >
+          <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-6">Top Sea-to-Table Queries</h3>
+          
+          <div className="space-y-4">
+            <div className="flex justify-between text-[#8a9bae] text-xs uppercase tracking-widest font-semibold pb-2 border-b border-[#c9a962]/10">
+              <span>Keyword</span>
+              <span className="text-right">Vol</span>
+            </div>
+            
+            {data.topQueries.map((item, index) => (
+              <motion.div 
+                key={item.query}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + (index * 0.1) }}
+                className="group relative"
+              >
+                <div className="flex justify-between items-center py-2 relative z-10">
+                  <span className="text-[#f0ead6] text-sm tracking-wide font-medium">{item.query}</span>
+                  <span className="text-[#c9a962] text-sm font-semibold">{item.count.toLocaleString()}</span>
+                </div>
+                {/* Horizontal Progress Bar Background */}
+                <div className="absolute bottom-0 left-0 h-full bg-[#c9a962]/5 rounded-md z-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none" />
+              </motion.div>
+            ))}
+          </div>
+          
+          <button className="w-full mt-8 font-body text-xs uppercase tracking-widest font-semibold py-3 border border-[#c9a962]/20 text-[#c9a962] hover:bg-[#c9a962]/10 transition-colors rounded">
+            View Expanded Report
+          </button>
+        </motion.div>
+      </div>
+      
+      </div>
+    </div>
+  );
+}
