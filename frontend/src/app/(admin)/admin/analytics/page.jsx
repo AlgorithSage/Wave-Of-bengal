@@ -33,9 +33,9 @@ const StatCard = ({ title, value, icon, delay }) => (
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-    className="bg-gradient-to-br from-[#0a1f2e]/70 to-[#0d2b3a]/70 backdrop-blur-xl border border-[#c9a962]/20 rounded-3xl p-7 shadow-[0_8px_32px_rgba(0,0,0,0.5)] relative overflow-hidden group"
+    className="bg-black/10 backdrop-blur-2xl border border-white/5 hover:bg-black/20 hover:border-[#c9a962]/20 rounded-3xl p-7 shadow-2xl relative overflow-hidden group transition-all duration-500"
   >
-    <div className="absolute top-0 right-0 p-5 opacity-20 group-hover:opacity-40 transition-opacity duration-500 text-[#c9a962]">
+    <div className="absolute top-0 right-0 p-5 opacity-10 group-hover:opacity-30 transition-opacity duration-500 text-[#c9a962]">
       {icon}
     </div>
     <h3 className="text-[#8a9bae] font-body text-xs uppercase tracking-[0.15em] font-semibold mb-3">{title}</h3>
@@ -121,7 +121,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, scale: 0.95, y: 20 }}
            animate={{ opacity: 1, scale: 1, y: 0 }}
            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="lg:col-span-2 bg-gradient-to-br from-[#0a1f2e]/70 to-[#0d2b3a]/70 backdrop-blur-xl border border-[#c9a962]/20 rounded-3xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)]"
+           className="lg:col-span-2 bg-black/10 backdrop-blur-2xl border border-white/5 rounded-3xl p-8 shadow-2xl"
         >
           <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-8 drop-shadow-sm">Weekly Search Velocity</h3>
           
@@ -154,7 +154,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, x: 20, y: 20 }}
            animate={{ opacity: 1, x: 0, y: 0 }}
            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="bg-gradient-to-br from-[#0a1f2e]/70 to-[#0d2b3a]/70 backdrop-blur-xl border border-[#c9a962]/20 rounded-3xl p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-between"
+           className="bg-black/10 backdrop-blur-2xl border border-white/5 rounded-3xl p-8 shadow-2xl overflow-hidden flex flex-col justify-between"
         >
           <div>
             <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-6 drop-shadow-sm">Top Sea Queries</h3>
