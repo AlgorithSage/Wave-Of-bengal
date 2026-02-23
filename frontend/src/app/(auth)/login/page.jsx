@@ -142,7 +142,7 @@ export default function Login() {
             <div className="hidden lg:flex lg:w-[55%] h-full p-4 lg:p-6 pl-0">
                 <div className="w-full h-full relative overflow-hidden rounded-[2rem]">
                     <Image
-                        src="/images/bg/Underwater Image 6.jpg"
+                        src="/images/bg/Underwater Image 7.jpeg"
                         alt="Wave of Bengal Authentication Background"
                         fill
                         className="object-cover object-center"
