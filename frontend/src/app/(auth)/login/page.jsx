@@ -5,7 +5,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -139,31 +138,18 @@ export default function Login() {
                 </div>
             </div>
 
-            {/* Right Pane (Frameless & Transparent Pop-out Effect) */}
-            <div className="hidden lg:flex lg:w-[55%] h-full p-4 lg:p-6 pl-0 items-center justify-center relative pointer-events-none">
-                {/* We use a motion div to simulate the fish physically floating inside the UI */}
-                <motion.div 
-                    animate={{ y: [-15, 15, -15], rotate: [-1, 1.5, -1] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-[120%] h-[120%] absolute top-0 -left-10 drop-shadow-[0_45px_45px_rgba(0,0,0,0.15)]"
-                >
+            {/* Right Pane (Normal Square Picture) */}
+            <div className="hidden lg:flex lg:w-[55%] h-full p-4 lg:p-6 pl-0">
+                <div className="w-full h-full relative">
                     <Image
-                        src="/images/bg/Underwater Image 3.jpeg"
+                        src="/images/bg/Underwater Image 6.jpg"
                         alt="Wave of Bengal Authentication Background"
                         fill
-                        className="object-cover object-center contrast-[1.2] saturate-[1.3] brightness-[1.05]"
-                        style={{
-                            /* Extremely dense radial mask completely erases the background edges, leaving only the transparent focal subject! */
-                            maskImage: 'radial-gradient(ellipse at center, black 25%, transparent 65%)',
-                            WebkitMaskImage: 'radial-gradient(ellipse at center, black 25%, transparent 65%)'
-                        }}
+                        className="object-cover object-center"
                         quality={100}
                         priority
                     />
-                </motion.div>
-                
-                {/* 3D Depth Glow behind the floating element */}
-                <div className="absolute inset-x-0 bottom-10 h-1/3 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-black/5 to-transparent blur-3xl" />
+                </div>
             </div>
         </div>
     );
