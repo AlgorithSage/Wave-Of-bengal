@@ -140,15 +140,27 @@ export default function Login() {
 
             {/* Right Pane (Image Placeholder) */}
             <div className="hidden lg:flex lg:w-[55%] h-full p-4 lg:p-6 pl-0">
-                <div className="w-full h-full relative overflow-hidden rounded-[2.5rem] shadow-xl border border-gray-100">
+                <div className="w-full h-full relative overflow-hidden rounded-[2.5rem] shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-white/40">
+                    
                     <Image
                         src="/images/bg/Underwater Image 3.jpeg"
                         alt="Wave of Bengal Authentication Background"
                         fill
-                        unoptimized
-                        className="object-cover object-center"
+                        className="object-cover object-center contrast-[1.15] saturate-[1.25] brightness-[1.02] transform scale-[1.02]"
+                        quality={100}
                         priority
                     />
+
+                    {/* Premium Cinematic Overlays to maximize striking aesthetics & hide compression artifacts */}
+                    
+                    {/* Deep Vignette (darkens edges to guide eye to center) */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(5,11,20,0.65)_130%)] mix-blend-multiply" />
+                    
+                    {/* Soft golden/teal shimmer from bottom for luxury lighting */}
+                    <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#0a1b2a]/70 via-[#0a1b2a]/20 to-transparent" />
+                    
+                    {/* Glossy inner stroke for the glass-like physical frame */}
+                    <div className="absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-white/20 pointer-events-none" />
                 </div>
             </div>
         </div>
