@@ -10,6 +10,27 @@ const mockAnalyticsData = {
   totalSearches: 4192,
   uniqueQueries: 843,
   conversionRate: '12.4%',
+  avgTimeSpent: '04m 12s',
+  repeatVisitors: '42%',
+  deviceDistribution: [
+    { type: 'Mobile', per: 65 },
+    { type: 'Desktop', per: 28 },
+    { type: 'Tablet', per: 7 },
+  ],
+  topCities: [
+    { city: 'Kolkata', traffic: '45%' },
+    { city: 'Mumbai', traffic: '18%' },
+    { city: 'London', traffic: '12%' },
+    { city: 'New York', traffic: '8%' },
+    { city: 'Dubai', traffic: '6%' },
+  ],
+  mostViewedProducts: [
+    { name: 'Jumbo Tiger Prawns', views: 1845 },
+    { name: 'Fresh Salmon Fillet', views: 1432 },
+    { name: 'Mud Crab', views: 980 },
+    { name: 'Squid Rings', views: 765 },
+    { name: 'Lobster Tails', views: 512 },
+  ],
   topQueries: [
     { query: 'Tiger Prawns', count: 1204, conversions: 180 },
     { query: 'Crab Meat', count: 856, conversions: 110 },
@@ -170,14 +191,18 @@ export default function SearchAnalyticsAdmin() {
         </motion.div>
 
       {/* Top Level Metric Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <StatCard delay={0.1} title="Total Search Volume" value={parseInt(data.totalSearches).toLocaleString()} icon={
+      {/* Top Level Metric Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <StatCard delay={0.1} title="Global Traffic" value={parseInt(data.totalSearches).toLocaleString()} icon={
           <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
         } />
-        <StatCard delay={0.2} title="Unique Product Queries" value={data.uniqueQueries} icon={
-          <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+        <StatCard delay={0.2} title="Avg Time Spent" value={data.avgTimeSpent} icon={
+          <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         } />
-        <StatCard delay={0.3} title="Search-to-Cart Conversion" value={data.conversionRate} icon={
+        <StatCard delay={0.3} title="Repeat Visitors" value={data.repeatVisitors} icon={
+          <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+        } />
+        <StatCard delay={0.4} title="Avg. Conversion" value={data.conversionRate} icon={
           <svg className="w-24 h-24 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
         } />
       </div>
@@ -255,6 +280,86 @@ export default function SearchAnalyticsAdmin() {
             View Expanded Report
           </button>
         </motion.div>
+      </div>
+      
+      {/* Product & User Demographics Data Matrix */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 pb-12">
+        
+        {/* Most Viewed Products */}
+        <motion.div 
+           initial={{ opacity: 0, scale: 0.95, y: 20 }}
+           animate={{ opacity: 1, scale: 1, y: 0 }}
+           transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
+        >
+          <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-6 drop-shadow-sm flex items-center gap-3">
+            <svg className="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+            Most Viewed Products
+          </h3>
+          <div className="space-y-4">
+            {data.mostViewedProducts.map((p, i) => (
+              <div key={p.name} className="flex justify-between items-center group relative border-b border-white/5 pb-3">
+                <span className="text-[#8a9bae] group-hover:text-[#f0ead6] transition-colors">{i+1}. {p.name}</span>
+                <span className="text-[#c9a962] font-semibold">{p.views.toLocaleString()}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* City Leaderboard */}
+        <motion.div 
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
+        >
+          <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-6 drop-shadow-sm flex items-center gap-3">
+             <svg className="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Traffic by Location
+          </h3>
+          <div className="space-y-3">
+            {data.topCities.map((c, i) => (
+              <div key={c.city} className="flex justify-between items-center bg-white/5 rounded-xl px-4 py-3 border border-white/5 hover:bg-white/10 transition-colors">
+                <span className="text-[#f0ead6] tracking-wide">{c.city}</span>
+                <span className="text-[#c9a962] font-semibold">{c.traffic}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Device Matrix */}
+        <motion.div 
+           initial={{ opacity: 0, x: 20, y: 20 }}
+           animate={{ opacity: 1, x: 0, y: 0 }}
+           transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] flex flex-col justify-start"
+        >
+          <div>
+            <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-8 drop-shadow-sm flex items-center gap-3">
+               <svg className="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+              Device Breakdown
+            </h3>
+            <div className="space-y-7">
+              {data.deviceDistribution.map((d, i) => (
+                <div key={d.type}>
+                  <div className="flex justify-between text-xs tracking-wider mb-2">
+                    <span className="text-[#8a9bae] uppercase font-bold">{d.type}</span>
+                    <span className="text-[#c9a962] font-bold">{d.per}%</span>
+                  </div>
+                  <div className="w-full bg-black/40 h-2 rounded-full overflow-hidden">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      animate={{ width: `${d.per}%` }}
+                      transition={{ delay: 1, duration: 1, ease: "easeOut" }}
+                      className="h-full bg-gradient-to-r from-[#c9a962]/50 to-[#c9a962] rounded-full"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
       </div>
       
       </div>
