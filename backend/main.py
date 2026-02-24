@@ -1,8 +1,17 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from services.auth_service import verify_firebase_token
+from database import engine
+from models import analytics_models
+from routers import analytics
+
+# Initialize SQLite database tracking tables automatically
+analytics_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Wave of Bengal API")
+
+# Register the Analytics endpoints
+app.include_router(analytics.router)
 
 app.add_middleware(
     CORSMiddleware,
