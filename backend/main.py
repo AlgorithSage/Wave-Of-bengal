@@ -15,7 +15,7 @@ app.include_router(analytics.router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"], # Allow all origins for easier deployment, update to specific Vercel URL later for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

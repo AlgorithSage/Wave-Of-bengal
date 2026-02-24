@@ -63,30 +63,33 @@ export default function FeaturedProducts() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, delay: idx * 0.15 }}
-                            className="group flex flex-col glass-card hover:border-white/30 z-10"
+                            className="group bg-white/95 backdrop-blur-md rounded-2xl border border-stone-200 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-400 overflow-hidden flex flex-col"
                         >
                             {/* Product Image Wrapper */}
-                            <div className="relative h-64 overflow-hidden bg-white/5">
+                            <div className="relative h-64 overflow-hidden">
                                 <div
                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                     style={{ backgroundImage: `url(${product.image})` }}
                                 />
+                                <div className="absolute inset-0 bg-linear-to-t from-[#0a1628]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
 
                             {/* Product Details */}
                             <div className="p-6 flex flex-col grow">
-                                <div className="flex justify-between items-start mb-6">
-                                    <h3 className="text-xl font-heading font-bold text-[#FFFDD0]">{product.name}</h3>
-                                    <span className="text-white/80 font-bold bg-white/10 border border-white/20 px-2 py-1 rounded text-sm">{product.weight}</span>
+                                <div className="flex justify-between items-start mb-4">
+                                    <h3 className="text-xl font-heading font-bold text-stone-800 tracking-tight">{product.name}</h3>
+                                    <span className="text-stone-500 font-bold bg-stone-100 px-2 py-1 rounded text-xs">{product.weight}</span>
                                 </div>
 
-                                <button
-                                    onClick={() => addToCart(product)}
-                                    className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border-2 border-white text-white font-bold py-3 px-4 rounded transition-all group-hover:shadow-[0_4px_12px_rgba(255,255,255,0.15)]"
-                                >
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                    Add to Cart
-                                </button>
+                                <div className="flex items-center justify-between mt-auto pt-4 border-t border-stone-100">
+                                    <span className="text-2xl font-heading font-black text-[#c5a061]">${product.price}</span>
+                                    <button
+                                        onClick={() => addToCart(product)}
+                                        className="w-10 h-10 flex items-center justify-center bg-stone-800 text-white rounded-full hover:bg-[#c5a061] transition-colors shadow-lg"
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    </button>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

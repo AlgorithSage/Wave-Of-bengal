@@ -95,266 +95,167 @@ const itemVariants = {
 
 export default function OurStory() {
     return (
-        <div className="relative min-h-screen pt-24 pb-20 text-white">
+        <div className="relative min-h-screen bg-[#0a1628] text-white">
 
-            {/* Fixed Background Image */}
-            <div className="fixed inset-0 z-0">
-                <Image
-                    src="/images/bg/untitled-design.png"
-                    alt="Our story background"
-                    fill
-                    className="object-cover"
-                    priority
-                    quality={90}
-                />
-                <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
-            </div>
+            {/* ═══════════ SPLIT SCREEN HERO ═══════════ */}
+            <div className="relative flex flex-col lg:flex-row min-h-screen pt-16 lg:pt-0">
 
-            {/* Content Layer */}
-            <div className="relative z-10">
-
-                {/* ═══════════ HERO HEADER ═══════════ */}
-                <div className="relative py-28 overflow-hidden mb-16">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                        {/* Decorative accent */}
-                        <motion.div
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ duration: 1.2, ease: "easeOut" }}
-                            className="w-32 h-[2px] bg-linear-to-r from-transparent via-gold to-transparent mx-auto mb-10"
-                        />
-                        <motion.span
-                            initial={{ opacity: 0, y: 15 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="inline-block text-[#FFFDD0] uppercase tracking-[0.3em] text-sm font-bold mb-6"
-                        >
-                            Est. 1952 — Bay of Bengal
-                        </motion.span>
-                        <motion.h1
-                            initial={{ opacity: 0, y: 25 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.9, delay: 0.15 }}
-                            className="text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-8 drop-shadow-lg leading-[0.95]"
-                        >
-                            Our <span className="text-[#FFFDD0] italic">Story</span>
-                        </motion.h1>
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                            className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-medium drop-shadow-md italic leading-relaxed"
-                        >
-                            From the fishing boats of Bengal to your table — a journey woven with
-                            passion, tradition, and an unwavering pursuit of excellence
-                        </motion.p>
-                        <motion.div
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-                            className="w-32 h-[2px] bg-linear-to-r from-transparent via-gold to-transparent mx-auto mt-10"
-                        />
+                {/* Left Side: Atmospheric Image */}
+                <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-screen overflow-hidden">
+                    <Image
+                        src="/images/boat-story.png"
+                        alt="Fishing boat at night"
+                        fill
+                        className="object-cover object-center"
+                        priority
+                    />
+                    {/* Atmospheric lighting dots (Particles) */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        {[...Array(12)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-2 h-2 bg-white/20 rounded-full blur-[1px]"
+                                style={{
+                                    top: `${Math.random() * 100}%`,
+                                    left: `${Math.random() * 100}%`,
+                                }}
+                                animate={{
+                                    opacity: [0.2, 0.7, 0.2],
+                                    scale: [0.8, 1.2, 0.8]
+                                }}
+                                transition={{
+                                    duration: 4 + Math.random() * 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            />
+                        ))}
                     </div>
+                    {/* Shadow overlay to blend with right side */}
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-[#0a1628]/40 lg:to-[#0a1628]" />
                 </div>
 
-                {/* ═══════════ TIMELINE SECTION ═══════════ */}
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                {/* Right Side: Content Area */}
+                <div className="w-full lg:w-1/2 min-h-[50vh] lg:h-screen bg-[#0a1628] flex items-center justify-center p-8 lg:p-24 flex-col text-left">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-20"
+                        initial={{ opacity: 0, x: 40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="max-w-xl"
                     >
-                        <span className="text-[#FFFDD0] uppercase tracking-[0.25em] text-sm font-bold mb-4 block">Heritage</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#FFFDD0] drop-shadow-lg">
-                            Our Journey
-                        </h2>
-                        <div className="w-20 h-[3px] bg-linear-to-r from-gold via-gold-light to-gold mx-auto rounded-full mt-6" />
-                    </motion.div>
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white mb-8 tracking-tight drop-shadow-md">
+                            Brand Story
+                        </h1>
 
-                    <div className="relative py-8">
-                        <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-white/20"></div>
-
-                        {/* Center Node */}
-                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gold border-4 border-[#0a192f] z-10 hidden md:block group-hover:scale-150 transition-transform duration-500"></div>
-
-                        <div className="space-y-24">
-                            {timeline.map((item, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-80px" }}
-                                    transition={{ duration: 0.8 }}
-                                    className={`relative flex flex-col md:flex-row items-center justify-between ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-                                >
-                                    {/* Glowing node marker */}
-                                    <div className="absolute left-[18px] md:left-1/2 w-5 h-5 bg-gold rounded-full -translate-x-px shadow-[0_0_20px_rgba(245,158,11,0.6),0_0_40px_rgba(245,158,11,0.2)] z-10 border-2 border-white/40"></div>
-
-                                    {/* Spacing */}
-                                    <div className="hidden md:block md:w-5/12"></div>
-
-                                    {/* Content Card */}
-                                    <div className="w-full pl-14 md:pl-0 md:w-5/12">
-                                        <div className={`glass-card p-10 hover:border-gold/30 hover:-translate-y-2 group ${idx % 2 === 0 ? 'md:mr-10 text-left md:text-right' : 'md:ml-10 text-left'}`}>
-                                            <span className="text-[#FFFDD0]/60 uppercase tracking-[0.2em] text-xs font-bold mb-3 block group-hover:text-[#FFFDD0]/90 transition-colors">{item.highlight}</span>
-                                            <span className="text-[#FFFDD0] font-heading text-4xl md:text-5xl font-black mb-3 block">{item.year}</span>
-                                            <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-gold-light transition-colors">{item.title}</h3>
-                                            <p className="text-white/60 text-base leading-relaxed group-hover:text-white/75 transition-colors">{item.description}</p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
+                        <div className="space-y-6 text-lg md:text-xl text-[#f5f0e8]/80 font-light leading-relaxed">
+                            <p>
+                                Since 1952, Wave of Bengal has been more than just a name—it's a testament to the relationship between man and the deep sea. Our story began with our grandfather's wooden trawler and a promise to honor the ocean.
+                            </p>
+                            <p>
+                                For three generations, we have perfected the art of sustainable fishing, ensuring that every catch is not only premium in quality but also ethically sourced. We believe that true freshness has no shortcut.
+                            </p>
+                            <p>
+                                Today, we combine traditional wisdom with state-of-the-art cold chain technology to bring the finest treasures of the Bay of Bengal directly to your doorstep, exactly as nature intended.
+                            </p>
                         </div>
-                    </div>
-                </div>
 
-                {/* ═══════════ QUOTE SECTION ═══════════ */}
-                <div className="relative py-28 my-16 overflow-hidden">
-                    {/* Glass strip background */}
-                    <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-gold/15" />
-                    {/* Decorative radial glow */}
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.08)_0%,transparent_70%)]" />
-
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1 }}
-                        >
-                            <span className="text-[#FFFDD0] text-6xl block mb-8 opacity-60">&ldquo;</span>
-                            <blockquote className="text-2xl md:text-4xl lg:text-5xl font-heading italic text-white leading-snug mb-10 drop-shadow-lg font-light">
-                                The sea has been our family&apos;s partner for three generations. We don&apos;t just fish — we nurture a relationship with the ocean that sustains us all.
-                            </blockquote>
-                            <div className="w-16 h-[2px] bg-gold/50 mx-auto mb-6" />
-                            <p className="text-[#FFFDD0] font-heading text-lg tracking-wide">
-                                — Third Generation Fisherman
-                            </p>
-                        </motion.div>
-                    </div>
-                </div>
-
-                {/* ═══════════ OUR VALUES SECTION ═══════════ */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-20"
-                    >
-                        <span className="text-[#FFFDD0] uppercase tracking-[0.25em] text-sm font-bold mb-4 block">What We Stand For</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#FFFDD0] drop-shadow-lg">
-                            Our Values
-                        </h2>
-                        <div className="w-20 h-[3px] bg-linear-to-r from-gold via-gold-light to-gold mx-auto rounded-full mt-6" />
-                    </motion.div>
-
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    >
-                        {values.map((value, idx) => (
-                            <motion.div
-                                key={idx}
-                                variants={itemVariants}
-                                className="bg-white/6 backdrop-blur-2xl border border-white/12 p-10 rounded-3xl text-center shadow-[0_8px_32px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-white/10 hover:border-gold/25 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(245,158,11,0.12)] transition-all duration-500 group"
-                            >
-                                {/* Icon container with gradient ring */}
-                                <div className="relative w-20 h-20 mx-auto mb-6">
-                                    <div className={`absolute inset-0 rounded-2xl bg-linear-to-br ${value.accent} opacity-15 group-hover:opacity-30 transition-opacity duration-500`} />
-                                    <div className="relative w-full h-full rounded-2xl border border-white/10 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-500">
-                                        {value.icon}
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-heading font-bold text-[#FFFDD0] mb-4 group-hover:text-[#FFFDD0]/80 transition-colors">{value.title}</h3>
-                                <p className="text-white/55 text-base leading-relaxed group-hover:text-white/70 transition-colors">{value.description}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* ═══════════ TEAM SECTION ═══════════ */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-20"
-                    >
-                        <span className="text-[#FFFDD0] uppercase tracking-[0.25em] text-sm font-bold mb-4 block">The Crew</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#FFFDD0] drop-shadow-lg">
-                            The People Behind <br className="hidden md:block" />Wave of Bengal
-                        </h2>
-                        <div className="w-20 h-[3px] bg-linear-to-r from-gold via-gold-light to-gold mx-auto rounded-full mt-6 mb-8" />
-                    </motion.div>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center text-white/60 text-xl max-w-4xl mx-auto mb-16 leading-relaxed"
-                    >
-                        We&apos;re a passionate team of seafood lovers, quality experts, and technology enthusiasts — united by a single mission: bringing the ocean&apos;s finest treasures to your table.
-                    </motion.p>
-
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-                    >
-                        {team.map((member, idx) => (
-                            <motion.div
-                                key={idx}
-                                variants={itemVariants}
-                                className="bg-white/6 backdrop-blur-2xl border border-white/12 p-10 rounded-3xl text-center shadow-[0_8px_32px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.08)] hover:bg-white/10 hover:border-gold/25 hover:-translate-y-3 hover:shadow-[0_16px_48px_rgba(245,158,11,0.1)] transition-all duration-500 group"
-                            >
-                                <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-linear-to-br from-gold/20 via-gold/10 to-transparent border-2 border-gold/30 flex items-center justify-center text-5xl group-hover:border-gold/60 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.2)] transition-all duration-500">
-                                    {member.icon}
-                                </div>
-                                <h3 className="text-xl font-heading font-bold text-[#FFFDD0] mb-3 group-hover:text-[#FFFDD0]/80 transition-colors">{member.name}</h3>
-                                <p className="text-white/55 text-base leading-relaxed italic group-hover:text-white/70 transition-colors">{member.role}</p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* ═══════════ CTA SECTION ═══════════ */}
-                <div className="relative py-28 mt-16 overflow-hidden">
-                    {/* Glass background */}
-                    <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-t border-gold/15" />
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.06)_0%,transparent_70%)]" />
-
-                    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                        <motion.div
-                            initial={{ opacity: 0, y: 25 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className="text-[#FFFDD0] uppercase tracking-[0.25em] text-sm font-bold mb-6 block">Join Our Journey</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 drop-shadow-lg">
-                                Experience the <span className="text-[#FFFDD0] italic">Difference</span>
-                            </h2>
-                            <p className="text-white/60 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-                                Taste the heritage. Feel the freshness. Join thousands of satisfied customers who&apos;ve made Wave of Bengal their trusted choice.
-                            </p>
+                        <div className="mt-12">
                             <Link
                                 href="/products"
-                                className="inline-block px-14 py-5 bg-linear-to-r from-gold to-gold-light text-[#FFFDD0] font-bold text-lg uppercase tracking-[0.15em] rounded-2xl hover:-translate-y-2 hover:shadow-[0_16px_60px_rgba(245,158,11,0.35)] transition-all duration-500 shadow-[0_8px_30px_rgba(245,158,11,0.2)]"
+                                className="inline-block px-10 py-4 border-2 border-white/40 text-white font-bold uppercase tracking-widest text-sm rounded-md hover:bg-white/10 hover:border-white transition-all duration-300 shadow-sm"
                             >
-                                Shop Fresh Seafood
+                                Shop Fresh Catch
                             </Link>
-                        </motion.div>
-                    </div>
+                        </div>
+                    </motion.div>
                 </div>
 
+                {/* Pagination dots (Visual only, per reference) */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:left-3/4 flex gap-3 z-20">
+                    <div className="w-2 h-2 rounded-full bg-white/40"></div>
+                    <div className="w-2 h-2 rounded-full bg-white"></div>
+                    <div className="w-2 h-2 rounded-full bg-white/40"></div>
+                </div>
             </div>
+
+            {/* ═══════════ TIMELINE / HERITAGE SECTION ═══════════ */}
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-24"
+                >
+                    <span className="text-[#c5a061] uppercase tracking-[0.25em] text-sm font-bold mb-4 block">Legacy</span>
+                    <h2 className="text-4xl md:text-5xl font-heading font-black text-white drop-shadow-lg leading-tight uppercase tracking-widest">
+                        A Journey of Decades
+                    </h2>
+                    <div className="w-24 h-px bg-[#c5a061] mx-auto mt-8" />
+                </motion.div>
+
+                <div className="relative">
+                    {/* Vertical Line */}
+                    <div className="absolute left-[20px] md:left-1/2 h-full w-px bg-white/10 -translate-x-px"></div>
+
+                    <div className="space-y-32">
+                        {timeline.map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.8 }}
+                                className={`relative flex flex-col md:flex-row items-center justify-between ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                            >
+                                {/* Year Marker */}
+                                <div className="absolute left-[10px] md:left-1/2 w-5 h-5 bg-[#c5a061] rounded-full -translate-x-px border-4 border-[#0a1628] z-10 shadow-[0_0_15px_rgba(197,160,97,0.4)]"></div>
+
+                                {/* Content Card */}
+                                <div className="hidden md:block w-5/12 text-center md:text-left">
+                                    <span className="text-6xl lg:text-8xl font-heading font-black text-white/5 opacity-40 select-none">{item.year}</span>
+                                </div>
+
+                                <div className="w-full pl-12 md:pl-0 md:w-5/12 mt-4 md:mt-0">
+                                    <div className="p-8 border-l border-white/10 bg-white/5 backdrop-blur-md rounded-r-2xl md:rounded-2xl md:border-l-0 hover:bg-white/10 transition-colors">
+                                        <h3 className="text-2xl font-heading font-bold text-[#c5a061] mb-2">{item.title}</h3>
+                                        <p className="text-[#f5f0e8]/70 leading-relaxed italic mb-4 text-sm uppercase tracking-widest">{item.highlight}</p>
+                                        <p className="text-[#f5f0e8]/90 leading-relaxed font-light">{item.description}</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* ═══════════ VALUES SECTION ═══════════ */}
+            <div className="bg-white/2 py-24 border-y border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+                    <h2 className="text-4xl font-heading font-black text-white uppercase tracking-widest">Our Guiding Values</h2>
+                    <div className="w-16 h-px bg-[#c5a061] mx-auto mt-6" />
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {values.map((value, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="bg-white/5 p-10 rounded-2xl border border-white/10 hover:border-[#c5a061]/30 transition-all duration-300"
+                        >
+                            <span className="text-4xl block mb-6">{value.icon}</span>
+                            <h3 className="text-xl font-heading font-bold text-white mb-4 uppercase tracking-wide">{value.title}</h3>
+                            <p className="text-[#f5f0e8]/70 font-light leading-relaxed">{value.description}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Footer space */}
+            <div className="py-20" />
+
         </div>
     );
 }
