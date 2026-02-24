@@ -11,25 +11,27 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-// Check if we have valid config (not placeholder)
-const isConfigValid = firebaseConfig.apiKey && firebaseConfig.apiKey !== 'placeholder';
+const isConfigValid = firebaseConfig.apiKey &&
+  firebaseConfig.apiKey !== 'placeholder' &&
+  firebaseConfig.apiKey.length > 10;
 
-let app;
-let auth;
-let db;
+let app = null;
+let auth = null;
+let db = null;
 
-// ONLY initialize if we have valid keys. 
-// If keys are missing/placeholder, we skip initialization entirely.
-if (isConfigValid) {
+// ONLY initialize in the browser AND if we have valid keys.
+// This prevents the SDK from ever running during the server-side build/export.
+if (typeof window !== "undefined" && isConfigValid) {
   try {
     app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
     if (app) {
       auth = getAuth(app);
       db = getFirestore(app);
     }
-  } catch (error) {
-    console.error("Firebase initialization skipped or failed:", error.message);
+  } catch (err) {
+    console.error("Firebase SDK init failure:", err.message);
   }
 }
 
-export { auth, db };
+// Named exports (app must be named for analytics.js)
+export { app, auth, db };
