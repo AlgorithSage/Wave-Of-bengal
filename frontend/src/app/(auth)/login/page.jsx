@@ -145,7 +145,8 @@ export default function Login() {
                         src="/images/bg/Underwater Image 7.jpeg"
                         alt="Wave of Bengal Authentication Background"
                         fill
-                        className="object-cover object-center"
+                        unoptimized
+                        className="object-cover object-center contrast-[1.05] saturate-[1.1] brightness-[1.02]"
                         quality={100}
                         priority
                     />
