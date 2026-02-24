@@ -1,9 +1,9 @@
 'use client'
 
+// AuthContext.jsx
 import { createContext, useEffect, useState } from 'react';
-import { onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth, db } from '../lib/firebase';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+// No top-level imports from firebase/auth or firestore to prevent Vercel build crashes
 
 export const AuthContext = createContext();
 
@@ -19,6 +19,9 @@ export function AuthProvider({ children }) {
             return;
         }
 
+        // Dynamic imports to prevent SSR crashes
+        const { onAuthStateChanged } = require('firebase/auth');
+
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
             setLoading(true);
             if (firebaseUser) {
@@ -26,6 +29,7 @@ export function AuthProvider({ children }) {
 
                 // Fetch extended profile from Firestore
                 if (db) {
+                    const { doc, getDoc, setDoc, serverTimestamp } = require('firebase/firestore');
                     const userRef = doc(db, 'users', firebaseUser.uid);
                     const userDoc = await getDoc(userRef);
 
@@ -58,10 +62,14 @@ export function AuthProvider({ children }) {
     }, []);
 
     const loginWithEmail = (email, password) => {
+        const { signInWithEmailAndPassword } = require('firebase/auth');
         return signInWithEmailAndPassword(auth, email, password);
     };
 
     const registerWithEmail = async (name, email, password) => {
+        const { createUserWithEmailAndPassword } = require('firebase/auth');
+        const { doc, setDoc, serverTimestamp } = require('firebase/firestore');
+
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
@@ -78,11 +86,13 @@ export function AuthProvider({ children }) {
     };
 
     const loginWithGoogle = async () => {
+        const { signInWithPopup, GoogleAuthProvider } = require('firebase/auth');
         const provider = new GoogleAuthProvider();
         return signInWithPopup(auth, provider);
     };
 
     const logout = () => {
+        const { signOut } = require('firebase/auth');
         return signOut(auth);
     };
 
