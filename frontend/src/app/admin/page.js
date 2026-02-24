@@ -8,12 +8,12 @@ export default function AdminDashboard() {
         <div className="space-y-8 mb-20 md:mb-0">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                 <header>
-                    <h1 className="text-4xl font-heading font-medium tracking-wide text-[#f0ead6] drop-shadow-md">Dashboard Overview</h1>
-                    <p className="text-[#8a9bae] mt-2 text-lg">Welcome back. Here is what is happening today.</p>
+                    <h1 className="text-4xl font-heading font-medium tracking-wide text-white drop-shadow-md">Dashboard Overview</h1>
+                    <p className="text-white/60 mt-2 text-lg">Welcome back. Here is what is happening today.</p>
                 </header>
                 <Link
                     href="/"
-                    className="flex items-center gap-2 px-6 py-3 bg-[#0a1f2e]/40 hover:bg-[#0a1f2e]/80 border border-[#c9a962]/30 rounded-full font-semibold tracking-wide text-[#c9a962] shadow-[0_4px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(201,169,98,0.2)]"
+                    className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full font-semibold tracking-wide text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />

@@ -16,11 +16,11 @@ export default function AdminSidebar() {
 
     return (
         <>
-            <div className="hidden md:flex flex-col w-64 h-screen fixed top-0 left-0 bg-[#0f172a]/80 backdrop-blur-sm border-r border-white/10 shadow-xl z-40 transition-all">
+            <div className="hidden md:flex flex-col w-64 h-screen fixed top-0 left-0 bg-black/40 backdrop-blur-lg border-r border-white/10 shadow-2xl z-40 transition-all">
                 <div className="p-6">
                     <Link href="/">
-                        <h2 className="text-2xl font-heading font-medium tracking-wide text-[#c9a962] mb-8 flex items-center gap-2 drop-shadow-md">
-                            <svg className="w-8 h-8 text-[#c9a962]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <h2 className="text-2xl font-heading font-medium tracking-wide text-white mb-8 flex items-center gap-2 drop-shadow-md">
+                            <svg className="w-8 h-8 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                             Admin Panel
@@ -34,9 +34,9 @@ export default function AdminSidebar() {
                                     <motion.div
                                         whileHover={{ x: 5 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
-                                                ? 'bg-gradient-to-r from-[#c9a962]/20 to-transparent border border-[#c9a962]/30 text-[#c9a962] shadow-[0_0_15px_rgba(201,169,98,0.1)]'
-                                                : 'text-[#8a9bae] hover:bg-white/5 hover:text-[#f0ead6]'
+                                        className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${isActive
+                                                ? 'bg-white/10 border border-white/10 text-white shadow-sm'
+                                                : 'text-white/60 hover:bg-white/5 hover:text-white/90'
                                             }`}
                                     >
                                         <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,7 +50,7 @@ export default function AdminSidebar() {
                     </nav>
                 </div>
                 <div className="mt-auto p-6 border-t border-white/10">
-                    <div className="flex items-center gap-3 px-4 py-3 text-sm tracking-wider text-[#8a9bae] font-medium">
+                    <div className="flex items-center gap-3 px-4 py-3 text-sm tracking-wider text-white/60 font-medium transition-colors hover:text-white/90 rounded-xl cursor-default">
                         <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                         System Online
                     </div>
@@ -58,12 +58,12 @@ export default function AdminSidebar() {
             </div>
 
             {/* Mobile nav placeholder - can expand later if needed */}
-            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0a1f2e]/60 backdrop-blur-xl border-t border-white/10 z-50 p-4 flex justify-around">
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-black/40 backdrop-blur-lg border-t border-white/10 z-50 p-4 flex justify-around">
                 {navItems.map((item) => {
                     const isActive = pathname === item.path
                     return (
                         <Link key={item.path} href={item.path}>
-                            <div className={`p-2 rounded-lg transition-colors ${isActive ? 'bg-[#c9a962]/20 border border-[#c9a962]/30 text-[#c9a962]' : 'text-[#8a9bae]'}`}>
+                            <div className={`p-2 rounded-lg transition-colors ${isActive ? 'bg-white/10 border border-white/10 text-white' : 'text-white/60 hover:text-white/90'}`}>
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                                 </svg>
