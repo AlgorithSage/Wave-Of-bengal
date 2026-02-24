@@ -14,30 +14,37 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!auth) {
+            setLoading(false);
+            return;
+        }
+
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
             setLoading(true);
             if (firebaseUser) {
                 setUser(firebaseUser);
 
                 // Fetch extended profile from Firestore
-                const userRef = doc(db, 'users', firebaseUser.uid);
-                const userDoc = await getDoc(userRef);
+                if (db) {
+                    const userRef = doc(db, 'users', firebaseUser.uid);
+                    const userDoc = await getDoc(userRef);
 
-                if (userDoc.exists()) {
-                    const userData = userDoc.data();
-                    setProfile(userData);
-                    setIsAdmin(userData.role === 'admin');
-                } else {
-                    // If profile doesn't exist (e.g., first Google login), create it
-                    const newProfile = {
-                        name: firebaseUser.displayName || 'User',
-                        email: firebaseUser.email,
-                        role: 'customer',
-                        createdAt: serverTimestamp(),
-                    };
-                    await setDoc(userRef, newProfile);
-                    setProfile(newProfile);
-                    setIsAdmin(false);
+                    if (userDoc.exists()) {
+                        const userData = userDoc.data();
+                        setProfile(userData);
+                        setIsAdmin(userData.role === 'admin');
+                    } else {
+                        // If profile doesn't exist (e.g., first Google login), create it
+                        const newProfile = {
+                            name: firebaseUser.displayName || 'User',
+                            email: firebaseUser.email,
+                            role: 'customer',
+                            createdAt: serverTimestamp(),
+                        };
+                        await setDoc(userRef, newProfile);
+                        setProfile(newProfile);
+                        setIsAdmin(false);
+                    }
                 }
             } else {
                 setUser(null);

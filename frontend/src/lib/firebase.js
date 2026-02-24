@@ -11,6 +11,25 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+// Check if we have valid config (not placeholder)
+const isConfigValid = firebaseConfig.apiKey && firebaseConfig.apiKey !== 'placeholder';
+
+let app;
+let auth;
+let db;
+
+// ONLY initialize if we have valid keys. 
+// If keys are missing/placeholder, we skip initialization entirely.
+if (isConfigValid) {
+  try {
+    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+    if (app) {
+      auth = getAuth(app);
+      db = getFirestore(app);
+    }
+  } catch (error) {
+    console.error("Firebase initialization skipped or failed:", error.message);
+  }
+}
+
+export { auth, db };
