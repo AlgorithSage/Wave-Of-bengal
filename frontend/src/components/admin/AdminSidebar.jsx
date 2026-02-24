@@ -16,11 +16,11 @@ export default function AdminSidebar() {
 
     return (
         <>
-            <div className="hidden md:flex flex-col w-64 h-screen fixed top-0 left-0 bg-white/20 backdrop-blur-md border-r border-white/40 shadow-xl z-40">
+            <div className="hidden md:flex flex-col w-64 h-screen fixed top-0 left-0 bg-[#0f172a]/80 backdrop-blur-sm border-r border-white/10 shadow-xl z-40 transition-all">
                 <div className="p-6">
                     <Link href="/">
-                        <h2 className="text-2xl font-heading font-bold text-ocean-deep mb-8 flex items-center gap-2">
-                            <svg className="w-8 h-8 text-oceanic-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <h2 className="text-2xl font-heading font-medium tracking-wide text-[#c9a962] mb-8 flex items-center gap-2 drop-shadow-md">
+                            <svg className="w-8 h-8 text-[#c9a962]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                             Admin Panel
@@ -35,8 +35,8 @@ export default function AdminSidebar() {
                                         whileHover={{ x: 5 }}
                                         whileTap={{ scale: 0.95 }}
                                         className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
-                                                ? 'bg-oceanic-blue text-white shadow-md'
-                                                : 'text-ocean-muted hover:bg-white/40 hover:text-ocean-deep'
+                                                ? 'bg-gradient-to-r from-[#c9a962]/20 to-transparent border border-[#c9a962]/30 text-[#c9a962] shadow-[0_0_15px_rgba(201,169,98,0.1)]'
+                                                : 'text-[#8a9bae] hover:bg-white/5 hover:text-[#f0ead6]'
                                             }`}
                                     >
                                         <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -49,21 +49,21 @@ export default function AdminSidebar() {
                         })}
                     </nav>
                 </div>
-                <div className="mt-auto p-6 border-t border-white/30">
-                    <div className="flex items-center gap-3 px-4 py-3 text-sm text-ocean-muted">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <div className="mt-auto p-6 border-t border-white/10">
+                    <div className="flex items-center gap-3 px-4 py-3 text-sm tracking-wider text-[#8a9bae] font-medium">
+                        <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                         System Online
                     </div>
                 </div>
             </div>
 
             {/* Mobile nav placeholder - can expand later if needed */}
-            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/30 backdrop-blur-xl border-t border-white/40 z-50 p-4 flex justify-around">
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0a1f2e]/60 backdrop-blur-xl border-t border-white/10 z-50 p-4 flex justify-around">
                 {navItems.map((item) => {
                     const isActive = pathname === item.path
                     return (
                         <Link key={item.path} href={item.path}>
-                            <div className={`p-2 rounded-lg ${isActive ? 'bg-oceanic-blue text-white' : 'text-ocean-muted'}`}>
+                            <div className={`p-2 rounded-lg transition-colors ${isActive ? 'bg-[#c9a962]/20 border border-[#c9a962]/30 text-[#c9a962]' : 'text-[#8a9bae]'}`}>
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                                 </svg>
