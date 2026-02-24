@@ -9,26 +9,26 @@ const MOCK_ORDERS = [
 export default function OrdersTable() {
     const getStatusColor = (status) => {
         switch (status) {
-            case 'Delivered': return 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-            case 'Processing': return 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-            case 'Shipped': return 'bg-sky-500/20 text-sky-400 border border-sky-500/30'
-            case 'Cancelled': return 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-            default: return 'bg-white/10 text-[#8a9bae] border border-white/20'
+            case 'Delivered': return 'bg-emerald-500/20 text-emerald-400'
+            case 'Processing': return 'bg-amber-500/20 text-amber-400'
+            case 'Shipped': return 'bg-sky-500/20 text-sky-400'
+            case 'Cancelled': return 'bg-rose-500/20 text-rose-400'
+            default: return 'bg-white/10 text-white/50'
         }
     }
 
     return (
-        <div className="bg-[#0f172a]/80 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden h-full shadow-xl">
-            <div className="p-6 border-b border-white/5 flex justify-between items-center">
-                <h2 className="text-xl font-heading font-medium tracking-wide text-[#f0ead6]">Recent Orders</h2>
-                <button className="text-[#c9a962] font-semibold hover:text-white transition-colors text-sm tracking-wide">
+        <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden h-full shadow-2xl">
+            <div className="p-6 border-b border-white/10 flex justify-between items-center">
+                <h2 className="text-xl font-heading font-medium tracking-wide text-white">Recent Orders</h2>
+                <button className="text-white/70 font-semibold hover:text-white transition-colors text-sm tracking-wide">
                     View All
                 </button>
             </div>
             <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="bg-white/5 text-[#8a9bae] text-xs font-semibold uppercase tracking-[0.15em]">
+                        <tr className="bg-white/5 text-white/50 text-xs font-semibold uppercase tracking-wider">
                             <th className="px-6 py-4">Order ID</th>
                             <th className="px-6 py-4">Customer</th>
                             <th className="px-6 py-4">Date</th>
@@ -36,18 +36,18 @@ export default function OrdersTable() {
                             <th className="px-6 py-4">Amount</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/5">
+                    <tbody className="divide-y divide-white/10">
                         {MOCK_ORDERS.map((order) => (
-                            <tr key={order.id} className="hover:bg-white/10 transition-colors group cursor-pointer">
-                                <td className="px-6 py-5 font-medium tracking-wide text-[#f0ead6] group-hover:text-white transition-colors">{order.id}</td>
-                                <td className="px-6 py-5 text-[#f0ead6] opacity-90">{order.customer}</td>
-                                <td className="px-6 py-5 text-[#8a9bae] font-mono text-sm">{order.date}</td>
+                            <tr key={order.id} className="hover:bg-white/5 transition-colors cursor-pointer group">
+                                <td className="px-6 py-5 font-medium tracking-wide text-white/90 group-hover:text-white">{order.id}</td>
+                                <td className="px-6 py-5 text-white/80">{order.customer}</td>
+                                <td className="px-6 py-5 text-white/50 font-mono text-sm">{order.date}</td>
                                 <td className="px-6 py-5">
                                     <span className={`px-3 py-1.5 rounded-md text-xs font-semibold tracking-wide ${getStatusColor(order.status)}`}>
                                         {order.status}
                                     </span>
                                 </td>
-                                <td className="px-6 py-5 font-heading text-lg font-bold tracking-wide text-[#c9a962]">{order.amount}</td>
+                                <td className="px-6 py-5 font-heading text-lg font-bold text-white">{order.amount}</td>
                             </tr>
                         ))}
                     </tbody>
