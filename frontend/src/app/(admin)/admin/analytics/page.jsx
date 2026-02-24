@@ -71,9 +71,24 @@ export default function SearchAnalyticsAdmin() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // Simulate API fetch delay
-    const timer = setTimeout(() => setData(mockAnalyticsData), 800);
-    return () => clearTimeout(timer);
+    // Fetch live crunched tracking data from Python Backend
+    const fetchRealAnalytics = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/analytics/admin/overview");
+        if (response.ok) {
+          const liveData = await response.json();
+          setData(liveData);
+          return;
+        }
+      } catch (err) {
+        console.warn("Backend analytics API unreachable. Falling back to mock data.", err);
+      }
+      
+      // Fallback to beautiful mock data if backend isn't running so UI doesn't break
+      setData(mockAnalyticsData);
+    };
+
+    fetchRealAnalytics();
   }, []);
 
   if (!data) {

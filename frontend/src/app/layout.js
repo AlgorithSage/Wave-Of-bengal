@@ -2,6 +2,7 @@ import { Playfair_Display, Inter, Space_Grotesk, Zilla_Slab } from "next/font/go
 import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { CartProvider } from '@/contexts/CartContext';
+import AnalyticsEngine from '@/components/analytics/AnalyticsEngine';
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
             >
                 <AuthProvider>
                     <CartProvider>
+                        <AnalyticsEngine />
                         {children}
                     </CartProvider>
                 </AuthProvider>
