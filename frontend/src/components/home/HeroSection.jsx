@@ -11,7 +11,7 @@ export default function HeroSection() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/bg/LandingpageBG.png"
+                    src="/bg/landingpagebg.png"
                     alt="Ocean waves"
                     fill
                     className="object-cover object-center"
