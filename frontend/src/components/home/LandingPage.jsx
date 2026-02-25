@@ -107,14 +107,14 @@ export default function LandingPage({ onEnter }) {
                                 {/* Admin Portal Card */}
                                 <button
                                     onClick={() => router.push('/admin-login')}
-                                    className="w-full flex items-center justify-start gap-4 p-5 bg-[#c9a962]/5 hover:bg-[#c9a962]/10 border border-[#c9a962]/20 hover:border-[#c9a962]/40 rounded-2xl transition-all duration-300 hover:-translate-y-1 group group-hover:shadow-[0_4px_20px_rgba(201,169,98,0.1)]"
+                                    className="w-full flex items-center justify-start gap-4 p-5 bg-[#d97736]/5 hover:bg-[#d97736]/10 border border-[#d97736]/20 hover:border-[#d97736]/40 rounded-2xl transition-all duration-300 hover:-translate-y-1 group group-hover:shadow-[0_4px_20px_rgba(217,119,54,0.1)]"
                                 >
-                                    <div className="p-3 rounded-full bg-[#c9a962]/10 group-hover:bg-[#c9a962]/20 transition-colors shrink-0">
-                                        <svg className="w-6 h-6 text-[#c9a962]/80 group-hover:text-[#c9a962] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div className="p-3 rounded-full bg-[#d97736]/10 group-hover:bg-[#d97736]/20 transition-colors shrink-0">
+                                        <svg className="w-6 h-6 text-[#d97736]/80 group-hover:text-[#d97736] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4V6a2 2 0 00-2-2H7a2 2 0 00-2 2v2h4m-4 8v1a2 2 0 002 2h6a2 2 0 002-2v-1M7 4V2M14 4V2M5 10H3M21 10h-2M5 14H3M21 14h-2M5 18H3M21 18h-2" />
                                         </svg>
                                     </div>
-                                    <span className="font-heading text-lg font-medium tracking-wide text-[#c9a962]/90 group-hover:text-[#c9a962] transition-colors">Admin Portal</span>
+                                    <span className="font-heading text-lg font-medium tracking-wide text-[#d97736]/90 group-hover:text-[#d97736] transition-colors">Admin Portal</span>
                                 </button>
                             </div>
                         </motion.div>
