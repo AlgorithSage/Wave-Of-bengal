@@ -19,7 +19,6 @@ export default function Navbar() {
         { name: 'Our Story', href: '/our-story', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
         { name: 'Sustainability', href: '/sustainability', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
         { name: 'Certifications', href: '/certifications', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
-        { name: 'Admin', href: '/admin', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-bold transition-colors' },
     ];
 
     const containerVariants = {
@@ -157,11 +156,6 @@ export default function Navbar() {
                                 <Link href="/account" className="text-base font-bold text-ocean-deep hover:text-oceanic-blue transition-colors hidden sm:block">
                                     {profile?.name || user.displayName || user.email.split('@')[0]}
                                 </Link>
-                                {isAdmin && (
-                                    <Link href="/admin" className="text-sm font-bold uppercase tracking-wider text-sky-light bg-oceanic-blue px-2 py-1 rounded">
-                                        Admin
-                                    </Link>
-                                )}
                                 <button
                                     onClick={handleLogout}
                                     className="text-base border border-ocean-muted/40 text-ocean-deep font-semibold hover:bg-oceanic-blue/10 px-4 py-2 rounded-md transition-colors"
