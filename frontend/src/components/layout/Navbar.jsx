@@ -81,8 +81,8 @@ export default function Navbar() {
 
                     <div className="flex items-center space-x-4">
                         <div className="relative">
-                            <button
-                                onClick={toggleCart}
+                            <Link
+                                href="/cart"
                                 className="text-ocean-deep hover:text-oceanic-blue relative p-2 transition-colors flex items-center gap-1 focus:outline-none"
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -91,65 +91,7 @@ export default function Navbar() {
                                         {cartCount}
                                     </span>
                                 )}
-                            </button>
-
-                            {/* Mini Cart Dropdown */}
-                            <AnimatePresence>
-                                {isCartOpen && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        transition={{ duration: 0.2 }}
-                                        className="absolute right-0 mt-2 w-80 glass-card bg-sky-light/70 backdrop-blur-2xl border-2 border-oceanic-blue/30 rounded-xl p-6 z-50 shadow-2xl origin-top-right text-ocean-deep"
-                                    >
-                                        <div className="flex justify-between items-center border-b border-oceanic-blue/20 pb-3 mb-4">
-                                            <h3 className="font-heading text-ocean-deep text-xl font-bold">Your Bag</h3>
-                                            <button onClick={toggleCart} className="text-ocean-muted hover:text-ocean-deep text-xl font-bold transition-colors">&times;</button>
-                                        </div>
-
-                                        <div className="max-h-64 overflow-y-auto mb-4 space-y-4 pr-2 custom-scrollbar">
-                                            {cart.length === 0 ? (
-                                                <p className="text-ocean-muted text-center text-sm italic py-4">Your cart is empty.</p>
-                                            ) : (
-                                                cart.map((item) => (
-                                                    <div key={`${item.id}-${item.size}`} className="flex justify-between items-start border-b border-oceanic-blue/10 pb-3 last:border-0 last:pb-0">
-                                                        <div className="flex-1">
-                                                            <h4 className="text-ocean-deep font-heading text-sm font-bold">{item.name || item.id}</h4>
-                                                            <p className="text-xs text-ocean-muted mb-1">{item.size || 'N/A'}</p>
-                                                            <div className="flex items-center gap-2 mt-2">
-                                                                <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="w-6 h-6 flex items-center justify-center border border-ocean-muted/30 text-ocean-muted hover:text-ocean-deep hover:border-ocean-deep rounded-md transition-colors text-xs font-bold">-</button>
-                                                                <span className="text-ocean-deep text-xs font-bold w-4 text-center">{item.quantity}</span>
-                                                                <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className="w-6 h-6 flex items-center justify-center border border-ocean-muted/30 text-ocean-muted hover:text-ocean-deep hover:border-ocean-deep rounded-md transition-colors text-xs font-bold">+</button>
-                                                            </div>
-                                                        </div>
-                                                        <div className="flex flex-col items-end gap-1">
-                                                            <span className="text-ocean-deep font-bold text-sm">₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
-                                                            <button onClick={() => removeFromCart(item.id)} className="text-rose-500 text-xs hover:text-rose-600 font-semibold tracking-wider mt-1 transition-colors">Remove</button>
-                                                        </div>
-                                                    </div>
-                                                ))
-                                            )}
-                                        </div>
-
-                                        {cart.length > 0 && (
-                                            <div className="border-t border-oceanic-blue/20 pt-4">
-                                                <div className="flex justify-between text-ocean-deep mb-4 font-heading text-lg font-bold">
-                                                    <span>Total</span>
-                                                    <span>₹{cartTotal.toLocaleString('en-IN')}</span>
-                                                </div>
-                                                <Link
-                                                    href="/checkout"
-                                                    onClick={() => setIsCartOpen(false)}
-                                                    className="block w-full text-center bg-ocean-deep text-sky-light py-3 font-heading font-bold rounded-md hover:bg-oceanic-blue transition-colors shadow-md hover:shadow-lg"
-                                                >
-                                                    Checkout
-                                                </Link>
-                                            </div>
-                                        )}
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            </Link>
                         </div>
 
                         {user ? (
