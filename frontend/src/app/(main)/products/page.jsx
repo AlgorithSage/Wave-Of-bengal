@@ -284,19 +284,19 @@ export default function ProductsPage() {
                                             <div className="flex gap-2">
                                                 <Link
                                                     href={`/cart?product=${product.id}`}
-                                                    className="flex-1 py-2.5 text-center text-sm font-semibold border-2 border-stone-800 text-stone-800 rounded-full hover:bg-stone-800 hover:text-white transition-all duration-300 tracking-wide"
+                                                    className="flex-1 py-2.5 text-center text-sm font-semibold bg-stone-800 text-white rounded-full hover:bg-stone-700 transition-all duration-300 tracking-wide"
                                                 >
-                                                    View Details
+                                                    Select Options
                                                 </Link>
-                                                <button
-                                                    onClick={() => handleAddToCart(product)}
-                                                    className="w-11 h-11 flex items-center justify-center border-2 border-stone-300 text-stone-500 rounded-full hover:bg-stone-800 hover:border-stone-800 hover:text-white transition-all duration-300"
+                                                <Link
+                                                    href={`/cart?product=${product.id}`}
+                                                    className="w-11 h-11 flex items-center justify-center border-2 border-stone-800 text-stone-800 bg-transparent rounded-full hover:bg-stone-800 hover:text-white transition-all duration-300"
                                                     title="Add to Cart"
                                                 >
                                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                                     </svg>
-                                                </button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </motion.div>

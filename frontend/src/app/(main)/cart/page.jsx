@@ -43,11 +43,47 @@ const ATTRIBUTES = ['Fresh', 'Safe', '100%', 'Tax'];
 
 export default function CartPage() {
     const { cart, addToCart } = useCart();
+    const [productsDict, setProductsDict] = useState(PRODUCTS);
     const [selectedProductId, setSelectedProductId] = useState('black-tiger-prawns');
     const [selectedSizeId, setSelectedSizeId] = useState('250g');
     const [showToast, setShowToast] = useState(false);
 
-    const currentProduct = PRODUCTS[selectedProductId];
+    useEffect(() => {
+        // Load all catalog products and merge them so any product can be viewed
+        try {
+            const stored = localStorage.getItem('wob_products');
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                const updatedDict = { ...PRODUCTS };
+                parsed.forEach(p => {
+                    if (!updatedDict[p.id]) {
+                        updatedDict[p.id] = {
+                            ...p,
+                            displayName: `${p.name} (${p.weight || '500g'})`,
+                            subtitle: 'Premium Selection',
+                            sizes: [
+                                { id: '250g', label: '250g', price: p.price * 0.55 },
+                                { id: '500g', label: '500g', price: p.price },
+                                { id: '1kg', label: '1kg', price: p.price * 1.8 }
+                            ]
+                        };
+                    }
+                });
+                setProductsDict(updatedDict);
+            }
+        } catch (e) { console.error(e); }
+
+        // Read URL param
+        if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('product');
+            if (productId) {
+                setSelectedProductId(productId);
+            }
+        }
+    }, []);
+
+    const currentProduct = productsDict[selectedProductId] || productsDict['black-tiger-prawns'];
     const currentPrice = currentProduct.sizes.find(s => s.id === selectedSizeId)?.price || currentProduct.price;
 
     const handleAddToCart = () => {
