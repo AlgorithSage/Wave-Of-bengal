@@ -117,7 +117,7 @@ export default function Certifications() {
                             className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-medium drop-shadow-md italic leading-relaxed"
                         >
                             Industry-leading standards that guarantee quality, safety, and sustainability in every product.
-                            <p>At Wave of Bengal, we don't just promise quality — we prove it. Every product we deliver meets rigorous international standards, verified by independent certification bodies.</p>
+                            <span className="block mt-4 text-lg text-white/70 italic">At Wave of Bengal, we don't just promise quality — we prove it. Every product we deliver meets rigorous international standards, verified by independent certification bodies.</span>
                         </motion.p>
                         <motion.div
                             initial={{ scaleX: 0 }}

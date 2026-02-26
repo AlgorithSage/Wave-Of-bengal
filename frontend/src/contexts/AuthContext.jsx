@@ -14,7 +14,7 @@ import {
     signInWithCredential
 } from 'firebase/auth';
 import { auth, db } from '../lib/firebase';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 
 export const AuthContext = createContext();
 
@@ -130,6 +130,21 @@ export function AuthProvider({ children }) {
         return signOut(auth);
     };
 
+    // Update user profile in Firestore (prevents role changes)
+    const updateProfile = async (updates) => {
+        if (!user) throw new Error('Not authenticated');
+        const { role, ...safeUpdates } = updates; // strip role
+        const userRef = doc(db, 'users', user.uid);
+        await updateDoc(userRef, { ...safeUpdates, updatedAt: serverTimestamp() });
+        // Refresh local state
+        const freshDoc = await getDoc(userRef);
+        if (freshDoc.exists()) {
+            const data = freshDoc.data();
+            setProfile(data);
+            setIsAdmin(data.role === 'admin');
+        }
+    };
+
     const value = {
         user,
         profile,
@@ -140,6 +155,7 @@ export function AuthProvider({ children }) {
         loginWithGoogle,
         sendPhoneOtp,
         verifyPhoneOtp,
+        updateProfile,
         logout
     };
 
