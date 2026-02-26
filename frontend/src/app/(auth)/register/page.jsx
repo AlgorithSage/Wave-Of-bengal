@@ -21,8 +21,8 @@ export default function Register() {
         setError('');
         setLoading(true);
         try {
-            await registerWithEmail(name, email, password);
-            router.push('/home');
+            const { role } = await registerWithEmail(name, email, password);
+            router.push(role === 'admin' ? '/admin' : '/home');
         } catch (err) {
             setError(err.message || 'Failed to register');
         } finally {
@@ -34,9 +34,10 @@ export default function Register() {
         setError('');
         setLoading(true);
         try {
-            await loginWithGoogle();
-            router.push('/home');
+            const { role } = await loginWithGoogle();
+            router.push(role === 'admin' ? '/admin' : '/home');
         } catch (err) {
+            if (err.code === 'auth/popup-closed-by-user') return;
             setError(err.message || 'Failed to login with Google');
         } finally {
             setLoading(false);
