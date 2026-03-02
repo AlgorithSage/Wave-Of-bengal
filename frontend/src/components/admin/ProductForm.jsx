@@ -31,7 +31,7 @@ export default function ProductForm({ onClose }) {
             className="glass-card bg-white/50 p-6 md:p-8 rounded-2xl max-w-2xl mx-auto w-full"
         >
             <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-heading font-bold text-ocean-deep">Add New Product</h2>
+                <h2 className="text-2xl font-fraunces font-bold text-ocean-deep">Add New Product</h2>
                 {onClose && (
                     <button onClick={onClose} className="p-2 text-ocean-muted hover:text-ocean-deep rounded-full hover:bg-white/40 transition-colors">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -37,7 +37,7 @@ export default function Testimonials() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-3xl md:text-5xl font-heading font-black text-[#FFFDD0] mb-4"
+                        className="text-3xl md:text-5xl font-cinzel font-black text-[#FFFDD0] mb-4"
                     >
                         Words from Our Patrons
                     </motion.h2>

@@ -98,7 +98,7 @@ export default function OurStory() {
         <div className="relative min-h-screen bg-[#0a1628] text-white">
 
             {/* ═══════════ SPLIT SCREEN HERO ═══════════ */}
-            <div className="relative flex flex-col lg:flex-row min-h-screen pt-16 lg:pt-0">
+            <div className="relative z-10 flex flex-col lg:flex-row min-h-screen pt-16 lg:pt-0">
 
                 {/* Left Side: Atmospheric Image */}
                 <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-screen overflow-hidden">
@@ -143,7 +143,7 @@ export default function OurStory() {
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="max-w-xl"
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black text-white mb-8 tracking-tight drop-shadow-md">
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-cinzel font-black text-white mb-8 tracking-tight drop-shadow-md">
                             Brand Story
                         </h1>
 
@@ -178,8 +178,20 @@ export default function OurStory() {
                 </div>
             </div>
 
+            {/* Fixed Background Image (below hero) */}
+            <div className="fixed inset-0 z-0">
+                <Image
+                    src="/images/bg/admin-bg.jpeg"
+                    alt="Background"
+                    fill
+                    className="object-cover"
+                    quality={90}
+                />
+                <div className="absolute inset-0 bg-[#0a1628]/60" />
+            </div>
+
             {/* ═══════════ TIMELINE / HERITAGE SECTION ═══════════ */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -187,7 +199,7 @@ export default function OurStory() {
                     className="text-center mb-24"
                 >
                     <span className="text-[#c5a061] uppercase tracking-[0.25em] text-sm font-bold mb-4 block">Legacy</span>
-                    <h2 className="text-4xl md:text-5xl font-heading font-black text-white drop-shadow-lg leading-tight uppercase tracking-widest">
+                    <h2 className="text-4xl md:text-5xl font-fraunces font-black text-white drop-shadow-lg leading-tight uppercase tracking-widest">
                         A Journey of Decades
                     </h2>
                     <div className="w-24 h-px bg-[#c5a061] mx-auto mt-8" />
@@ -217,7 +229,7 @@ export default function OurStory() {
 
                                 <div className="w-full pl-12 md:pl-0 md:w-5/12 mt-4 md:mt-0">
                                     <div className="p-8 border-l border-white/10 bg-white/5 backdrop-blur-md rounded-r-2xl md:rounded-2xl md:border-l-0 hover:bg-white/10 transition-colors">
-                                        <h3 className="text-2xl font-heading font-bold text-[#c5a061] mb-2">{item.title}</h3>
+                                        <h3 className="text-2xl font-playfair font-bold text-[#c5a061] mb-2">{item.title}</h3>
                                         <p className="text-[#f5f0e8]/70 leading-relaxed italic mb-4 text-sm uppercase tracking-widest">{item.highlight}</p>
                                         <p className="text-[#f5f0e8]/90 leading-relaxed font-light">{item.description}</p>
                                     </div>
@@ -229,9 +241,9 @@ export default function OurStory() {
             </div>
 
             {/* ═══════════ VALUES SECTION ═══════════ */}
-            <div className="bg-white/2 py-24 border-y border-white/5">
+            <div className="relative z-10 bg-white/2 py-24 border-y border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-                    <h2 className="text-4xl font-heading font-black text-white uppercase tracking-widest">Our Guiding Values</h2>
+                    <h2 className="text-4xl font-fraunces font-black text-white uppercase tracking-widest">Our Guiding Values</h2>
                     <div className="w-16 h-px bg-[#c5a061] mx-auto mt-6" />
                 </div>
 
@@ -246,7 +258,7 @@ export default function OurStory() {
                             className="bg-white/5 p-10 rounded-2xl border border-white/10 hover:border-[#c5a061]/30 transition-all duration-300"
                         >
                             <span className="text-4xl block mb-6">{value.icon}</span>
-                            <h3 className="text-xl font-heading font-bold text-white mb-4 uppercase tracking-wide">{value.title}</h3>
+                            <h3 className="text-xl font-playfair font-bold text-white mb-4 uppercase tracking-wide">{value.title}</h3>
                             <p className="text-[#f5f0e8]/70 font-light leading-relaxed">{value.description}</p>
                         </motion.div>
                     ))}

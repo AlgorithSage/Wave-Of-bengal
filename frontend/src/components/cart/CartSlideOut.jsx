@@ -44,7 +44,7 @@ export default function CartSlideOut() {
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-oceanic-blue/10 bg-sky-light/50">
-                            <h2 className="text-2xl font-heading font-black text-ocean-deep">Your Catch</h2>
+                            <h2 className="text-2xl font-fraunces font-black text-ocean-deep">Your Catch</h2>
                             <button
                                 onClick={() => setIsCartOpen(false)}
                                 className="text-ocean-muted hover:text-ocean-deep hover:bg-oceanic-blue/10 p-2 rounded-full transition-colors"
@@ -83,7 +83,7 @@ export default function CartSlideOut() {
                                         <div className="flex-1 flex flex-col justify-between">
                                             <div>
                                                 <div className="flex justify-between items-start">
-                                                    <h3 className="font-heading font-bold text-ocean-deep line-clamp-2 pr-4">{item.name}</h3>
+                                                    <h3 className="font-playfair font-bold text-ocean-deep line-clamp-2 pr-4">{item.name}</h3>
                                                     <button onClick={() => removeFromCart(item.id)} className="text-ocean-muted hover:text-red-500 transition-colors">
                                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                                                     </button>

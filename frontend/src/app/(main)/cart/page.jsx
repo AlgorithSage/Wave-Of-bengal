@@ -159,7 +159,7 @@ export default function CartPage() {
 
                             {/* Info */}
                             <div className="grow">
-                                <h3 className="text-2xl md:text-3xl font-heading font-black text-white mb-2 tracking-tight">
+                                <h3 className="text-2xl md:text-3xl font-playfair font-black text-white mb-2 tracking-tight">
                                     {product.displayName}
                                 </h3>
                                 <p className="text-[#c5a061] text-sm font-medium italic mb-4 uppercase tracking-widest opacity-80">
@@ -179,7 +179,7 @@ export default function CartPage() {
                                         <span className="text-xs font-bold text-white/40">INR Base</span>
                                     </div>
                                     <div className="ml-auto">
-                                        <div className="px-4 py-2 bg-[#FFFDD0] text-[#0a1628] text-xs font-black uppercase tracking-widest rounded-full group-hover:bg-[#c5a061] group-hover:text-white transition-colors duration-300 shadow-md">
+                                        <div className="btn-gold px-4 py-2 text-xs rounded-full shadow-md">
                                             Select
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@ export default function CartPage() {
 
                         {/* Title & Static Attribute Chips */}
                         <div>
-                            <h2 className="text-4xl lg:text-5xl font-heading font-black text-white mb-2 leading-[0.9]">
+                            <h2 className="text-4xl lg:text-5xl font-fraunces font-black text-white mb-2 leading-[0.9]">
                                 {currentProduct.name}
                             </h2>
                             <p className="text-[#c5a061] text-lg font-medium italic mb-8 opacity-90">
@@ -279,7 +279,7 @@ export default function CartPage() {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
-                        className="fixed bottom-8 right-8 bg-[#c5a061] text-[#0a1628] px-8 py-5 rounded-2xl flex items-center gap-4 z-50 shadow-2xl border border-[#FFFDD0]/30"
+                        className="btn-gold fixed bottom-8 right-8 px-8 py-5 rounded-2xl flex items-center gap-4 z-50 shadow-2xl border border-[#FFFDD0]/30"
                     >
                         <div className="w-8 h-8 rounded-full bg-[#0a1628] flex items-center justify-center shadow-lg">
                             <svg className="w-4 h-4 text-[#c5a061]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>

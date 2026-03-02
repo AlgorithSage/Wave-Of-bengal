@@ -9,7 +9,7 @@ const MOCK_SEARCHES = [
 export default function AnalyticsPanel() {
     return (
         <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-6 h-full shadow-2xl">
-            <h2 className="text-xl font-heading font-medium tracking-wide text-white mb-6">Top Search Queries</h2>
+            <h2 className="text-xl font-fraunces font-medium tracking-wide text-white mb-6">Top Search Queries</h2>
 
             <div className="space-y-4">
                 {MOCK_SEARCHES.map((search, index) => (

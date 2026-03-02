@@ -43,7 +43,7 @@ export default function ConfirmationPage() {
         return (
             <div className="min-h-screen bg-sky-light text-ocean-deep font-body py-20 flex flex-col items-center justify-center">
                 <div className="glass-card p-12 text-center max-w-md w-full">
-                    <h1 className="text-2xl font-heading font-bold mb-4">No Recent Orders</h1>
+                    <h1 className="text-2xl font-cinzel font-bold mb-4">No Recent Orders</h1>
                     <p className="text-ocean-muted mb-8">We couldn't find details for a recent order.</p>
                     <Link href="/products" className="inline-block bg-ocean-deep text-sky-light px-6 py-3 rounded-xl font-bold hover:bg-oceanic-blue transition-colors">
                         Return to Shop
@@ -85,7 +85,7 @@ export default function ConfirmationPage() {
                         </motion.svg>
                     </motion.div>
 
-                    <h1 className="text-3xl md:text-5xl font-heading font-black tracking-tight uppercase text-ocean-deep mb-4">
+                    <h1 className="text-3xl md:text-5xl font-cinzel font-black tracking-tight uppercase text-ocean-deep mb-4">
                         Order Confirmed!
                     </h1>
                     <p className="text-lg text-ocean-muted italic font-medium">
@@ -139,7 +139,7 @@ export default function ConfirmationPage() {
 
                 {/* What Happens Next Timeline */}
                 <div className="mb-10">
-                    <h2 className="text-xl font-heading font-black uppercase tracking-widest text-ocean-deep mb-6">What Happens Next?</h2>
+                    <h2 className="text-xl font-fraunces font-black uppercase tracking-widest text-ocean-deep mb-6">What Happens Next?</h2>
 
                     <div className="glass-card p-6 md:p-8 bg-white/20 backdrop-blur-xl">
                         <div className="space-y-6">
@@ -192,7 +192,7 @@ export default function ConfirmationPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                     <Link
                         href="/products"
-                        className="py-4 px-6 text-center bg-ocean-deep text-sky-light hover:bg-oceanic-blue hover:text-ocean-deep font-bold uppercase tracking-widest rounded-xl transition-all shadow-md"
+                        className="btn-gold py-4 px-6 text-center rounded-xl"
                     >
                         Continue Shopping
                     </Link>

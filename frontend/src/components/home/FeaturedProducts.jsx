@@ -11,14 +11,14 @@ const MOCK_FEATURED = [
         name: "Jumbo Black Tiger Prawns",
         price: 24.99,
         weight: "1 lb",
-        image: "/images/black tiger.jpeg"
+        image: "/images/black%20tiger.jpeg"
     },
     {
         id: "pomfret-1",
         name: "Fresh Butter Prawns",
         price: 28.50,
         weight: "1 lb",
-        image: "/images/butter prawns .jpeg"
+        image: "/images/butter%20prawns%20.jpeg"
     },
     {
         id: "salmon-1",
@@ -42,7 +42,7 @@ export default function FeaturedProducts() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-3xl md:text-5xl font-heading font-black text-[#FFFDD0] mb-4"
+                        className="text-3xl md:text-5xl font-cinzel font-black text-[#FFFDD0] mb-4"
                     >
                         Today's Fresh Catch
                     </motion.h2>
@@ -77,7 +77,7 @@ export default function FeaturedProducts() {
                             {/* Product Details */}
                             <div className="p-6 flex flex-col grow">
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-heading font-bold text-stone-800 tracking-tight">{product.name}</h3>
+                                    <h3 className="text-xl font-playfair font-bold text-stone-800 tracking-tight">{product.name}</h3>
                                     <span className="text-stone-500 font-bold bg-stone-100 px-2 py-1 rounded text-xs">{product.weight}</span>
                                 </div>
 
@@ -85,7 +85,7 @@ export default function FeaturedProducts() {
                                     <span className="text-2xl font-heading font-black text-[#c5a061]">${product.price}</span>
                                     <button
                                         onClick={() => addToCart(product)}
-                                        className="w-10 h-10 flex items-center justify-center bg-stone-800 text-white rounded-full hover:bg-[#c5a061] transition-colors shadow-lg"
+                                        className="btn-gold w-10 h-10 flex items-center justify-center rounded-full shadow-lg"
                                     >
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                                     </button>

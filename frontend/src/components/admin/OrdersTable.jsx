@@ -20,7 +20,7 @@ export default function OrdersTable() {
     return (
         <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden h-full shadow-2xl">
             <div className="p-6 border-b border-white/10 flex justify-between items-center">
-                <h2 className="text-xl font-heading font-medium tracking-wide text-white">Recent Orders</h2>
+                <h2 className="text-xl font-fraunces font-medium tracking-wide text-white">Recent Orders</h2>
                 <button className="text-white/70 font-semibold hover:text-white transition-colors text-sm tracking-wide">
                     View All
                 </button>

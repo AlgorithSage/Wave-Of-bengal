@@ -66,19 +66,19 @@ const labTests = [
 
 export default function Certifications() {
     return (
-        <div className="relative min-h-screen pt-24 pb-20 text-white">
+        <div className="relative min-h-screen bg-[#0a1628] pt-24 pb-20 text-white">
 
             {/* Fixed Background Image */}
             <div className="fixed inset-0 z-0">
                 <Image
-                    src="/images/bg/963b.jpg"
-                    alt="Certifications background"
+                    src="/images/bg/admin-bg.jpeg"
+                    alt="Background"
                     fill
                     className="object-cover"
                     priority
                     quality={90}
                 />
-                <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+                <div className="absolute inset-0 bg-[#0a1628]/60" />
             </div>
 
             {/* Content Layer */}
@@ -106,7 +106,7 @@ export default function Certifications() {
                             initial={{ opacity: 0, y: 25 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.15 }}
-                            className="text-6xl md:text-7xl lg:text-8xl font-heading font-black text-white mb-8 drop-shadow-lg leading-[0.95]"
+                            className="text-6xl md:text-7xl lg:text-8xl font-cinzel font-black text-white mb-8 drop-shadow-lg leading-[0.95]"
                         >
                             Uncompromised <span className="text-[#FFFDD0] italic">Quality</span>
                         </motion.h1>
@@ -141,7 +141,7 @@ export default function Certifications() {
                                     viewport={{ once: true }}
                                     className="flex items-center gap-6 mb-12"
                                 >
-                                    <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">{section.category}</h2>
+                                    <h2 className="text-3xl md:text-4xl font-fraunces font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">{section.category}</h2>
                                     <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
                                 </motion.div>
 
@@ -162,7 +162,7 @@ export default function Certifications() {
                                                 </div>
                                             </div>
                                             <div>
-                                                <h3 className="text-2xl font-heading font-bold text-[#FFFDD0] mb-1 group-hover:text-[#FFFDD0]/80 transition-colors">{item.name}</h3>
+                                                <h3 className="text-2xl font-playfair font-bold text-[#FFFDD0] mb-1 group-hover:text-[#FFFDD0]/80 transition-colors">{item.name}</h3>
                                                 {item.subtitle && <p className="text-sm text-white italic mb-3">{item.subtitle}</p>}
                                                 <p className="text-white/60 text-base leading-relaxed group-hover:text-white/75 transition-colors mb-4">{item.desc}</p>
 
@@ -192,7 +192,7 @@ export default function Certifications() {
                             viewport={{ once: true }}
                             className="flex items-center gap-6 mb-16"
                         >
-                            <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Quality by Numbers</h2>
+                            <h2 className="text-3xl md:text-4xl font-fraunces font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Quality by Numbers</h2>
                             <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
                         </motion.div>
 
@@ -223,7 +223,7 @@ export default function Certifications() {
                                 viewport={{ once: true }}
                                 className="flex items-center gap-6 mb-4"
                             >
-                                <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Full Traceability</h2>
+                                <h2 className="text-3xl md:text-4xl font-fraunces font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Full Traceability</h2>
                                 <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
                             </motion.div>
                             <motion.p
@@ -269,7 +269,7 @@ export default function Certifications() {
                                     viewport={{ once: true }}
                                     className="flex items-center gap-6 mb-4"
                                 >
-                                    <h2 className="text-3xl md:text-4xl font-heading font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Lab Testing Standards</h2>
+                                    <h2 className="text-3xl md:text-4xl font-fraunces font-black text-[#FFFDD0] whitespace-nowrap drop-shadow-lg">Lab Testing Standards</h2>
                                     <div className="w-full h-[2px] bg-linear-to-r from-white/30 to-transparent"></div>
                                 </motion.div>
                                 <motion.p
@@ -315,7 +315,7 @@ export default function Certifications() {
                             className="relative z-10 text-center px-8"
                         >
                             <span className="text-[#FFFDD0] uppercase tracking-[0.25em] text-sm font-bold mb-6 block">Our Promise</span>
-                            <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-white mb-6 drop-shadow-lg">
+                            <h3 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-black text-white mb-6 drop-shadow-lg">
                                 Quality You Can <span className="text-[#FFFDD0] italic">Trust</span>
                             </h3>
                             <div className="w-20 h-[3px] bg-linear-to-r from-gold via-gold-light to-gold mx-auto rounded-full mb-8" />

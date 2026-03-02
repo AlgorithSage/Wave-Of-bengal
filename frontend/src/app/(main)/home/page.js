@@ -19,17 +19,16 @@ export default function Home() {
       {/* Post-hero content with bg3 background */}
       <div className="relative">
         {/* Fixed Background Image */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-black/90">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
-            src="/bg/bg3.png"
+            src="/bg/landingpagebg.png"
             alt="Ocean Background"
             fill
-            className="object-cover opacity-80"
+            className="object-cover"
             quality={90}
             priority
           />
-          {/* Subtle dark overlay for text legibility and glass aesthetic */}
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-[#0a1628]/40" />
         </div>
 
         {/* Content Layer */}
@@ -43,7 +42,7 @@ export default function Home() {
           <section className="py-24 relative z-20 overflow-hidden border-y border-white/20">
             <div className="absolute inset-0 bg-linear-to-br from-oceanic-blue/5 via-transparent to-transparent opacity-50"></div>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[#FFFDD0] mb-8 italic">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-fraunces font-black text-[#FFFDD0] mb-8 italic">
                 "A legacy born from the deep sea"
               </h2>
               <p className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-10 max-w-3xl mx-auto">

@@ -83,7 +83,7 @@ export default function HeroSection() {
                 >
                     <Link
                         href="/products"
-                        className="px-8 py-4 bg-[#c5a061] text-[#0a1628] font-bold uppercase tracking-widest text-sm rounded-md hover:bg-[#d4b070] transition-all duration-300 shadow-lg hover:shadow-[0_8px_30px_rgba(197,160,97,0.3)] text-center"
+                        className="btn-gold px-8 py-4 text-sm rounded-md text-center"
                     >
                         Shop Premium Seafood
                     </Link>

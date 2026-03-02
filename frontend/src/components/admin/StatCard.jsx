@@ -4,7 +4,7 @@ export default function StatCard({ title, value, trend, trendUp, icon }) {
             <div className="flex justify-between items-start mb-4">
                 <div>
                     <p className="text-white/60 text-xs font-semibold tracking-wider mb-1 uppercase">{title}</p>
-                    <h3 className="text-3xl font-heading font-medium tracking-wide text-white">{value}</h3>
+                    <h3 className="text-3xl font-playfair font-medium tracking-wide text-white">{value}</h3>
                 </div>
                 <div className="p-3 text-white/80">
                     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">

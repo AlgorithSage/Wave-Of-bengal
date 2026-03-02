@@ -207,7 +207,7 @@ export default function ProductsPage() {
                             <div className="w-16 h-px bg-amber-800/30" />
                         </div>
 
-                        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-stone-800 mb-4 italic">
+                        <h1 className="font-cinzel text-4xl md:text-5xl lg:text-6xl text-stone-800 mb-4 uppercase tracking-widest font-bold">
                             Our Signature Selection
                         </h1>
 
@@ -225,7 +225,7 @@ export default function ProductsPage() {
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 border ${activeCategory === category
-                                ? 'bg-stone-800 text-white border-stone-800 shadow-md'
+                                ? 'btn-gold border-[#c5a061] shadow-md'
                                 : 'bg-white/70 text-stone-600 border-stone-300 hover:bg-stone-100 hover:border-stone-400'
                                 }`}
                         >
@@ -284,13 +284,13 @@ export default function ProductsPage() {
                                             <div className="flex gap-2">
                                                 <Link
                                                     href={`/cart?product=${product.id}`}
-                                                    className="flex-1 py-2.5 text-center text-sm font-semibold bg-stone-800 text-white rounded-full hover:bg-stone-700 transition-all duration-300 tracking-wide"
+                                                    className="btn-gold flex-1 py-2.5 text-center text-sm rounded-full"
                                                 >
                                                     Select Options
                                                 </Link>
                                                 <Link
                                                     href={`/cart?product=${product.id}`}
-                                                    className="w-11 h-11 flex items-center justify-center border-2 border-stone-800 text-stone-800 bg-transparent rounded-full hover:bg-stone-800 hover:text-white transition-all duration-300"
+                                                    className="btn-gold w-11 h-11 flex items-center justify-center rounded-full"
                                                     title="Add to Cart"
                                                 >
                                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -314,7 +314,7 @@ export default function ProductsPage() {
                             <p className="text-stone-400 mb-8">Try selecting a different category.</p>
                             <button
                                 onClick={() => setActiveCategory('All')}
-                                className="px-8 py-3 bg-stone-800 text-white rounded-full font-semibold hover:bg-stone-700 transition-all"
+                                className="btn-gold px-8 py-3 rounded-full"
                             >
                                 View All
                             </button>

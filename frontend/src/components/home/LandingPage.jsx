@@ -87,7 +87,7 @@ export default function LandingPage({ onEnter }) {
                                 </svg>
                             </button>
 
-                            <h3 className="text-2xl font-heading font-medium tracking-wide text-white mb-2">Select Portal</h3>
+                            <h3 className="text-2xl font-playfair font-medium tracking-wide text-white mb-2">Select Portal</h3>
                             <p className="text-white/50 text-xs mb-8 text-center tracking-wide">Please choose your destination to continue securely.</p>
 
                             <div className="flex flex-col gap-4 w-full">
