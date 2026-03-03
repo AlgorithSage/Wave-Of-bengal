@@ -76,7 +76,7 @@ export default function LandingPage({ onEnter }) {
                             animate={{ scale: 1, y: 0, opacity: 1 }}
                             exit={{ scale: 0.92, y: 30, opacity: 0 }}
                             transition={{ type: "spring", damping: 22, stiffness: 260 }}
-                            className="bg-[#0b0c10]/95 backdrop-blur-2xl border border-white/[0.08] p-8 sm:p-10 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.9)] w-full max-w-[28rem] relative flex flex-col items-center overflow-hidden"
+                            className="bg-black/40 backdrop-blur-xl border border-white/[0.12] p-8 sm:p-10 rounded-[2rem] shadow-[0_8px_60px_rgba(0,0,0,0.6),_inset_0_1px_0_rgba(255,255,255,0.06)] w-full max-w-[28rem] relative flex flex-col items-center overflow-hidden"
                         >
                             <button
                                 onClick={() => setShowLoginModal(false)}
