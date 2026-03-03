@@ -125,7 +125,7 @@ export default function AdminLogin() {
     ];
 
     return (
-        <div className="relative flex min-h-screen text-[#f0ead6] selection:bg-[#4a90d9]/20">
+        <div className="relative flex min-h-screen text-[#f0ead6] selection:bg-[#7cb3f0]/20">
             {/* Background */}
             <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#02070e]">
                 <div className="absolute inset-0 opacity-100">
@@ -151,7 +151,7 @@ export default function AdminLogin() {
                     className="w-full max-w-md bg-black/30 backdrop-blur-xl border border-white/[0.10] rounded-[2rem] p-8 lg:p-10 shadow-[0_8px_60px_rgba(0,0,0,0.5),_inset_0_1px_0_rgba(255,255,255,0.05)] flex flex-col overflow-hidden relative"
                 >
                     {/* Subtle top accent line */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-gradient-to-r from-transparent via-[#4a90d9]/40 to-transparent" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-gradient-to-r from-transparent via-[#7cb3f0]/40 to-transparent" />
 
                     {/* Header */}
                     <div className="flex flex-col items-center mb-8">
@@ -175,7 +175,7 @@ export default function AdminLogin() {
                                 key={tab.id}
                                 onClick={() => { setAuthMode(tab.id); setError(''); setSuccess(''); }}
                                 className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${authMode === tab.id
-                                    ? 'bg-[#4a90d9]/15 text-[#4a90d9] shadow-[0_0_15px_rgba(74,144,217,0.08)] border border-[#4a90d9]/20'
+                                    ? 'bg-[#7cb3f0]/20 text-[#7cb3f0] shadow-[0_0_20px_rgba(124,179,240,0.12)] border border-[#7cb3f0]/30'
                                     : 'text-white/35 hover:text-white/60'
                                     }`}
                             >
@@ -240,7 +240,7 @@ export default function AdminLogin() {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="admin@waveofbengal.com"
-                                        className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 px-6 text-white placeholder-white/25 focus:ring-1 focus:ring-[#4a90d9]/30 focus:border-[#4a90d9]/30 outline-none transition-all duration-300 text-sm tracking-wide"
+                                        className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 px-6 text-white placeholder-white/25 focus:ring-1 focus:ring-[#7cb3f0]/50 focus:border-[#7cb3f0]/40 outline-none transition-all duration-300 text-sm tracking-wide"
                                         required
                                     />
                                 </div>
@@ -252,7 +252,7 @@ export default function AdminLogin() {
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
                                             placeholder="••••••••••••••••"
-                                            className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 pl-6 pr-12 text-white placeholder-white/25 focus:ring-1 focus:ring-[#4a90d9]/30 focus:border-[#4a90d9]/30 outline-none transition-all duration-300 text-sm tracking-[0.2em]"
+                                            className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 pl-6 pr-12 text-white placeholder-white/25 focus:ring-1 focus:ring-[#7cb3f0]/50 focus:border-[#7cb3f0]/40 outline-none transition-all duration-300 text-sm tracking-[0.2em]"
                                             required
                                         />
                                         <button
@@ -268,7 +268,7 @@ export default function AdminLogin() {
                                     <button
                                         type="submit"
                                         disabled={loading}
-                                        className="w-full bg-[#4a90d9]/20 hover:bg-[#4a90d9]/30 border border-[#4a90d9]/25 hover:border-[#4a90d9]/40 text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_25px_rgba(74,144,217,0.08)] hover:shadow-[0_0_35px_rgba(74,144,217,0.15)] transition-all duration-300 ease-out flex justify-center items-center gap-2 hover:-translate-y-0.5"
+                                        className="w-full bg-[#7cb3f0]/15 hover:bg-[#7cb3f0]/25 border border-[#7cb3f0]/30 hover:border-[#7cb3f0]/50 text-[#c8dffa] hover:text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_30px_rgba(124,179,240,0.10)] hover:shadow-[0_0_40px_rgba(124,179,240,0.20)] transition-all duration-300 ease-out flex justify-center items-center gap-2 hover:-translate-y-0.5"
                                     >
                                         {loading ? (
                                             <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -302,7 +302,7 @@ export default function AdminLogin() {
                                 <button
                                     onClick={handleGoogleLogin}
                                     disabled={loading}
-                                    className="w-full bg-[#4a90d9]/20 hover:bg-[#4a90d9]/30 border border-[#4a90d9]/25 hover:border-[#4a90d9]/40 text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_25px_rgba(74,144,217,0.08)] hover:shadow-[0_0_35px_rgba(74,144,217,0.15)] transition-all duration-300 ease-out flex justify-center items-center gap-3 hover:-translate-y-0.5"
+                                    className="w-full bg-[#7cb3f0]/15 hover:bg-[#7cb3f0]/25 border border-[#7cb3f0]/30 hover:border-[#7cb3f0]/50 text-[#c8dffa] hover:text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_30px_rgba(124,179,240,0.10)] hover:shadow-[0_0_40px_rgba(124,179,240,0.20)] transition-all duration-300 ease-out flex justify-center items-center gap-3 hover:-translate-y-0.5"
                                 >
                                     {loading ? (
                                         <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -343,7 +343,7 @@ export default function AdminLogin() {
                                                     onChange={(e) => setPhone(e.target.value.replace(/[^\d]/g, ''))}
                                                     placeholder="9876543210"
                                                     maxLength={10}
-                                                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 pl-14 pr-6 text-white placeholder-white/25 focus:ring-1 focus:ring-[#4a90d9]/30 focus:border-[#4a90d9]/30 outline-none transition-all duration-300 text-sm tracking-widest"
+                                                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 pl-14 pr-6 text-white placeholder-white/25 focus:ring-1 focus:ring-[#7cb3f0]/50 focus:border-[#7cb3f0]/40 outline-none transition-all duration-300 text-sm tracking-widest"
                                                     required
                                                 />
                                             </div>
@@ -355,7 +355,7 @@ export default function AdminLogin() {
                                             <button
                                                 type="submit"
                                                 disabled={loading || phone.length < 10}
-                                                className="w-full bg-[#4a90d9]/20 hover:bg-[#4a90d9]/30 border border-[#4a90d9]/25 hover:border-[#4a90d9]/40 text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_25px_rgba(74,144,217,0.08)] hover:shadow-[0_0_35px_rgba(74,144,217,0.15)] transition-all duration-300 ease-out flex justify-center items-center gap-2 hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"
+                                                className="w-full bg-[#7cb3f0]/15 hover:bg-[#7cb3f0]/25 border border-[#7cb3f0]/30 hover:border-[#7cb3f0]/50 text-[#c8dffa] hover:text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_30px_rgba(124,179,240,0.10)] hover:shadow-[0_0_40px_rgba(124,179,240,0.20)] transition-all duration-300 ease-out flex justify-center items-center gap-2 hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"
                                             >
                                                 {loading ? (
                                                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -373,7 +373,7 @@ export default function AdminLogin() {
                                                 onChange={(e) => setOtp(e.target.value.replace(/[^\d]/g, ''))}
                                                 placeholder="123456"
                                                 maxLength={6}
-                                                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 px-6 text-white placeholder-white/25 focus:ring-1 focus:ring-[#4a90d9]/30 focus:border-[#4a90d9]/30 outline-none transition-all duration-300 text-2xl tracking-[0.5em] text-center font-mono"
+                                                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-2xl py-4 px-6 text-white placeholder-white/25 focus:ring-1 focus:ring-[#7cb3f0]/50 focus:border-[#7cb3f0]/40 outline-none transition-all duration-300 text-2xl tracking-[0.5em] text-center font-mono"
                                                 required
                                                 autoFocus
                                             />
@@ -385,7 +385,7 @@ export default function AdminLogin() {
                                             <button
                                                 type="submit"
                                                 disabled={loading || otp.length < 6}
-                                                className="w-full bg-[#4a90d9]/20 hover:bg-[#4a90d9]/30 border border-[#4a90d9]/25 hover:border-[#4a90d9]/40 text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_25px_rgba(74,144,217,0.08)] hover:shadow-[0_0_35px_rgba(74,144,217,0.15)] transition-all duration-300 ease-out flex justify-center items-center gap-2 hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"
+                                                className="w-full bg-[#7cb3f0]/15 hover:bg-[#7cb3f0]/25 border border-[#7cb3f0]/30 hover:border-[#7cb3f0]/50 text-[#c8dffa] hover:text-white font-semibold tracking-wider py-4 rounded-2xl shadow-[0_0_30px_rgba(124,179,240,0.10)] hover:shadow-[0_0_40px_rgba(124,179,240,0.20)] transition-all duration-300 ease-out flex justify-center items-center gap-2 hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"
                                             >
                                                 {loading ? (
                                                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -410,7 +410,7 @@ export default function AdminLogin() {
 
                     {/* Footer */}
                     <div className="mt-8 flex justify-center">
-                        <Link href="/" className="text-white/35 hover:text-[#4a90d9]/80 text-xs tracking-wider uppercase font-semibold transition-colors duration-300 flex items-center gap-2">
+                        <Link href="/" className="text-white/35 hover:text-[#7cb3f0]/80 text-xs tracking-wider uppercase font-semibold transition-colors duration-300 flex items-center gap-2">
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                             Return to Website
                         </Link>
