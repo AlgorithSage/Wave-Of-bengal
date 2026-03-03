@@ -72,51 +72,85 @@ export default function LandingPage({ onEnter }) {
                         className="absolute inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
                     >
                         <motion.div
-                            initial={{ scale: 0.95, y: 30 }}
-                            animate={{ scale: 1, y: 0 }}
-                            exit={{ scale: 0.95, y: 30 }}
-                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-[#0b0c10]/90 backdrop-blur-xl border border-white/10 p-8 lg:p-10 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)] w-full max-w-[26rem] relative flex flex-col items-center"
+                            initial={{ scale: 0.92, y: 30, opacity: 0 }}
+                            animate={{ scale: 1, y: 0, opacity: 1 }}
+                            exit={{ scale: 0.92, y: 30, opacity: 0 }}
+                            transition={{ type: "spring", damping: 22, stiffness: 260 }}
+                            className="bg-[#0b0c10]/95 backdrop-blur-2xl border border-white/[0.08] p-8 sm:p-10 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.9)] w-full max-w-[28rem] relative flex flex-col items-center overflow-hidden"
                         >
+                            {/* Subtle decorative glow at top */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
                             <button
                                 onClick={() => setShowLoginModal(false)}
-                                className="absolute top-5 right-5 p-2 rounded-full text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+                                className="absolute top-5 right-5 p-2 rounded-full text-white/30 hover:text-white hover:bg-white/10 transition-all duration-200"
                             >
                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
 
-                            <h3 className="text-2xl font-playfair font-medium tracking-wide text-white mb-2">Select Portal</h3>
-                            <p className="text-white/50 text-xs mb-8 text-center tracking-wide">Please choose your destination to continue securely.</p>
+                            {/* Header */}
+                            <div className="flex flex-col items-center mb-8 mt-2">
+                                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/[0.06] mb-5">
+                                    <svg className="w-7 h-7 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-2xl font-heading font-semibold tracking-wide text-white mb-1.5">Select Portal</h3>
+                                <p className="text-white/40 text-[13px] text-center tracking-wide">Choose your destination to continue securely</p>
+                            </div>
 
-                            <div className="flex flex-col gap-4 w-full">
+                            <div className="flex flex-col gap-3 w-full">
                                 {/* User Portal Card */}
                                 <button
                                     onClick={() => router.push('/login')}
-                                    className="w-full flex items-center justify-start gap-4 p-5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-2xl transition-all duration-300 hover:-translate-y-1 group"
+                                    className="w-full flex items-center gap-4 p-5 bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] hover:border-white/20 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group"
                                 >
-                                    <div className="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors shrink-0">
-                                        <svg className="w-6 h-6 text-white/70 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <div className="p-3.5 rounded-xl bg-white/[0.06] group-hover:bg-white/[0.12] transition-all duration-300 shrink-0">
+                                        <svg className="w-6 h-6 text-white/60 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                         </svg>
                                     </div>
-                                    <span className="font-heading text-lg font-medium tracking-wide text-white">User Portal</span>
+                                    <div className="flex flex-col items-start text-left flex-1">
+                                        <span className="font-heading text-[17px] font-semibold tracking-wide text-white group-hover:text-white transition-colors">User Portal</span>
+                                        <span className="text-white/35 text-[11px] tracking-wider mt-0.5 group-hover:text-white/50 transition-colors">Browse products, place orders & track deliveries</span>
+                                    </div>
+                                    <svg className="w-5 h-5 text-white/20 group-hover:text-white/50 group-hover:translate-x-1 transition-all duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
                                 </button>
+
+                                {/* Divider */}
+                                <div className="flex items-center gap-3 px-4 my-0.5">
+                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                                    <span className="text-white/20 text-[10px] uppercase tracking-[0.25em] font-medium">or</span>
+                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                                </div>
 
                                 {/* Admin Portal Card */}
                                 <button
                                     onClick={() => router.push('/admin-login')}
-                                    className="w-full flex items-center justify-start gap-4 p-5 bg-[#d97736]/5 hover:bg-[#d97736]/10 border border-[#d97736]/20 hover:border-[#d97736]/40 rounded-2xl transition-all duration-300 hover:-translate-y-1 group group-hover:shadow-[0_4px_20px_rgba(217,119,54,0.1)]"
+                                    className="w-full flex items-center gap-4 p-5 bg-[#d97736]/[0.04] hover:bg-[#d97736]/[0.10] border border-[#d97736]/15 hover:border-[#d97736]/40 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group hover:shadow-[0_4px_30px_rgba(217,119,54,0.08)]"
                                 >
-                                    <div className="p-3 rounded-full bg-[#d97736]/10 group-hover:bg-[#d97736]/20 transition-colors shrink-0">
-                                        <svg className="w-6 h-6 text-[#d97736]/80 group-hover:text-[#d97736] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4V6a2 2 0 00-2-2H7a2 2 0 00-2 2v2h4m-4 8v1a2 2 0 002 2h6a2 2 0 002-2v-1M7 4V2M14 4V2M5 10H3M21 10h-2M5 14H3M21 14h-2M5 18H3M21 18h-2" />
+                                    <div className="p-3.5 rounded-xl bg-[#d97736]/10 group-hover:bg-[#d97736]/20 transition-all duration-300 shrink-0">
+                                        <svg className="w-6 h-6 text-[#d97736]/70 group-hover:text-[#d97736] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
                                     </div>
-                                    <span className="font-heading text-lg font-medium tracking-wide text-[#d97736]/90 group-hover:text-[#d97736] transition-colors">Admin Portal</span>
+                                    <div className="flex flex-col items-start text-left flex-1">
+                                        <span className="font-heading text-[17px] font-semibold tracking-wide text-[#d97736]/90 group-hover:text-[#d97736] transition-colors">Admin Portal</span>
+                                        <span className="text-white/30 text-[11px] tracking-wider mt-0.5 group-hover:text-white/50 transition-colors">Manage inventory, orders & system analytics</span>
+                                    </div>
+                                    <svg className="w-5 h-5 text-[#d97736]/25 group-hover:text-[#d97736]/60 group-hover:translate-x-1 transition-all duration-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
                                 </button>
                             </div>
+
+                            {/* Bottom decorative glow */}
+                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                         </motion.div>
                     </motion.div>
                 )}
