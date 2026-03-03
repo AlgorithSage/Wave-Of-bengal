@@ -78,9 +78,6 @@ export default function LandingPage({ onEnter }) {
                             transition={{ type: "spring", damping: 22, stiffness: 260 }}
                             className="bg-[#0b0c10]/95 backdrop-blur-2xl border border-white/[0.08] p-8 sm:p-10 rounded-[2rem] shadow-[0_0_80px_rgba(0,0,0,0.9)] w-full max-w-[28rem] relative flex flex-col items-center overflow-hidden"
                         >
-                            {/* Subtle decorative glow at top */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
                             <button
                                 onClick={() => setShowLoginModal(false)}
                                 className="absolute top-5 right-5 p-2 rounded-full text-white/30 hover:text-white hover:bg-white/10 transition-all duration-200"
