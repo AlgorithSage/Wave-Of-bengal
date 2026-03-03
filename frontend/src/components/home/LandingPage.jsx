@@ -102,7 +102,7 @@ export default function LandingPage({ onEnter }) {
                                 {/* User Portal Card */}
                                 <button
                                     onClick={() => router.push('/login')}
-                                    className="w-full flex items-center gap-4 p-5 bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] hover:border-white/20 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group"
+                                    className="w-full flex items-center gap-4 p-5 bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.08] hover:border-white/20 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group shadow-[0_0_25px_rgba(255,255,255,0.08)] hover:shadow-[0_0_35px_rgba(255,255,255,0.14)]"
                                 >
                                     <div className="p-3.5 rounded-xl bg-white/[0.06] group-hover:bg-white/[0.12] transition-all duration-300 shrink-0">
                                         <svg className="w-6 h-6 text-white/60 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,7 +128,7 @@ export default function LandingPage({ onEnter }) {
                                 {/* Admin Portal Card */}
                                 <button
                                     onClick={() => router.push('/admin-login')}
-                                    className="w-full flex items-center gap-4 p-5 bg-[#d97736]/[0.04] hover:bg-[#d97736]/[0.10] border border-[#d97736]/15 hover:border-[#d97736]/40 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group hover:shadow-[0_4px_30px_rgba(217,119,54,0.08)]"
+                                    className="w-full flex items-center gap-4 p-5 bg-[#d97736]/[0.08] hover:bg-[#d97736]/[0.14] border border-[#d97736]/[0.12] hover:border-[#d97736]/35 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group shadow-[0_0_25px_rgba(217,119,54,0.10)] hover:shadow-[0_0_35px_rgba(217,119,54,0.18)]"
                                 >
                                     <div className="p-3.5 rounded-xl bg-[#d97736]/10 group-hover:bg-[#d97736]/20 transition-all duration-300 shrink-0">
                                         <svg className="w-6 h-6 text-[#d97736]/70 group-hover:text-[#d97736] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
