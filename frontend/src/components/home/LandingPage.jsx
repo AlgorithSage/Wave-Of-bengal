@@ -119,10 +119,10 @@ export default function LandingPage({ onEnter }) {
                                 </button>
 
                                 {/* Divider */}
-                                <div className="flex items-center gap-3 px-4 my-0.5">
-                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                                    <span className="text-white/20 text-[10px] uppercase tracking-[0.25em] font-medium">or</span>
-                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                                <div className="flex items-center gap-3 px-4 my-1">
+                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                                    <span className="text-white/40 text-[11px] uppercase tracking-[0.3em] font-semibold">or</span>
+                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                                 </div>
 
                                 {/* Admin Portal Card */}
