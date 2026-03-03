@@ -94,8 +94,8 @@ export default function LandingPage({ onEnter }) {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                     </svg>
                                 </div>
-                                <h3 className="text-2xl font-heading font-semibold tracking-wide text-white mb-1.5">Select Portal</h3>
-                                <p className="text-white/40 text-[13px] text-center tracking-wide">Choose your destination to continue securely</p>
+                                <h3 className="text-2xl font-heading font-semibold tracking-wide text-white mb-2">Select Portal</h3>
+                                <p className="text-white/40 text-sm font-heading tracking-wider text-center">Secure access to your dashboard</p>
                             </div>
 
                             <div className="flex flex-col gap-3 w-full">
