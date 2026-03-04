@@ -78,7 +78,12 @@ export default function CartSlideOut() {
                                         className="flex gap-4 p-4 bg-sky-light/30 rounded-2xl border border-oceanic-blue/10"
                                     >
                                         <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 border border-oceanic-blue/20">
-                                            <Image src={item.image} alt={item.name} fill className="object-cover" />
+                                            <Image
+                                                src={item.image || "/images/placeholder.png"}
+                                                alt={item.name}
+                                                fill
+                                                className="object-cover"
+                                            />
                                         </div>
                                         <div className="flex-1 flex flex-col justify-between">
                                             <div>

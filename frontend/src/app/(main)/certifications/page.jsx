@@ -260,7 +260,7 @@ export default function Certifications() {
                     </div>
 
                     {/* ═══════════ LAB TESTING STANDARDS ═══════════ */}
-                    <div className="relative py-24 mt-16 bg-white/5 backdrop-blur-md border-y border-white/10 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+                    <div className="relative py-24 mt-16">
                         <div className="max-w-6xl mx-auto">
                             <div className="mb-16">
                                 <motion.div

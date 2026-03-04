@@ -189,7 +189,7 @@ export default function ProductsPage() {
             <div className="fixed inset-0 bg-amber-50/20 z-0" />
 
             {/* Content */}
-            <div className="relative z-10 pt-28 pb-20">
+            <div className="relative z-10 pt-28">
 
                 {/* Hero Header */}
                 <div className="text-center mb-12 px-4">
@@ -362,7 +362,7 @@ export default function ProductsPage() {
                 </div>
 
                 {/* Footer Image */}
-                <div className="relative w-full mt-16">
+                <div className="relative w-full">
                     <Image
                         src="/images/footer image.png"
                         alt="Wave of Bengal Footer"

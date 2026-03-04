@@ -124,141 +124,155 @@ export default function CheckoutPage() {
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px] gap-12 lg:gap-16 items-start">
+                <div className="bg-[#fdfbf6]/95 backdrop-blur-xl rounded-4xl border border-stone-200 shadow-2xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto">
 
                     {/* Left side: Checkout Form */}
-                    <form onSubmit={handlePlaceOrder} className="flex flex-col gap-10">
+                    <div className="flex-1 p-8 lg:p-14 border-b lg:border-b-0 lg:border-r border-stone-200">
+                        <form onSubmit={handlePlaceOrder} className="flex flex-col gap-12">
 
-                        {/* Contact Info */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-md"
-                        >
-                            <h2 className="text-lg font-fraunces font-bold tracking-wide mb-6 text-stone-800 border-b border-stone-200 pb-3">Contact Information</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Email</label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required className={inputClasses} />
+                            {/* Contact Info */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                className="flex flex-col gap-6"
+                            >
+                                <h2 className="text-xl font-fraunces font-bold tracking-wide text-stone-800 flex items-center gap-3">
+                                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 text-amber-700 text-sm">1</span>
+                                    Contact Information
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Email</label>
+                                        <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required className={inputClasses} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Phone</label>
+                                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 9876543210" required className={inputClasses} />
+                                    </div>
                                 </div>
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Phone</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 9876543210" required className={inputClasses} />
-                                </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
 
-                        {/* Shipping Address */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-md"
-                        >
-                            <h2 className="text-lg font-fraunces font-bold tracking-wide mb-6 text-stone-800 border-b border-stone-200 pb-3">Shipping Address</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Full Name</label>
-                                    <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="John Doe" required className={inputClasses} />
-                                </div>
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Address Line 1</label>
-                                    <input type="text" name="address1" value={formData.address1} onChange={handleChange} placeholder="Street, Area" required className={inputClasses} />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 gap-5 mb-5">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Address Line 2 (Optional)</label>
-                                    <input type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Landmark, Building" className={inputClasses} />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">City</label>
-                                    <input type="text" name="city" value={formData.city} onChange={handleChange} placeholder="City" required className={inputClasses} />
-                                </div>
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">State</label>
-                                    <input type="text" name="state" value={formData.state} onChange={handleChange} placeholder="State / Province" required className={inputClasses} />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">ZIP Code</label>
-                                    <input type="text" name="zip" value={formData.zip} onChange={handleChange} placeholder="560001" required className={inputClasses} />
-                                </div>
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Country</label>
-                                    <input type="text" name="country" value={formData.country} onChange={handleChange} placeholder="India" required className={inputClasses} />
-                                </div>
-                            </div>
-                        </motion.div>
+                            <hr className="border-stone-200/60" />
 
-                        {/* Payment Method */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                            className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-md"
-                        >
-                            <h2 className="text-lg font-fraunces font-bold tracking-wide mb-6 text-stone-800 border-b border-stone-200 pb-3">Payment Method</h2>
-                            <div className="grid grid-cols-1 gap-5 mb-5">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Card Number</label>
-                                    <div className="relative">
-                                        <input type="text" name="cardNumber" value={formData.cardNumber} onChange={handleChange} placeholder="1234 5678 9012 3456" required className={`${inputClasses} pr-12`} />
-                                        <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                                            <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                            {/* Shipping Address */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                                className="flex flex-col gap-6"
+                            >
+                                <h2 className="text-xl font-fraunces font-bold tracking-wide text-stone-800 flex items-center gap-3">
+                                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 text-amber-700 text-sm">2</span>
+                                    Shipping Address
+                                </h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-1">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Full Name</label>
+                                        <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="John Doe" required className={inputClasses} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Address Line 1</label>
+                                        <input type="text" name="address1" value={formData.address1} onChange={handleChange} placeholder="Street, Area" required className={inputClasses} />
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-1 gap-5 mb-1">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Address Line 2 (Optional)</label>
+                                        <input type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Landmark, Building" className={inputClasses} />
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-1">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">City</label>
+                                        <input type="text" name="city" value={formData.city} onChange={handleChange} placeholder="City" required className={inputClasses} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">State</label>
+                                        <input type="text" name="state" value={formData.state} onChange={handleChange} placeholder="State / Province" required className={inputClasses} />
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">ZIP Code</label>
+                                        <input type="text" name="zip" value={formData.zip} onChange={handleChange} placeholder="560001" required className={inputClasses} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Country</label>
+                                        <input type="text" name="country" value={formData.country} onChange={handleChange} placeholder="India" required className={inputClasses} />
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            <hr className="border-stone-200/60" />
+
+                            {/* Payment Method */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                                className="flex flex-col gap-6"
+                            >
+                                <h2 className="text-xl font-fraunces font-bold tracking-wide text-stone-800 flex items-center gap-3">
+                                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 text-amber-700 text-sm">3</span>
+                                    Payment Method
+                                </h2>
+                                <div className="grid grid-cols-1 gap-5 mb-2">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Card Number</label>
+                                        <div className="relative">
+                                            <input type="text" name="cardNumber" value={formData.cardNumber} onChange={handleChange} placeholder="1234 5678 9012 3456" required className={`${inputClasses} pr-12`} />
+                                            <div className="absolute right-4 top-1/2 -translate-y-1/2">
+                                                <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Expiry</label>
-                                    <input type="text" name="expiry" value={formData.expiry} onChange={handleChange} placeholder="MM/YY" required className={inputClasses} />
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">Expiry</label>
+                                        <input type="text" name="expiry" value={formData.expiry} onChange={handleChange} placeholder="MM/YY" required className={inputClasses} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-stone-600 text-[10px] font-bold mb-2 pl-4 uppercase tracking-widest">CVV</label>
+                                        <input type="text" name="cvv" value={formData.cvv} onChange={handleChange} placeholder="•••" required className={inputClasses} />
+                                    </div>
                                 </div>
-                                <div>
-                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">CVV</label>
-                                    <input type="text" name="cvv" value={formData.cvv} onChange={handleChange} placeholder="•••" required className={inputClasses} />
-                                </div>
-                            </div>
 
-                            <motion.button
-                                type="submit"
-                                disabled={isProcessing}
-                                whileHover={{ scale: isProcessing ? 1 : 1.02 }}
-                                whileTap={{ scale: isProcessing ? 1 : 0.97 }}
-                                className={`bg-linear-to-b from-[#ebd1a7] to-[#d6b075] border border-[#cba365] text-stone-800 w-full py-4 px-6 rounded-2xl text-lg font-bold tracking-wide shadow-sm transition-opacity flex items-center justify-center gap-3 ${isProcessing ? 'opacity-70 cursor-wait shadow-none' : 'hover:opacity-90'}`}
-                            >
-                                {isProcessing ? (
-                                    <>
-                                        <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                                        Processing...
-                                    </>
-                                ) : (
-                                    <>
-                                        Place Order
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                    </>
-                                )}
-                            </motion.button>
-                        </motion.div>
+                                <motion.button
+                                    type="submit"
+                                    disabled={isProcessing}
+                                    whileHover={{ scale: isProcessing ? 1 : 1.01 }}
+                                    whileTap={{ scale: isProcessing ? 1 : 0.98 }}
+                                    className={`bg-linear-to-b from-[#ebd1a7] to-[#d6b075] border border-[#cba365] text-stone-800 w-full lg:w-3/4 mx-auto py-5 px-8 rounded-[1.25rem] text-lg font-bold tracking-wide shadow-lg transition-all flex items-center justify-center gap-3 ${isProcessing ? 'opacity-70 cursor-wait shadow-none' : 'hover:shadow-xl hover:opacity-90'}`}
+                                >
+                                    {isProcessing ? (
+                                        <>
+                                            <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                            Processing...
+                                        </>
+                                    ) : (
+                                        <>
+                                            Place Order Securely
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                                        </>
+                                    )}
+                                </motion.button>
+                            </motion.div>
 
-                    </form>
+                        </form>
+                    </div>
 
                     {/* Right side: Order Summary */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="sticky top-24"
-                    >
-                        <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-lg">
-                            <h2 className="text-xl font-fraunces font-bold tracking-wide mb-6 text-stone-800">Order Summary</h2>
-
-                            <div className="flex flex-col gap-5 mb-8 max-h-[40vh] overflow-y-auto pr-2">
+                    <div className="w-full lg:w-[420px] bg-stone-50/70 p-8 lg:p-12 flex flex-col relative shrink-0">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="sticky top-24"
+                        >
+                            <h2 className="text-xl font-fraunces font-bold tracking-wide mb-8 text-stone-800">Order Summary</h2>
+                            <div className="flex flex-col gap-5 mb-8 max-h-[40vh] overflow-y-auto pr-2 custom-scrollbar">
                                 {cart.length === 0 ? (
                                     <div className="text-center py-8 text-stone-500 italic text-sm">
                                         <p className="mb-2">Your cart is empty</p>
@@ -317,8 +331,8 @@ export default function CheckoutPage() {
                                     <span className="text-[9px] uppercase tracking-wider text-stone-400 font-bold">Cold Chain</span>
                                 </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </div>
 
                 </div>
             </div>

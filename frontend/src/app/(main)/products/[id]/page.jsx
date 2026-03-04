@@ -222,7 +222,7 @@ export default function ProductDetailPage() {
             />
             <div className="fixed inset-0 bg-amber-50/20 z-0" />
 
-            <div className="relative z-10 pt-28 pb-20">
+            <div className="relative z-10 pt-28">
 
                 {/* ═══════════════════════════════════════════
                     ROW 1: Hero (Image Left, Details Right)
@@ -358,7 +358,7 @@ export default function ProductDetailPage() {
                 </div>
 
                 {/* Footer Image */}
-                <div className="relative w-full mt-8">
+                <div className="relative w-full">
                     <Image
                         src="/images/footer image.png"
                         alt="Wave of Bengal Footer"
