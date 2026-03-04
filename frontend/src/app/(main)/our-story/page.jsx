@@ -8,17 +8,27 @@ import Link from 'next/link';
 const storyFrames = [
     {
         label: 'Brand Story',
+<<<<<<< HEAD
         year: 'Est. 1970s',
         heading: 'Our Story',
         body: [
             "Wave of Bengal is recognised as one of the most trusted names in seafood processing from the Eastern Coast of India, West Bengal, Kolkata. We have positioned our brand uniquely and strategically, serving consumers across India.",
             "Keeping up with the dynamism of our acquired knowledge, modern infrastructure, and innovative technology \u2014 including a competent in-house lab approved by EIC, Govt. of India \u2014 we have been committed since inception to pushing forward growth consistency from advanced shrimp processing to delivering a range of best-quality and value-added shrimps.",
             "Today, Wave of Bengal brings the finest sustainably sourced seafood directly to your doorstep in Kolkata, combining over four decades of industry expertise with state-of-the-art processing facilities.",
+=======
+        year: 'Est. 1952',
+        heading: 'Brand Story',
+        body: [
+            "Since 1952, Wave of Bengal has been more than just a name — it's a testament to the relationship between man and the deep sea.",
+            "Our story began with our grandfather's wooden trawler and a promise to honor the ocean that had sustained generations of fishermen before him.",
+            "Today, we combine traditional wisdom with state-of-the-art cold chain technology to bring the finest treasures directly to your doorstep.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         ],
         cta: { label: 'Shop Fresh Catch', href: '/products' },
         scrollHint: true,
     },
     {
+<<<<<<< HEAD
         label: 'The Foundation',
         year: '1970s',
         heading: 'The Foundation',
@@ -76,6 +86,55 @@ const storyFrames = [
         body: [
             "Wave of Bengal began serving consumers directly in India, starting from Kolkata. We stand with our core fundamentals \u2014 engaging with our farmers and customers, creating better supply chains, and meeting consumer needs with refined services, teamwork, and flawless management.",
             "From the Bay of Bengal to your doorstep \u2014 premium, sustainably sourced seafood, now just a click away.",
+=======
+        label: 'The Beginning',
+        year: '1952',
+        heading: 'The Beginning',
+        highlight: 'Where it all began',
+        body: [
+            "Our grandfather first set sail in the Bay of Bengal, learning the ancient art of sustainable fishing from generations before him.",
+            "With a small wooden boat and big dreams, he began a legacy that would span over seven decades.",
+        ],
+    },
+    {
+        label: 'Expanding Horizons',
+        year: '1978',
+        heading: 'Expanding Horizons',
+        highlight: 'Growth & tradition',
+        body: [
+            "The second generation took the helm, modernizing our fleet while preserving traditional fishing methods.",
+            "We began supplying to local markets, building relationships that last to this day.",
+        ],
+    },
+    {
+        label: 'Premium Quality Focus',
+        year: '2005',
+        heading: 'Premium Quality Focus',
+        highlight: 'Excellence redefined',
+        body: [
+            "We invested in cold chain infrastructure and quality control, ensuring that every catch reaches customers at peak freshness.",
+            "Our reputation for premium seafood began to spread across regions.",
+        ],
+    },
+    {
+        label: 'Digital Transformation',
+        year: '2020',
+        heading: 'Digital Transformation',
+        highlight: 'A new chapter',
+        body: [
+            "Wave of Bengal was born — bringing our 70-year heritage directly to your doorstep.",
+            "Same quality, same values, now accessible to seafood lovers across India through technology.",
+        ],
+    },
+    {
+        label: 'Ocean to Doorstep',
+        year: 'Today',
+        heading: 'Ocean to Doorstep',
+        highlight: 'Legacy lives on',
+        body: [
+            "We continue to honor our grandfather's vision — sustainable fishing, uncompromising quality, and a deep respect for the ocean.",
+            "The journey continues.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         ],
         cta: { label: 'Shop Fresh Catch', href: '/products' }
     },
@@ -103,12 +162,20 @@ function StoryFrame({ frame, scrollYProgress, index, total }) {
     return (
         <motion.div
             style={{ opacity, y }}
+<<<<<<< HEAD
             className="absolute inset-0 flex flex-col justify-center px-8 md:px-12 lg:px-20 py-12 overflow-y-auto"
+=======
+            className="absolute inset-0 flex flex-col justify-center px-12 lg:px-20 py-16"
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         >
             <span className="text-[#c5a061] text-xs font-bold uppercase tracking-[0.3em] mb-3 block">
                 {frame.year}
             </span>
+<<<<<<< HEAD
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-cinzel font-black text-white mb-3 tracking-tight leading-[1.15] break-words">
+=======
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-cinzel font-black text-white mb-3 tracking-tight leading-tight">
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                 {frame.heading}
             </h2>
             {frame.highlight && (
@@ -249,37 +316,66 @@ const values = [
     {
         icon: "🦐",
         title: "Uncompromising Quality",
+<<<<<<< HEAD
         description: "Complete quality control at every stage — from farm to processing to delivery. Our state-of-the-art facility with international accreditation ensures only the finest shrimp reaches you.",
+=======
+        description: "Every catch is hand-selected by our master inspectors. We reject anything that doesn't meet our exacting premium standards — because you deserve only the finest.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         accent: "from-amber-400 to-orange-500"
     },
     {
         icon: "🌊",
+<<<<<<< HEAD
         title: "Sustainable Aquaculture",
         description: "We champion environmental sustainability by certifying our aquaculture shrimp farms through independent bodies like ASC and BAP, promoting responsible farming practices.",
+=======
+        title: "Ocean Stewardship",
+        description: "We practice sustainable fishing methods that protect marine ecosystems. Our commitment ensures thriving oceans for generations yet to come.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         accent: "from-cyan-400 to-blue-500"
     },
     {
         icon: "🤝",
+<<<<<<< HEAD
         title: "Farmer Partnerships",
         description: "Over 40 years of engaging with our farmers — providing financial support, buyback arrangements, and building a supply chain rooted in trust and mutual growth.",
+=======
+        title: "Community First",
+        description: "We support local fishing communities, ensuring fair wages and sustainable livelihoods for the families who depend on the sea for their daily sustenance.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         accent: "from-emerald-400 to-green-500"
     },
     {
         icon: "❄️",
+<<<<<<< HEAD
         title: "Modern Processing",
         description: "Our state-of-the-art facility at Rajarhat, Kolkata — within 30 minutes of the airport — features advanced infrastructure with BSCI-approved social compliances and accommodation for 500 workers.",
+=======
+        title: "Cold Chain Excellence",
+        description: "From the moment of catch to your doorstep delivery, our seafood never breaks the cold chain. Absolute freshness is our non-negotiable guarantee.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         accent: "from-sky-400 to-indigo-500"
     },
     {
         icon: "🔍",
+<<<<<<< HEAD
         title: "Certified Excellence",
         description: "International accreditations including ASC and BAP certifications ensure our shrimp meets the highest global standards for quality, sustainability, and traceability.",
+=======
+        title: "Full Transparency",
+        description: "Track every product back to its source. Know the exact waters, the fishing method, and the journey your seafood took to reach your table.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         accent: "from-violet-400 to-purple-500"
     },
     {
         icon: "💚",
+<<<<<<< HEAD
         title: "Serving Kolkata",
         description: "Now bringing Eastern India's finest sustainably sourced shrimp directly to consumers in Kolkata — premium quality from the Bay of Bengal to your doorstep.",
+=======
+        title: "Customer Obsession",
+        description: "Your satisfaction is our deepest mission. We're not satisfied until you're absolutely delighted with every order, every time.",
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         accent: "from-rose-400 to-pink-500"
     }
 ];

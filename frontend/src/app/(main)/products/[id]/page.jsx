@@ -158,6 +158,7 @@ export default function ProductDetailPage() {
                     const parsed = JSON.parse(stored);
                     const storedProduct = parsed.find(p => p.id === params.id);
                     if (storedProduct) {
+<<<<<<< HEAD
                         const hasSizes = storedProduct.sizes?.length > 0;
                         found = {
                             ...storedProduct,
@@ -167,6 +168,15 @@ export default function ProductDetailPage() {
                             whatYouReceiveDetail: storedProduct.whatYouReceiveDetail || 'Premium export-grade seafood, individually quick-frozen to lock in freshness.',
                             image: storedProduct.images?.[0] || storedProduct.image || '/images/black%20tiger.jpeg',
                             sizes: hasSizes ? storedProduct.sizes : [
+=======
+                        found = {
+                            ...storedProduct,
+                            displayName: `${storedProduct.name} (${storedProduct.weight || '500g'})`,
+                            subtitle: storedProduct.category || 'Premium Selection',
+                            whatYouReceive: 'Carefully cleaned and frozen at peak freshness.',
+                            whatYouReceiveDetail: 'Premium export-grade seafood, individually quick-frozen to lock in freshness.',
+                            sizes: [
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                                 { id: '250g', label: '250g', price: Math.round(storedProduct.price * 0.55) },
                                 { id: '500g', label: '500g', price: storedProduct.price },
                                 { id: '1kg', label: '1 Kg', price: Math.round(storedProduct.price * 1.8) }
@@ -233,6 +243,7 @@ export default function ProductDetailPage() {
                     <div className="flex flex-col md:flex-row items-stretch">
                         {/* Left: Large Product Image */}
                         <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-[70vh] rounded-2xl overflow-hidden">
+<<<<<<< HEAD
                             {(product.image || '').startsWith('data:') ? (
                                 // eslint-disable-next-line @next/next/no-img-element
                                 <img src={product.image} alt={product.name} className="w-full h-full object-cover absolute inset-0" />
@@ -246,6 +257,15 @@ export default function ProductDetailPage() {
                                     unoptimized
                                 />
                             )}
+=======
+                            <Image
+                                src={product.image}
+                                alt={product.name}
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+>>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                         </div>
 
                         {/* Right: Product Details */}
