@@ -69,14 +69,14 @@ export default function LandingPage({ onEnter }) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="absolute inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
+                        className="absolute inset-0 z-100 flex items-center justify-center bg-black/60 backdrop-blur-md p-4"
                     >
                         <motion.div
                             initial={{ scale: 0.92, y: 30, opacity: 0 }}
                             animate={{ scale: 1, y: 0, opacity: 1 }}
                             exit={{ scale: 0.92, y: 30, opacity: 0 }}
                             transition={{ type: "spring", damping: 22, stiffness: 260 }}
-                            className="bg-black/25 backdrop-blur-xl border border-white/[0.12] p-8 sm:p-10 rounded-[2rem] shadow-[0_8px_60px_rgba(0,0,0,0.6),_inset_0_1px_0_rgba(255,255,255,0.06)] w-full max-w-[28rem] relative flex flex-col items-center overflow-hidden"
+                            className="bg-black/25 backdrop-blur-xl border border-white/12 p-8 sm:p-10 rounded-4xl shadow-[0_8px_60px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.06)] w-full max-w-md relative flex flex-col items-center overflow-hidden"
                         >
                             <button
                                 onClick={() => setShowLoginModal(false)}
@@ -89,7 +89,7 @@ export default function LandingPage({ onEnter }) {
 
                             {/* Header */}
                             <div className="flex flex-col items-center mb-8 mt-2">
-                                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/[0.06] mb-5">
+                                <div className="p-3 rounded-2xl bg-white/4 border border-white/6 mb-5">
                                     <svg className="w-7 h-7 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                     </svg>
@@ -102,9 +102,9 @@ export default function LandingPage({ onEnter }) {
                                 {/* User Portal Card */}
                                 <button
                                     onClick={() => router.push('/login')}
-                                    className="w-full flex items-center gap-4 p-5 bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.08] hover:border-white/20 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group shadow-[0_0_25px_rgba(255,255,255,0.08)] hover:shadow-[0_0_35px_rgba(255,255,255,0.14)]"
+                                    className="w-full flex items-center gap-4 p-5 bg-white/6 hover:bg-white/10 border border-white/8 hover:border-white/20 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group shadow-[0_0_25px_rgba(255,255,255,0.08)] hover:shadow-[0_0_35px_rgba(255,255,255,0.14)]"
                                 >
-                                    <div className="p-3.5 rounded-xl bg-white/[0.06] group-hover:bg-white/[0.12] transition-all duration-300 shrink-0">
+                                    <div className="p-3.5 rounded-xl bg-white/6 group-hover:bg-white/12 transition-all duration-300 shrink-0">
                                         <svg className="w-6 h-6 text-white/60 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                         </svg>
@@ -120,15 +120,15 @@ export default function LandingPage({ onEnter }) {
 
                                 {/* Divider */}
                                 <div className="flex items-center gap-3 px-4 my-1">
-                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                                    <div className="flex-1 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
                                     <span className="text-white/40 text-[11px] uppercase tracking-[0.3em] font-semibold">or</span>
-                                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                                    <div className="flex-1 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
                                 </div>
 
                                 {/* Admin Portal Card */}
                                 <button
                                     onClick={() => router.push('/admin-login')}
-                                    className="w-full flex items-center gap-4 p-5 bg-[#d97736]/[0.08] hover:bg-[#d97736]/[0.14] border border-[#d97736]/[0.12] hover:border-[#d97736]/35 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group shadow-[0_0_25px_rgba(217,119,54,0.10)] hover:shadow-[0_0_35px_rgba(217,119,54,0.18)]"
+                                    className="w-full flex items-center gap-4 p-5 bg-[#d97736]/8 hover:bg-[#d97736]/14 border border-[#d97736]/12 hover:border-[#d97736]/35 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 group shadow-[0_0_25px_rgba(217,119,54,0.10)] hover:shadow-[0_0_35px_rgba(217,119,54,0.18)]"
                                 >
                                     <div className="p-3.5 rounded-xl bg-[#d97736]/10 group-hover:bg-[#d97736]/20 transition-all duration-300 shrink-0">
                                         <svg className="w-6 h-6 text-[#d97736]/70 group-hover:text-[#d97736] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -147,7 +147,7 @@ export default function LandingPage({ onEnter }) {
                             </div>
 
                             {/* Bottom decorative glow */}
-                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
                         </motion.div>
                     </motion.div>
                 )}

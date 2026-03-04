@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useCart } from '@/contexts/CartContext';
+import AIRecipe from './AIRecipe';
 
 function StarRating({ rating }) {
     return (
@@ -246,6 +247,9 @@ export default function ProductDetail({ product, allProducts, onViewProduct, onC
                     </p>
                 </div>
             </div>
+
+            {/* ═══════ AI RECIPE SECTION ═══════ */}
+            <AIRecipe product={product} />
 
             {/* Trust Badges */}
             <div className="flex items-center justify-center flex-wrap divide-x divide-stone-300 mb-12">
