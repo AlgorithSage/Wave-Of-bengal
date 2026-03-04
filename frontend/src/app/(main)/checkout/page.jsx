@@ -103,13 +103,13 @@ export default function CheckoutPage() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center gap-4 mb-12 pb-8 border-b border-stone-200"
+                    className="flex flex-col items-center justify-center gap-4 mb-12 pb-8 border-b border-stone-200"
                 >
-                    <Link href="/" className="shrink-0 bg-white p-2 rounded-2xl border border-stone-200 shadow-sm hover:border-amber-500/30 transition-all">
-                        <Image src="/images/WOB-black-4.png" alt="Wave of Bengal" width={48} height={48} className="object-contain" />
+                    <Link href="/" className="transition-transform hover:scale-105 duration-300">
+                        <Image src="/images/WOB-black-4.png" alt="Wave of Bengal" width={180} height={48} className="object-contain h-12 w-auto" priority />
                     </Link>
-                    <div>
-                        <h1 className="text-3xl md:text-4xl font-fraunces font-bold text-stone-800 tracking-wide uppercase">Checkout</h1>
+                    <div className="text-center">
+                        <h1 className="text-3xl md:text-4xl font-fraunces font-bold text-stone-800 tracking-wide uppercase mt-2">Checkout</h1>
                         <p className="text-sm font-medium italic text-stone-500 mt-1">Secure and fast checkout</p>
                     </div>
                     <div className="ml-auto hidden md:flex items-center gap-6">
