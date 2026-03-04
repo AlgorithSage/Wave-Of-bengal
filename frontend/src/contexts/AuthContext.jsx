@@ -26,14 +26,26 @@ export function AuthProvider({ children }) {
 
     // Helper: fetch or create a Firestore profile, return the role
     const fetchOrCreateProfile = async (firebaseUser) => {
+        // 1. Check if user is an admin
+        const adminRef = doc(db, 'admins', firebaseUser.uid);
+        const adminDoc = await getDoc(adminRef);
+
+        if (adminDoc.exists()) {
+            const adminData = adminDoc.data();
+            setProfile(adminData);
+            setIsAdmin(true);
+            return 'admin';
+        }
+
+        // 2. If not an admin, check/create as a regular user
         const userRef = doc(db, 'users', firebaseUser.uid);
         const userDoc = await getDoc(userRef);
 
         if (userDoc.exists()) {
             const userData = userDoc.data();
             setProfile(userData);
-            setIsAdmin(userData.role === 'admin');
-            return userData.role;
+            setIsAdmin(false);
+            return 'customer'; // Default role for users
         } else {
             const newProfile = {
                 name: firebaseUser.displayName || 'User',
@@ -134,14 +146,17 @@ export function AuthProvider({ children }) {
     const updateProfile = async (updates) => {
         if (!user) throw new Error('Not authenticated');
         const { role, ...safeUpdates } = updates; // strip role
-        const userRef = doc(db, 'users', user.uid);
+
+        const collectionName = isAdmin ? 'admins' : 'users';
+        const userRef = doc(db, collectionName, user.uid);
+
         await updateDoc(userRef, { ...safeUpdates, updatedAt: serverTimestamp() });
         // Refresh local state
         const freshDoc = await getDoc(userRef);
         if (freshDoc.exists()) {
             const data = freshDoc.data();
             setProfile(data);
-            setIsAdmin(data.role === 'admin');
+            setIsAdmin(collectionName === 'admins');
         }
     };
 

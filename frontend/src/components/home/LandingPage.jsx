@@ -30,7 +30,7 @@ export default function LandingPage({ onEnter }) {
                 className="relative z-20 flex flex-col items-center"
             >
                 {/* Glass Card */}
-                <div className="flex flex-col items-center bg-black/5 backdrop-blur-[2px] rounded-3xl border border-white/10 shadow-2xl px-10 py-8">
+                <div className="flex flex-col items-center bg-black/5 backdrop-blur-[2px] rounded-2xl-3xl border border-white/10 shadow-2xl px-10 py-8">
 
                     {/* Logo */}
                     <div className="w-full max-w-sm sm:max-w-md md:max-w-lg px-2 flex justify-center">
@@ -76,7 +76,7 @@ export default function LandingPage({ onEnter }) {
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.95, y: 30 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-[#0b0c10]/90 backdrop-blur-xl border border-white/10 p-8 lg:p-10 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)] w-full max-w-[26rem] relative flex flex-col items-center"
+                            className="bg-[#0b0c10]/90 backdrop-blur-xl border border-white/10 p-8 lg:p-10 rounded-2xl-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)] w-full max-w-[26rem] relative flex flex-col items-center"
                         >
                             <button
                                 onClick={() => setShowLoginModal(false)}

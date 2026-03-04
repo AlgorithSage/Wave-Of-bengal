@@ -39,7 +39,7 @@ export default function SustainabilityBanner() {
                 >
                     <Link
                         href="/sustainability"
-                        className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-ocean-deep font-bold py-4 px-8 rounded transition-all w-full sm:w-auto shadow-[0_4px_12px_rgba(255,255,255,0.15)] hover:-translate-y-1 hover:shadow-[0_6px_16px_rgba(255,255,255,0.25)]"
+                        className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-ocean-deep font-bold py-4 px-8 rounded-2xl transition-all w-full sm:w-auto shadow-[0_4px_12px_rgba(255,255,255,0.15)] hover:-translate-y-1 hover:shadow-[0_6px_16px_rgba(255,255,255,0.25)]"
                     >
                         Learn Our Practices
                     </Link>

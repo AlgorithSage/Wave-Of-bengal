@@ -18,7 +18,7 @@ export default function OrdersTable() {
     }
 
     return (
-        <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden h-full shadow-2xl">
+        <div className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl-3xl overflow-hidden h-full shadow-2xl">
             <div className="p-6 border-b border-white/10 flex justify-between items-center">
                 <h2 className="text-xl font-fraunces font-medium tracking-wide text-white">Recent Orders</h2>
                 <button className="text-white/70 font-semibold hover:text-white transition-colors text-sm tracking-wide">
@@ -43,7 +43,7 @@ export default function OrdersTable() {
                                 <td className="px-6 py-5 text-white/80">{order.customer}</td>
                                 <td className="px-6 py-5 text-white/50 font-mono text-sm">{order.date}</td>
                                 <td className="px-6 py-5">
-                                    <span className={`px-3 py-1.5 rounded-md text-xs font-semibold tracking-wide ${getStatusColor(order.status)}`}>
+                                    <span className={`px-3 py-1.5 rounded-2xl text-xs font-semibold tracking-wide ${getStatusColor(order.status)}`}>
                                         {order.status}
                                     </span>
                                 </td>

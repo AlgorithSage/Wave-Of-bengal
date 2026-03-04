@@ -21,8 +21,8 @@ export default function Register() {
         setError('');
         setLoading(true);
         try {
-            const { role } = await registerWithEmail(name, email, password);
-            router.push(role === 'admin' ? '/admin' : '/home');
+            await registerWithEmail(name, email, password);
+            router.push('/home');
         } catch (err) {
             setError(err.message || 'Failed to register');
         } finally {
@@ -34,8 +34,8 @@ export default function Register() {
         setError('');
         setLoading(true);
         try {
-            const { role } = await loginWithGoogle();
-            router.push(role === 'admin' ? '/admin' : '/home');
+            await loginWithGoogle();
+            router.push('/home');
         } catch (err) {
             if (err.code === 'auth/popup-closed-by-user') return;
             setError(err.message || 'Failed to login with Google');
@@ -60,7 +60,7 @@ export default function Register() {
                     <p className="text-ocean-muted text-base lg:text-lg mb-10">Sign up and get 30 day free trial</p>
 
                     {error && (
-                        <div className="bg-red-50 text-red-500 text-sm p-3 rounded-xl mb-6 text-center border border-red-100 font-medium">
+                        <div className="bg-red-50 text-red-500 text-sm p-3 rounded-2xl mb-6 text-center border border-red-100 font-medium">
                             {error}
                         </div>
                     )}
@@ -149,7 +149,7 @@ export default function Register() {
 
             {/* Right Pane (Image Placeholder) */}
             <div className="hidden lg:flex lg:w-[55%] h-full p-4 lg:p-6 pl-0">
-                <div className="w-full h-full relative overflow-hidden rounded-[2.5rem] shadow-xl border border-gray-100">
+                <div className="w-full h-full relative overflow-hidden rounded-2xl-[2.5rem] shadow-xl border border-gray-100">
                     <Image
                         src="/images/loginbg.png"
                         alt="Wave of Bengal Authentication Background"

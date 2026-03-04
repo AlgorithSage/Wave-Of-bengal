@@ -304,8 +304,8 @@ export default function Certifications() {
 
                     {/* ═══════════ GUARANTEE SECTION ═══════════ */}
                     <div className="relative py-24 mt-10 overflow-hidden">
-                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-gold/15 rounded-3xl" />
-                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.06)_0%,transparent_70%)] rounded-3xl" />
+                        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-gold/15 rounded-2xl-3xl" />
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.06)_0%,transparent_70%)] rounded-2xl-3xl" />
 
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}

@@ -17,7 +17,7 @@ const DEFAULT_PRODUCTS = [
         category: 'Prawns',
         stock: 100,
         status: 'active',
-        image: '/images/black tiger.jpeg',
+        image: '/images/black%20tiger.jpeg',
         rating: 5
     },
     {
@@ -29,7 +29,7 @@ const DEFAULT_PRODUCTS = [
         category: 'Prawns',
         stock: 80,
         status: 'active',
-        image: '/images/butter prawns .jpeg',
+        image: '/images/butter%20prawns%20.jpeg',
         rating: 4
     },
     {
@@ -53,7 +53,7 @@ const DEFAULT_PRODUCTS = [
         category: 'Prawns',
         stock: 120,
         status: 'active',
-        image: '/images/black tiger.jpeg',
+        image: '/images/black%20tiger.jpeg',
         rating: 4
     },
     {
@@ -65,7 +65,7 @@ const DEFAULT_PRODUCTS = [
         category: 'Prawns',
         stock: 90,
         status: 'active',
-        image: '/images/butter prawns .jpeg',
+        image: '/images/butter%20prawns%20.jpeg',
         rating: 3
     },
     {
@@ -89,7 +89,7 @@ const DEFAULT_PRODUCTS = [
         category: 'Fish',
         stock: 50,
         status: 'active',
-        image: '/images/black tiger.jpeg',
+        image: '/images/black%20tiger.jpeg',
         rating: 5
     },
     {
@@ -101,7 +101,7 @@ const DEFAULT_PRODUCTS = [
         category: 'Fish',
         stock: 40,
         status: 'active',
-        image: '/images/butter prawns .jpeg',
+        image: '/images/butter%20prawns%20.jpeg',
         rating: 4
     }
 ];
@@ -141,7 +141,7 @@ export default function ProductsPage() {
                 if (Array.isArray(parsed) && parsed.length > 0) {
                     setProducts(parsed.map(p => ({
                         ...p,
-                        image: p.image || '/images/black tiger.jpeg',
+                        image: p.image || '/images/black%20tiger.jpeg',
                         rating: p.rating || 4
                     })));
                 }
@@ -210,7 +210,6 @@ export default function ProductsPage() {
                         <h1 className="font-cinzel text-4xl md:text-5xl lg:text-6xl text-stone-800 mb-4 uppercase tracking-widest font-bold">
                             Our Signature Selection
                         </h1>
-
 
                         <p className="text-stone-500 text-base md:text-lg max-w-xl mx-auto italic font-light">
                             Explore our finest selection of export-grade seafood, instantly frozen lock in time.
@@ -283,20 +282,20 @@ export default function ProductsPage() {
                                             {/* Actions */}
                                             <div className="flex gap-2">
                                                 <Link
-                                                    href={`/cart?product=${product.id}`}
+                                                    href={`/products/${product.id}`}
                                                     className="btn-gold flex-1 py-2.5 text-center text-sm rounded-full"
                                                 >
-                                                    Select Options
+                                                    View Details
                                                 </Link>
-                                                <Link
-                                                    href={`/cart?product=${product.id}`}
+                                                <button
+                                                    onClick={() => handleAddToCart(product)}
                                                     className="btn-gold w-11 h-11 flex items-center justify-center rounded-full"
                                                     title="Add to Cart"
                                                 >
                                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                                     </svg>
-                                                </Link>
+                                                </button>
                                             </div>
                                         </div>
                                     </motion.div>
@@ -370,7 +369,7 @@ export default function ProductsPage() {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }}
-                        className="fixed bottom-8 right-8 bg-stone-800 text-white px-6 py-4 rounded-xl flex items-center gap-3 z-50 shadow-2xl border border-stone-600"
+                        className="fixed bottom-8 right-8 bg-stone-800 text-white px-6 py-4 rounded-2xl flex items-center gap-3 z-50 shadow-2xl border border-stone-600"
                     >
                         <svg className="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                         <span className="font-medium text-sm tracking-wide">{toastMessage}</span>

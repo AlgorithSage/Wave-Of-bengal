@@ -54,7 +54,7 @@ const StatCard = ({ title, value, icon, delay }) => (
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-    className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 hover:border-white/30 hover:bg-[#0a1f2e]/40 rounded-3xl p-7 shadow-[0_16px_40px_rgba(0,0,0,0.6)] relative overflow-hidden group transition-all duration-500"
+    className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 hover:border-white/30 hover:bg-[#0a1f2e]/40 rounded-2xl-3xl p-7 shadow-[0_16px_40px_rgba(0,0,0,0.6)] relative overflow-hidden group transition-all duration-500"
   >
     <div className="absolute top-0 right-0 p-5 opacity-10 group-hover:opacity-30 transition-opacity duration-500 text-[#c9a962]">
       {icon}
@@ -199,7 +199,7 @@ export default function SearchAnalyticsAdmin() {
           </div>
           <button 
             onClick={exportToCSV}
-            className="mt-6 md:mt-0 font-body text-xs uppercase tracking-[0.15em] font-bold py-3 px-8 rounded-xl border border-[#c9a962]/30 text-[#c9a962] bg-black/20 hover:bg-[#c9a962]/20 backdrop-blur-md transition-all shadow-[0_8px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_25px_rgba(201,169,98,0.2)]"
+            className="mt-6 md:mt-0 font-body text-xs uppercase tracking-[0.15em] font-bold py-3 px-8 rounded-2xl border border-[#c9a962]/30 text-[#c9a962] bg-black/20 hover:bg-[#c9a962]/20 backdrop-blur-md transition-all shadow-[0_8px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_25px_rgba(201,169,98,0.2)]"
           >
             Export CSV
           </button>
@@ -228,7 +228,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, scale: 0.95, y: 20 }}
            animate={{ opacity: 1, scale: 1, y: 0 }}
            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="lg:col-span-2 bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
+           className="lg:col-span-2 bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-2xl-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
         >
           <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-8 drop-shadow-sm">Weekly Search Velocity</h3>
           
@@ -238,7 +238,7 @@ export default function SearchAnalyticsAdmin() {
               return (
                 <div key={trend.day} className="flex flex-col items-center justify-end h-full w-full group relative">
                   {/* Tooltip */}
-                  <div className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#0a1f2e] border border-[#c9a962]/20 text-[#c9a962] text-xs py-1 px-3 rounded shadow-lg pointer-events-none">
+                  <div className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#0a1f2e] border border-[#c9a962]/20 text-[#c9a962] text-xs py-1 px-3 rounded-2xl shadow-lg pointer-events-none">
                     {trend.searches}
                   </div>
                   {/* Bar */}
@@ -246,7 +246,7 @@ export default function SearchAnalyticsAdmin() {
                     initial={{ height: 0 }}
                     animate={{ height: `${heightPercent}%` }}
                     transition={{ delay: 0.5 + (i * 0.1), duration: 0.8, type: "spring" }}
-                    className="w-full max-w-[40px] bg-gradient-to-t from-[#c9a962]/20 to-[#c9a962]/80 hover:to-[#d4b978] rounded-t-sm transition-colors cursor-pointer"
+                    className="w-full max-w-[40px] bg-gradient-to-t from-[#c9a962]/20 to-[#c9a962]/80 hover:to-[#d4b978] rounded-t- transition-colors cursor-pointer"
                   />
                   {/* Label */}
                   <span className="text-[#8a9bae] text-xs font-medium tracking-wider mt-4">{trend.day}</span>
@@ -261,7 +261,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, x: 20, y: 20 }}
            animate={{ opacity: 1, x: 0, y: 0 }}
            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-between"
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-2xl-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-between"
         >
           <div>
             <h3 className="text-[#f0ead6] font-heading text-2xl font-medium tracking-wide mb-6 drop-shadow-sm">Top Sea Queries</h3>
@@ -285,13 +285,13 @@ export default function SearchAnalyticsAdmin() {
                   <span className="text-[#c9a962] font-semibold tracking-wider drop-shadow-md">{item.count.toLocaleString()}</span>
                 </div>
                 {/* Horizontal Progress Bar Background */}
-                <div className="absolute bottom-0 left-0 h-full bg-[#c9a962]/10 rounded-md z-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 h-full bg-[#c9a962]/10 rounded-2xl z-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none" />
               </motion.div>
             ))}
           </div>
           </div>
           
-          <button className="w-full mt-6 font-body text-xs uppercase tracking-[0.2em] font-bold py-3.5 border border-[#c9a962]/30 text-[#c9a962] bg-[#c9a962]/5 hover:bg-[#c9a962]/20 hover:border-[#c9a962]/80 transition-all rounded-xl shadow-[0_0_15px_rgba(201,169,98,0.1)] hover:shadow-[0_0_20px_rgba(201,169,98,0.3)]">
+          <button className="w-full mt-6 font-body text-xs uppercase tracking-[0.2em] font-bold py-3.5 border border-[#c9a962]/30 text-[#c9a962] bg-[#c9a962]/5 hover:bg-[#c9a962]/20 hover:border-[#c9a962]/80 transition-all rounded-2xl shadow-[0_0_15px_rgba(201,169,98,0.1)] hover:shadow-[0_0_20px_rgba(201,169,98,0.3)]">
             View Expanded Report
           </button>
         </motion.div>
@@ -305,7 +305,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, scale: 0.95, y: 20 }}
            animate={{ opacity: 1, scale: 1, y: 0 }}
            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-2xl-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
         >
           <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-6 drop-shadow-sm flex items-center gap-3">
             <svg className="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
@@ -326,7 +326,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-2xl-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)]"
         >
           <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-6 drop-shadow-sm flex items-center gap-3">
              <svg className="w-5 h-5 text-[#c9a962]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -334,7 +334,7 @@ export default function SearchAnalyticsAdmin() {
           </h3>
           <div className="space-y-3">
             {data.topCities.map((c, i) => (
-              <div key={c.city} className="flex justify-between items-center bg-white/5 rounded-xl px-4 py-3 border border-white/5 hover:bg-white/10 transition-colors">
+              <div key={c.city} className="flex justify-between items-center bg-white/5 rounded-2xl px-4 py-3 border border-white/5 hover:bg-white/10 transition-colors">
                 <span className="text-[#f0ead6] tracking-wide">{c.city}</span>
                 <span className="text-[#c9a962] font-semibold">{c.traffic}</span>
               </div>
@@ -347,7 +347,7 @@ export default function SearchAnalyticsAdmin() {
            initial={{ opacity: 0, x: 20, y: 20 }}
            animate={{ opacity: 1, x: 0, y: 0 }}
            transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] flex flex-col justify-start"
+           className="bg-[#0a1f2e]/30 backdrop-blur-[24px] border border-white/10 rounded-2xl-3xl p-8 shadow-[0_16px_40px_rgba(0,0,0,0.6)] flex flex-col justify-start"
         >
           <div>
             <h3 className="text-[#f0ead6] font-heading text-xl font-medium tracking-wide mb-8 drop-shadow-sm flex items-center gap-3">

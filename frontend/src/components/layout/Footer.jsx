@@ -60,12 +60,12 @@ export default function Footer() {
                             <input
                                 type="email"
                                 placeholder="Enter your email"
-                                className="bg-white border border-oceanic-blue/20 rounded-l-lg px-4 py-2 text-sm text-ocean-deep focus:outline-none focus:border-oceanic-blue w-full font-medium"
+                                className="bg-white border border-oceanic-blue/20 rounded-l- px-4 py-2 text-sm text-ocean-deep focus:outline-none focus:border-oceanic-blue w-full font-medium"
                                 required
                             />
                             <button
                                 type="submit"
-                                className="bg-ocean-deep hover:bg-oceanic-blue text-sky-light font-bold px-4 py-2 rounded-r-lg transition-colors"
+                                className="bg-ocean-deep hover:bg-oceanic-blue text-sky-light font-bold px-4 py-2 rounded-r- transition-colors"
                             >
                                 Join
                             </button>

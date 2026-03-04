@@ -14,11 +14,11 @@ export default function Navbar() {
     const toggleCart = () => setIsCartOpen(!isCartOpen);
 
     const navLinks = [
-        { name: 'Home', href: '/home', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-bold transition-colors' },
-        { name: 'Products', href: '/products', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-bold transition-colors' },
-        { name: 'Our Story', href: '/our-story', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
-        { name: 'Sustainability', href: '/sustainability', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
-        { name: 'Certifications', href: '/certifications', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-md text-base font-semibold transition-colors' },
+        { name: 'Home', href: '/home', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-2xl text-base font-bold transition-colors' },
+        { name: 'Products', href: '/products', className: 'text-ocean-deep hover:text-oceanic-blue px-3 py-2 rounded-2xl text-base font-bold transition-colors' },
+        { name: 'Our Story', href: '/our-story', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-2xl text-base font-semibold transition-colors' },
+        { name: 'Sustainability', href: '/sustainability', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-2xl text-base font-semibold transition-colors' },
+        { name: 'Certifications', href: '/certifications', className: 'text-ocean-muted hover:text-oceanic-blue px-3 py-2 rounded-2xl text-base font-semibold transition-colors' },
     ];
 
     const containerVariants = {
@@ -100,7 +100,7 @@ export default function Navbar() {
                                 </Link>
                                 <button
                                     onClick={handleLogout}
-                                    className="text-base border border-ocean-muted/40 text-ocean-deep font-semibold hover:bg-oceanic-blue/10 px-4 py-2 rounded-md transition-colors"
+                                    className="text-base border border-ocean-muted/40 text-ocean-deep font-semibold hover:bg-oceanic-blue/10 px-4 py-2 rounded-2xl transition-colors"
                                 >
                                     Logout
                                 </button>
@@ -108,7 +108,7 @@ export default function Navbar() {
                         ) : (
                             <Link
                                 href="/login"
-                                className="text-base bg-ocean-deep text-sky-light hover:bg-oceanic-blue font-bold px-5 py-2.5 rounded-md transition-all hover:shadow-[0_4px_12px_rgba(14,165,233,0.3)] hover:-translate-y-0.5"
+                                className="text-base bg-ocean-deep text-sky-light hover:bg-oceanic-blue font-bold px-5 py-2.5 rounded-2xl transition-all hover:shadow-[0_4px_12px_rgba(14,165,233,0.3)] hover:-translate-y-0.5"
                             >
                                 Sign In
                             </Link>

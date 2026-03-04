@@ -162,7 +162,7 @@ export default function OurStory() {
                         <div className="mt-12">
                             <Link
                                 href="/products"
-                                className="inline-block px-10 py-4 border-2 border-white/40 text-white font-bold uppercase tracking-widest text-sm rounded-md hover:bg-white/10 hover:border-white transition-all duration-300 shadow-sm"
+                                className="inline-block px-10 py-4 border-2 border-white/40 text-white font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-white/10 hover:border-white transition-all duration-300 shadow-sm"
                             >
                                 Shop Fresh Catch
                             </Link>
@@ -228,7 +228,7 @@ export default function OurStory() {
                                 </div>
 
                                 <div className="w-full pl-12 md:pl-0 md:w-5/12 mt-4 md:mt-0">
-                                    <div className="p-8 border-l border-white/10 bg-white/5 backdrop-blur-md rounded-r-2xl md:rounded-2xl md:border-l-0 hover:bg-white/10 transition-colors">
+                                    <div className="p-8 border-l border-white/10 bg-white/5 backdrop-blur-md rounded-r- md:rounded-2xl md:border-l-0 hover:bg-white/10 transition-colors">
                                         <h3 className="text-2xl font-playfair font-bold text-[#c5a061] mb-2">{item.title}</h3>
                                         <p className="text-[#f5f0e8]/70 leading-relaxed italic mb-4 text-sm uppercase tracking-widest">{item.highlight}</p>
                                         <p className="text-[#f5f0e8]/90 leading-relaxed font-light">{item.description}</p>

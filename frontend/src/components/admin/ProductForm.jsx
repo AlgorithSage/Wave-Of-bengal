@@ -52,7 +52,7 @@ export default function ProductForm({ onClose }) {
                             onChange={handleChange}
                             placeholder="e.g. Premium Ilish"
                             required
-                            className="w-full bg-white/60 border border-white/40 rounded-xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
+                            className="w-full bg-white/60 border border-white/40 rounded-2xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
                         />
                     </div>
                     <div className="space-y-2">
@@ -62,7 +62,7 @@ export default function ProductForm({ onClose }) {
                             value={formData.category}
                             onChange={handleChange}
                             required
-                            className="w-full bg-white/60 border border-white/40 rounded-xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium appearance-none"
+                            className="w-full bg-white/60 border border-white/40 rounded-2xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium appearance-none"
                         >
                             <option value="" disabled>Select Category</option>
                             <option value="fresh-water">Fresh Water Fish</option>
@@ -79,7 +79,7 @@ export default function ProductForm({ onClose }) {
                             onChange={handleChange}
                             placeholder="0.00"
                             required
-                            className="w-full bg-white/60 border border-white/40 rounded-xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
+                            className="w-full bg-white/60 border border-white/40 rounded-2xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
                         />
                     </div>
                     <div className="space-y-2">
@@ -91,7 +91,7 @@ export default function ProductForm({ onClose }) {
                             onChange={handleChange}
                             placeholder="0"
                             required
-                            className="w-full bg-white/60 border border-white/40 rounded-xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
+                            className="w-full bg-white/60 border border-white/40 rounded-2xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
                         />
                     </div>
                 </div>
@@ -105,7 +105,7 @@ export default function ProductForm({ onClose }) {
                         onChange={handleChange}
                         placeholder="Tell us about the source, weight range, and taste notes..."
                         required
-                        className="w-full bg-white/60 border border-white/40 rounded-xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium resize-none"
+                        className="w-full bg-white/60 border border-white/40 rounded-2xl px-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium resize-none"
                     ></textarea>
                 </div>
 

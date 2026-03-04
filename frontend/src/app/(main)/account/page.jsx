@@ -89,7 +89,7 @@ export default function AccountPage() {
         .toUpperCase()
         .slice(0, 2);
 
-    const inputClasses = "w-full bg-white/5 border border-white/10 rounded-xl py-3.5 px-4 text-white placeholder-white/30 focus:ring-2 focus:ring-[#c5a061]/40 focus:border-[#c5a061]/50 outline-none transition-all text-sm font-medium backdrop-blur-sm";
+    const inputClasses = "w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-4 text-white placeholder-white/30 focus:ring-2 focus:ring-[#c5a061]/40 focus:border-[#c5a061]/50 outline-none transition-all text-sm font-medium backdrop-blur-sm";
 
     return (
         <div className="relative min-h-screen bg-[#0a1628] text-white pt-24 pb-20">
@@ -172,7 +172,7 @@ export default function AccountPage() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 overflow-hidden"
+                    className="bg-white/5 backdrop-blur-md rounded-2xl-3xl border border-white/10 overflow-hidden"
                 >
                     {/* Avatar & Overview Banner */}
                     <div className="relative bg-linear-to-r from-[#050B14] via-[#0c1a2e] to-[#0a1628] px-8 py-10 border-b border-white/10">
@@ -219,7 +219,7 @@ export default function AccountPage() {
                             {!editing ? (
                                 <button
                                     onClick={() => setEditing(true)}
-                                    className="flex items-center gap-2 text-sm font-semibold text-[#c5a061] hover:text-[#FFFDD0] transition-colors px-4 py-2 rounded-xl hover:bg-white/5"
+                                    className="flex items-center gap-2 text-sm font-semibold text-[#c5a061] hover:text-[#FFFDD0] transition-colors px-4 py-2 rounded-2xl hover:bg-white/5"
                                 >
                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -230,14 +230,14 @@ export default function AccountPage() {
                                 <div className="flex gap-2">
                                     <button
                                         onClick={handleCancel}
-                                        className="text-sm font-semibold text-white/50 hover:text-white transition-colors px-4 py-2 rounded-xl hover:bg-white/5"
+                                        className="text-sm font-semibold text-white/50 hover:text-white transition-colors px-4 py-2 rounded-2xl hover:bg-white/5"
                                     >
                                         Cancel
                                     </button>
                                     <button
                                         onClick={handleSave}
                                         disabled={saving}
-                                        className="btn-gold flex items-center gap-2 text-sm px-5 py-2 rounded-xl disabled:opacity-50"
+                                        className="btn-gold flex items-center gap-2 text-sm px-5 py-2 rounded-2xl disabled:opacity-50"
                                     >
                                         {saving ? (
                                             <svg className="animate-spin h-4 w-4 text-[#0a1628]" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -365,7 +365,7 @@ export default function AccountPage() {
                         onClick={() => router.push('/home')}
                         className="flex items-center gap-4 p-5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#c5a061]/30 transition-all hover:-translate-y-0.5 group"
                     >
-                        <div className="p-3 rounded-xl bg-[#c5a061]/10 group-hover:bg-[#c5a061]/20 transition-colors">
+                        <div className="p-3 rounded-2xl bg-[#c5a061]/10 group-hover:bg-[#c5a061]/20 transition-colors">
                             <svg className="w-5 h-5 text-[#c5a061]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
@@ -382,7 +382,7 @@ export default function AccountPage() {
                             onClick={() => router.push('/admin')}
                             className="flex items-center gap-4 p-5 bg-white/5 backdrop-blur-md rounded-2xl border border-[#c5a061]/20 hover:border-[#c5a061]/40 transition-all hover:-translate-y-0.5 group"
                         >
-                            <div className="p-3 rounded-xl bg-[#c5a061]/10 group-hover:bg-[#c5a061]/20 transition-colors">
+                            <div className="p-3 rounded-2xl bg-[#c5a061]/10 group-hover:bg-[#c5a061]/20 transition-colors">
                                 <svg className="w-5 h-5 text-[#c5a061]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -400,7 +400,7 @@ export default function AccountPage() {
                         onClick={handleLogout}
                         className="flex items-center gap-4 p-5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-red-500/30 transition-all hover:-translate-y-0.5 group"
                     >
-                        <div className="p-3 rounded-xl bg-red-500/10 group-hover:bg-red-500/20 transition-colors">
+                        <div className="p-3 rounded-2xl bg-red-500/10 group-hover:bg-red-500/20 transition-colors">
                             <svg className="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                             </svg>

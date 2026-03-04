@@ -9,21 +9,21 @@ const MOCK_FEATURED = [
     {
         id: "tiger-prawns-1",
         name: "Jumbo Black Tiger Prawns",
-        price: 24.99,
+        price: 2099,
         weight: "1 lb",
         image: "/images/black%20tiger.jpeg"
     },
     {
         id: "pomfret-1",
         name: "Fresh Butter Prawns",
-        price: 28.50,
+        price: 2399,
         weight: "1 lb",
         image: "/images/butter%20prawns%20.jpeg"
     },
     {
         id: "salmon-1",
         name: "Ocean Skewers",
-        price: 18.99,
+        price: 1599,
         weight: "4 Skewers",
         image: "/images/skewers.jpeg"
     }
@@ -78,11 +78,14 @@ export default function FeaturedProducts() {
                             <div className="p-6 flex flex-col grow">
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-xl font-playfair font-bold text-stone-800 tracking-tight">{product.name}</h3>
-                                    <span className="text-stone-500 font-bold bg-stone-100 px-2 py-1 rounded text-xs">{product.weight}</span>
+                                    <span className="text-stone-500 font-bold bg-stone-100 px-2 py-1 rounded-2xl text-xs">{product.weight}</span>
                                 </div>
 
                                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-stone-100">
-                                    <span className="text-2xl font-heading font-black text-[#c5a061]">${product.price}</span>
+                                    <span className="font-black text-[#c5a061] flex items-baseline gap-0.5">
+                                        <span className="font-body text-xl leading-none">₹</span>
+                                        <span className="font-heading text-2xl leading-none">{product.price.toLocaleString('en-IN')}</span>
+                                    </span>
                                     <button
                                         onClick={() => addToCart(product)}
                                         className="btn-gold w-10 h-10 flex items-center justify-center rounded-full shadow-lg"

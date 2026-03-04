@@ -190,7 +190,7 @@ export default function Sustainability() {
 
                                     {/* Content Card */}
                                     <div className="w-full pl-12 md:pl-0 md:w-5/12 mt-4 md:mt-0">
-                                        <div className="p-8 border-l border-white/10 bg-white/5 backdrop-blur-md rounded-r-2xl md:rounded-2xl md:border-l-0 hover:bg-white/10 transition-colors">
+                                        <div className="p-8 border-l border-white/10 bg-white/5 backdrop-blur-md rounded-r- md:rounded-2xl md:border-l-0 hover:bg-white/10 transition-colors">
                                             <h3 className="text-2xl font-playfair font-bold text-[#c5a061] mb-2">{item.title}</h3>
                                             <p className="text-[#f5f0e8]/70 leading-relaxed italic mb-4 text-sm uppercase tracking-widest">{item.highlight}</p>
                                             <p className="text-[#f5f0e8]/90 leading-relaxed font-light">{item.description}</p>
@@ -253,8 +253,8 @@ export default function Sustainability() {
 
                 {/* ═══════════ OCEAN PROMISE CTA ═══════════ */}
                 <div className="relative py-24 mt-16 overflow-hidden">
-                    <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-[#c5a061]/15 rounded-3xl mx-4 sm:mx-6 lg:mx-8" />
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,160,97,0.08)_0%,transparent_70%)] rounded-3xl mx-4 sm:mx-6 lg:mx-8" />
+                    <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-[#c5a061]/15 rounded-2xl-3xl mx-4 sm:mx-6 lg:mx-8" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,160,97,0.08)_0%,transparent_70%)] rounded-2xl-3xl mx-4 sm:mx-6 lg:mx-8" />
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -273,7 +273,7 @@ export default function Sustainability() {
                         </p>
                         <Link
                             href="/products"
-                            className="btn-gold inline-block px-10 py-4 text-sm rounded-xl text-center"
+                            className="btn-gold inline-block px-10 py-4 text-sm rounded-2xl text-center"
                         >
                             Shop Sustainable Seafood
                         </Link>

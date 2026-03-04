@@ -83,13 +83,13 @@ export default function HeroSection() {
                 >
                     <Link
                         href="/products"
-                        className="btn-gold px-8 py-4 text-sm rounded-md text-center"
+                        className="btn-gold px-8 py-4 text-sm rounded-2xl text-center"
                     >
                         Shop Premium Seafood
                     </Link>
                     <Link
                         href="/our-story"
-                        className="px-8 py-4 border-2 border-[#f5f0e8]/40 text-[#f5f0e8] font-bold uppercase tracking-widest text-sm rounded-md hover:bg-[#f5f0e8]/10 hover:border-[#f5f0e8]/70 transition-all duration-300 text-center"
+                        className="px-8 py-4 border-2 border-[#f5f0e8]/40 text-[#f5f0e8] font-bold uppercase tracking-widest text-sm rounded-2xl hover:bg-[#f5f0e8]/10 hover:border-[#f5f0e8]/70 transition-all duration-300 text-center"
                     >
                         Explore Our Story
                     </Link>

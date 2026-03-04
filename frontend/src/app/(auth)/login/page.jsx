@@ -23,8 +23,8 @@ export default function Login() {
     const router = useRouter();
     const recaptchaRef = useRef(null);
 
-    const handleRedirect = (role) => {
-        router.push(role === 'admin' ? '/admin' : '/home');
+    const handleRedirect = () => {
+        router.push('/home');
     };
 
     const handleEmailLogin = async (e) => {
@@ -143,7 +143,7 @@ export default function Login() {
                                     initial={{ opacity: 0, y: -5 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -5 }}
-                                    className="bg-red-500/10 text-red-400 text-sm p-3 rounded-xl mb-6 text-center border border-red-500/20 font-medium"
+                                    className="bg-red-500/10 text-red-400 text-sm p-3 rounded-2xl mb-6 text-center border border-red-500/20 font-medium"
                                 >
                                     {error}
                                 </motion.div>
@@ -153,7 +153,7 @@ export default function Login() {
                                     initial={{ opacity: 0, y: -5 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -5 }}
-                                    className="bg-emerald-500/10 text-emerald-400 text-sm p-3 rounded-xl mb-6 text-center border border-emerald-500/20 font-medium"
+                                    className="bg-emerald-500/10 text-emerald-400 text-sm p-3 rounded-2xl mb-6 text-center border border-emerald-500/20 font-medium"
                                 >
                                     {success}
                                 </motion.div>
@@ -331,7 +331,7 @@ export default function Login() {
 
             {/* Right Pane — Background Image */}
             <div className="hidden lg:flex lg:w-[55%] h-full p-4 lg:p-6 pl-0">
-                <div className="w-full h-full relative overflow-hidden rounded-4xl">
+                <div className="w-full h-full relative overflow-hidden rounded-2xl-4xl">
                     <Image
                         src="/images/bg/admin-bg.jpeg"
                         alt="Wave of Bengal Premium Seafood"

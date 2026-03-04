@@ -148,7 +148,7 @@ export default function AdminLogin() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full max-w-md bg-black/40 backdrop-blur-lg border border-white/10 rounded-3xl p-8 lg:p-10 shadow-2xl flex flex-col"
+                    className="w-full max-w-md bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl-3xl p-8 lg:p-10 shadow-2xl flex flex-col"
                 >
                     {/* Header */}
                     <div className="flex flex-col items-center mb-8">
@@ -171,7 +171,7 @@ export default function AdminLogin() {
                             <button
                                 key={tab.id}
                                 onClick={() => { setAuthMode(tab.id); setError(''); setSuccess(''); }}
-                                className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-medium tracking-wide uppercase transition-all duration-300 ${authMode === tab.id
+                                className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-2xl text-xs font-medium tracking-wide uppercase transition-all duration-300 ${authMode === tab.id
                                     ? 'bg-white/15 text-white shadow-md border border-white/10'
                                     : 'text-white/40 hover:text-white/70'
                                     }`}
@@ -200,7 +200,7 @@ export default function AdminLogin() {
                                 initial={{ opacity: 0, y: -5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -5 }}
-                                className="bg-rose-500/10 text-rose-400 text-sm p-3 rounded-xl mb-5 text-center border border-rose-500/20 font-medium tracking-wide"
+                                className="bg-rose-500/10 text-rose-400 text-sm p-3 rounded-2xl mb-5 text-center border border-rose-500/20 font-medium tracking-wide"
                             >
                                 {error}
                             </motion.div>
@@ -210,7 +210,7 @@ export default function AdminLogin() {
                                 initial={{ opacity: 0, y: -5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -5 }}
-                                className="bg-emerald-500/10 text-emerald-400 text-sm p-3 rounded-xl mb-5 text-center border border-emerald-500/20 font-medium tracking-wide"
+                                className="bg-emerald-500/10 text-emerald-400 text-sm p-3 rounded-2xl mb-5 text-center border border-emerald-500/20 font-medium tracking-wide"
                             >
                                 {success}
                             </motion.div>

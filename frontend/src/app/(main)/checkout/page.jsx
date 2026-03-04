@@ -78,22 +78,23 @@ export default function CheckoutPage() {
         }
     };
 
-    const inputClasses = "w-full px-5 py-4 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-xl focus:outline-none focus:ring-2 focus:ring-[#c5a061]/40 focus:border-[#c5a061]/50 transition-all placeholder:text-white/30 backdrop-blur-sm";
+    const inputClasses = "w-full px-5 py-4 bg-white border border-stone-300 text-stone-800 text-sm font-medium rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500/50 transition-all placeholder:text-stone-400 shadow-sm";
 
     return (
-        <div className="min-h-screen bg-[#0a1628] text-white font-body pt-24 pb-20 relative overflow-hidden">
+        <div className="min-h-screen relative font-body pt-24 pb-20 overflow-hidden">
 
             {/* Fixed Background Image */}
-            <div className="fixed inset-0 z-0">
-                <Image
-                    src="/images/bg/admin-bg.jpeg"
-                    alt="Background"
-                    fill
-                    className="object-cover"
-                    quality={90}
-                />
-                <div className="absolute inset-0 bg-[#0a1628]/60" />
-            </div>
+            <div
+                className="fixed inset-0 z-0"
+                style={{
+                    backgroundImage: "url('/bg/overall-background.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundAttachment: 'fixed'
+                }}
+            />
+            <div className="fixed inset-0 bg-amber-50/20 z-0" />
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
 
@@ -102,22 +103,22 @@ export default function CheckoutPage() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center gap-4 mb-12 pb-8 border-b border-white/10"
+                    className="flex items-center gap-4 mb-12 pb-8 border-b border-stone-200"
                 >
-                    <Link href="/" className="shrink-0 bg-white/5 p-2 rounded-xl border border-white/10 backdrop-blur-sm hover:border-[#c5a061]/30 transition-all">
-                        <Image src="/images/WOB-black-4.png" alt="Wave of Bengal" width={48} height={48} className="object-contain invert" />
+                    <Link href="/" className="shrink-0 bg-white p-2 rounded-2xl border border-stone-200 shadow-sm hover:border-amber-500/30 transition-all">
+                        <Image src="/images/WOB-black-4.png" alt="Wave of Bengal" width={48} height={48} className="object-contain" />
                     </Link>
                     <div>
-                        <h1 className="text-3xl md:text-4xl font-cinzel font-black text-[#FFFDD0] tracking-tight uppercase">Checkout</h1>
-                        <p className="text-sm font-medium italic text-white/50 mt-1">Secure and fast checkout</p>
+                        <h1 className="text-3xl md:text-4xl font-fraunces font-bold text-stone-800 tracking-wide uppercase">Checkout</h1>
+                        <p className="text-sm font-medium italic text-stone-500 mt-1">Secure and fast checkout</p>
                     </div>
                     <div className="ml-auto hidden md:flex items-center gap-6">
-                        <div className="flex items-center gap-2 text-white/30">
-                            <svg className="w-4 h-4 text-[#c5a061]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        <div className="flex items-center gap-2 text-stone-400">
+                            <svg className="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                             <span className="text-xs uppercase tracking-widest font-bold">Secure</span>
                         </div>
-                        <div className="flex items-center gap-2 text-white/30">
-                            <svg className="w-4 h-4 text-[#c5a061]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div className="flex items-center gap-2 text-stone-400">
+                            <svg className="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             <span className="text-xs uppercase tracking-widest font-bold">Verified</span>
                         </div>
                     </div>
@@ -133,16 +134,16 @@ export default function CheckoutPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 md:p-8"
+                            className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-md"
                         >
-                            <h2 className="text-lg font-fraunces font-bold uppercase tracking-widest mb-6 text-[#FFFDD0] border-b border-white/10 pb-3">Contact Information</h2>
+                            <h2 className="text-lg font-fraunces font-bold tracking-wide mb-6 text-stone-800 border-b border-stone-200 pb-3">Contact Information</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Email</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Email</label>
                                     <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Phone</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Phone</label>
                                     <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 9876543210" required className={inputClasses} />
                                 </div>
                             </div>
@@ -153,42 +154,42 @@ export default function CheckoutPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 md:p-8"
+                            className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-md"
                         >
-                            <h2 className="text-lg font-fraunces font-bold uppercase tracking-widest mb-6 text-[#FFFDD0] border-b border-white/10 pb-3">Shipping Address</h2>
+                            <h2 className="text-lg font-fraunces font-bold tracking-wide mb-6 text-stone-800 border-b border-stone-200 pb-3">Shipping Address</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Full Name</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Full Name</label>
                                     <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="John Doe" required className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Address Line 1</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Address Line 1</label>
                                     <input type="text" name="address1" value={formData.address1} onChange={handleChange} placeholder="Street, Area" required className={inputClasses} />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 gap-5 mb-5">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Address Line 2 (Optional)</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Address Line 2 (Optional)</label>
                                     <input type="text" name="address2" value={formData.address2} onChange={handleChange} placeholder="Landmark, Building" className={inputClasses} />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">City</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">City</label>
                                     <input type="text" name="city" value={formData.city} onChange={handleChange} placeholder="City" required className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">State</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">State</label>
                                     <input type="text" name="state" value={formData.state} onChange={handleChange} placeholder="State / Province" required className={inputClasses} />
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">ZIP Code</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">ZIP Code</label>
                                     <input type="text" name="zip" value={formData.zip} onChange={handleChange} placeholder="560001" required className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Country</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Country</label>
                                     <input type="text" name="country" value={formData.country} onChange={handleChange} placeholder="India" required className={inputClasses} />
                                 </div>
                             </div>
@@ -199,27 +200,27 @@ export default function CheckoutPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-6 md:p-8"
+                            className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-md"
                         >
-                            <h2 className="text-lg font-fraunces font-bold uppercase tracking-widest mb-6 text-[#FFFDD0] border-b border-white/10 pb-3">Payment Method</h2>
+                            <h2 className="text-lg font-fraunces font-bold tracking-wide mb-6 text-stone-800 border-b border-stone-200 pb-3">Payment Method</h2>
                             <div className="grid grid-cols-1 gap-5 mb-5">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Card Number</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Card Number</label>
                                     <div className="relative">
                                         <input type="text" name="cardNumber" value={formData.cardNumber} onChange={handleChange} placeholder="1234 5678 9012 3456" required className={`${inputClasses} pr-12`} />
                                         <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                                            <svg className="w-5 h-5 text-[#c5a061]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                            <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">Expiry</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">Expiry</label>
                                     <input type="text" name="expiry" value={formData.expiry} onChange={handleChange} placeholder="MM/YY" required className={inputClasses} />
                                 </div>
                                 <div>
-                                    <label className="block text-[#c5a061] text-[11px] uppercase tracking-[0.2em] font-bold mb-2 pl-1">CVV</label>
+                                    <label className="block text-stone-600 text-xs font-bold mb-2 pl-1 uppercase tracking-wide">CVV</label>
                                     <input type="text" name="cvv" value={formData.cvv} onChange={handleChange} placeholder="•••" required className={inputClasses} />
                                 </div>
                             </div>
@@ -229,7 +230,7 @@ export default function CheckoutPage() {
                                 disabled={isProcessing}
                                 whileHover={{ scale: isProcessing ? 1 : 1.02 }}
                                 whileTap={{ scale: isProcessing ? 1 : 0.97 }}
-                                className={`btn-gold w-full py-5 px-6 rounded-2xl text-lg tracking-widest flex items-center justify-center gap-3 ${isProcessing ? 'bg-white/10! text-white/40! cursor-wait shadow-none!' : ''}`}
+                                className={`bg-linear-to-b from-[#ebd1a7] to-[#d6b075] border border-[#cba365] text-stone-800 w-full py-4 px-6 rounded-2xl text-lg font-bold tracking-wide shadow-sm transition-opacity flex items-center justify-center gap-3 ${isProcessing ? 'opacity-70 cursor-wait shadow-none' : 'hover:opacity-90'}`}
                             >
                                 {isProcessing ? (
                                     <>
@@ -254,26 +255,26 @@ export default function CheckoutPage() {
                         transition={{ delay: 0.2 }}
                         className="sticky top-24"
                     >
-                        <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-[#c5a061]/20 p-6 md:p-8 shadow-[0_10px_50px_rgba(197,160,97,0.08)]">
-                            <h2 className="text-xl font-fraunces font-bold uppercase tracking-widest mb-6 text-[#FFFDD0]">Order Summary</h2>
+                        <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-stone-200 p-6 md:p-8 shadow-lg">
+                            <h2 className="text-xl font-fraunces font-bold tracking-wide mb-6 text-stone-800">Order Summary</h2>
 
                             <div className="flex flex-col gap-5 mb-8 max-h-[40vh] overflow-y-auto pr-2">
                                 {cart.length === 0 ? (
-                                    <div className="text-center py-8 text-white/40 italic text-sm">
+                                    <div className="text-center py-8 text-stone-500 italic text-sm">
                                         <p className="mb-2">Your cart is empty</p>
-                                        <Link href="/products" className="text-[#c5a061] font-bold hover:underline not-italic">Browse Products</Link>
+                                        <Link href="/products" className="text-amber-600 font-bold hover:underline not-italic">Browse Products</Link>
                                     </div>
                                 ) : (
                                     cart.map(item => (
                                         <div key={`${item.id}-${item.size}`} className="grid grid-cols-[50px_1fr_auto] gap-4 items-center">
-                                            <div className="w-12 h-12 bg-white/5 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/10">
-                                                <svg className="w-6 h-6 text-[#c5a061]/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                                            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-stone-200 shadow-sm">
+                                                <svg className="w-6 h-6 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
                                             </div>
                                             <div className="flex flex-col gap-0.5">
-                                                <div className="text-sm font-bold text-white leading-tight truncate">{item.name || item.id}</div>
-                                                <div className="text-xs text-white/40 font-medium">{item.size || '500g'} × {item.quantity}</div>
+                                                <div className="text-sm font-bold text-stone-800 leading-tight truncate">{item.name || item.id}</div>
+                                                <div className="text-xs text-stone-500 font-medium">{item.size || '500g'} × {item.quantity}</div>
                                             </div>
-                                            <div className="text-sm font-bold text-[#FFFDD0]">
+                                            <div className="text-sm font-bold text-stone-800">
                                                 ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                                             </div>
                                         </div>
@@ -281,39 +282,39 @@ export default function CheckoutPage() {
                                 )}
                             </div>
 
-                            <div className="flex flex-col gap-3 pt-6 border-t border-white/10 mb-6">
-                                <div className="flex justify-between text-sm font-medium text-white/70">
+                            <div className="flex flex-col gap-3 pt-6 border-t border-stone-200 mb-6">
+                                <div className="flex justify-between text-sm font-medium text-stone-600">
                                     <span>Subtotal</span>
-                                    <span className="text-white">₹{cartTotal.toLocaleString('en-IN')}</span>
+                                    <span className="text-stone-800">₹{cartTotal.toLocaleString('en-IN')}</span>
                                 </div>
-                                <div className="flex justify-between text-sm font-medium text-white/70">
+                                <div className="flex justify-between text-sm font-medium text-stone-600">
                                     <span>Shipping</span>
-                                    <span>{isFreeDelivery ? <span className="text-[#c5a061] font-bold">FREE</span> : `₹${shipping}`}</span>
+                                    <span>{isFreeDelivery ? <span className="text-amber-600 font-bold">FREE</span> : `₹${shipping}`}</span>
                                 </div>
-                                <div className="flex justify-between text-sm font-medium text-white/70">
+                                <div className="flex justify-between text-sm font-medium text-stone-600">
                                     <span>Tax (5%)</span>
-                                    <span className="text-white">₹{tax.toLocaleString('en-IN')}</span>
+                                    <span className="text-stone-800">₹{tax.toLocaleString('en-IN')}</span>
                                 </div>
                             </div>
 
-                            <div className="flex justify-between items-center text-2xl font-heading font-black text-[#FFFDD0] pt-6 border-t-2 border-[#c5a061]/30">
+                            <div className="flex justify-between items-center text-2xl font-fraunces font-bold text-stone-800 pt-6 border-t border-stone-300">
                                 <span className="uppercase tracking-widest text-lg">Grand Total</span>
                                 <span>₹{grandTotal.toLocaleString('en-IN')}</span>
                             </div>
 
                             {/* Trust badges */}
-                            <div className="flex items-center justify-center gap-6 mt-8 pt-6 border-t border-white/5">
+                            <div className="flex items-center justify-center gap-6 mt-8 pt-6 border-t border-stone-100">
                                 <div className="flex flex-col items-center gap-1">
-                                    <svg className="w-5 h-5 text-[#c5a061]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                                    <span className="text-[9px] uppercase tracking-wider text-white/30 font-bold">Secure</span>
+                                    <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                                    <span className="text-[9px] uppercase tracking-wider text-stone-400 font-bold">Secure</span>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <svg className="w-5 h-5 text-[#c5a061]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                                    <span className="text-[9px] uppercase tracking-wider text-white/30 font-bold">Verified</span>
+                                    <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                                    <span className="text-[9px] uppercase tracking-wider text-stone-400 font-bold">Verified</span>
                                 </div>
                                 <div className="flex flex-col items-center gap-1">
-                                    <svg className="w-5 h-5 text-[#c5a061]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
-                                    <span className="text-[9px] uppercase tracking-wider text-white/30 font-bold">Cold Chain</span>
+                                    <svg className="w-5 h-5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                                    <span className="text-[9px] uppercase tracking-wider text-stone-400 font-bold">Cold Chain</span>
                                 </div>
                             </div>
                         </div>

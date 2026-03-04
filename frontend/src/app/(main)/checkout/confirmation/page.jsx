@@ -45,7 +45,7 @@ export default function ConfirmationPage() {
                 <div className="glass-card p-12 text-center max-w-md w-full">
                     <h1 className="text-2xl font-cinzel font-bold mb-4">No Recent Orders</h1>
                     <p className="text-ocean-muted mb-8">We couldn't find details for a recent order.</p>
-                    <Link href="/products" className="inline-block bg-ocean-deep text-sky-light px-6 py-3 rounded-xl font-bold hover:bg-oceanic-blue transition-colors">
+                    <Link href="/products" className="inline-block bg-ocean-deep text-sky-light px-6 py-3 rounded-2xl font-bold hover:bg-oceanic-blue transition-colors">
                         Return to Shop
                     </Link>
                 </div>
@@ -121,7 +121,7 @@ export default function ConfirmationPage() {
                 </div>
 
                 {/* Notifications Box */}
-                <div className="glass-card bg-emerald-50/40 backdrop-blur-xl border-l-4 border-wob-green p-6 rounded-r-xl mb-10 shadow-sm">
+                <div className="glass-card bg-emerald-50/40 backdrop-blur-xl border-l-4 border-wob-green p-6 rounded-r- mb-10 shadow-sm">
                     <div className="flex items-center gap-3 mb-3 text-ocean-deep font-medium">
                         <span className="text-wob-green text-xl">✅</span> Order confirmation sent to <span className="font-bold">{orderDetails.email}</span>
                     </div>
@@ -192,13 +192,13 @@ export default function ConfirmationPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                     <Link
                         href="/products"
-                        className="btn-gold py-4 px-6 text-center rounded-xl"
+                        className="btn-gold py-4 px-6 text-center rounded-2xl"
                     >
                         Continue Shopping
                     </Link>
                     <button
                         onClick={() => alert("Tracking details will be sent via SMS shortly.")}
-                        className="py-4 px-6 text-center border-2 border-ocean-deep text-ocean-deep hover:bg-ocean-deep hover:text-sky-light font-bold uppercase tracking-widest rounded-xl transition-all"
+                        className="py-4 px-6 text-center border-2 border-ocean-deep text-ocean-deep hover:bg-ocean-deep hover:text-sky-light font-bold uppercase tracking-widest rounded-2xl transition-all"
                     >
                         Track Order
                     </button>

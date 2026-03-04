@@ -75,9 +75,9 @@ export default function CartSlideOut() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, x: -20 }}
-                                        className="flex gap-4 p-4 bg-sky-light/30 rounded-xl border border-oceanic-blue/10"
+                                        className="flex gap-4 p-4 bg-sky-light/30 rounded-2xl border border-oceanic-blue/10"
                                     >
-                                        <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0 border border-oceanic-blue/20">
+                                        <div className="relative w-24 h-24 rounded-2xl overflow-hidden shrink-0 border border-oceanic-blue/20">
                                             <Image src={item.image} alt={item.name} fill className="object-cover" />
                                         </div>
                                         <div className="flex-1 flex flex-col justify-between">
@@ -92,7 +92,7 @@ export default function CartSlideOut() {
                                             </div>
                                             <div className="flex items-center justify-between mt-4">
                                                 {/* Quantity Controls */}
-                                                <div className="flex items-center bg-white border border-oceanic-blue/20 rounded-lg overflow-hidden shadow-sm">
+                                                <div className="flex items-center bg-white border border-oceanic-blue/20 rounded-2xl overflow-hidden shadow-sm">
                                                     <button
                                                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                         className="px-3 py-1 text-ocean-deep hover:bg-sky-light transition-colors font-bold"
@@ -124,7 +124,7 @@ export default function CartSlideOut() {
                                 <Link
                                     href="/checkout"
                                     onClick={() => setIsCartOpen(false)}
-                                    className="block w-full py-4 text-center bg-ocean-deep text-sky-light hover:bg-oceanic-blue font-bold rounded-lg uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-[0_4px_12px_rgba(8,47,73,0.2)] hover:shadow-[0_8px_20px_rgba(14,165,233,0.3)]"
+                                    className="block w-full py-4 text-center bg-ocean-deep text-sky-light hover:bg-oceanic-blue font-bold rounded-2xl uppercase tracking-wider transition-all hover:-translate-y-0.5 shadow-[0_4px_12px_rgba(8,47,73,0.2)] hover:shadow-[0_8px_20px_rgba(14,165,233,0.3)]"
                                 >
                                     Proceed to Checkout
                                 </Link>
