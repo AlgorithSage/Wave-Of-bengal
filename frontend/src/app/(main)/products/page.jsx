@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,7 +25,7 @@ const DEFAULT_PRODUCTS = [
     {
         id: 'butter-prawns',
         name: 'Butter Prawns',
-        description: 'Marinated in rich garlic butter and aromatic herbs. Ready to saut├⌐ or grill.',
+        description: 'Marinated in rich garlic butter and aromatic herbs. Ready to sauté or grill.',
         weight: '500g',
         price: 950,
         category: 'Prawns',
@@ -145,7 +145,7 @@ const DEFAULT_PRODUCTS = [
     {
         id: 'signature-bay-platter',
         name: 'Bay of Bengal Platter',
-        description: 'Our crown jewel ΓÇö hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.',
+        description: 'Our crown jewel — hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.',
         weight: '1 Kg Total',
         price: 2200,
         category: 'Signature Dishes',
@@ -360,7 +360,7 @@ export default function ProductsPage() {
                                             </h3>
 
                                             <p className="text-white/60 text-xs mb-3 font-medium">
-                                                Starting at <span className="text-[#C8A96A] font-bold">Γé╣{product.price.toLocaleString('en-IN')}</span>
+                                                Starting at <span className="text-[#C8A96A] font-bold">₹{product.price.toLocaleString('en-IN')}</span>
                                             </p>
 
                                             {/* Star Rating */}

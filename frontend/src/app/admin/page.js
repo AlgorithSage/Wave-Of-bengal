@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
@@ -187,7 +187,7 @@ export default function AdminDashboard() {
                     icon="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 <LiveStatCard title="Total Stock" value={totalStock.toLocaleString()} trend={`${lowStockCount} low stock`} trendUp={lowStockCount === 0}
                     icon="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                <LiveStatCard title="Catalog Value" value={`Γé╣${totalCatalogValue.toLocaleString()}`} trend="+8.3%" trendUp={true}
+                <LiveStatCard title="Catalog Value" value={`₹${totalCatalogValue.toLocaleString()}`} trend="+8.3%" trendUp={true}
                     icon="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 <LiveStatCard title="Page Views" value={traffic.pageViews.toLocaleString()} trend={`${traffic.visitors} visitors`} trendUp={true} pulse={true}
                     icon="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl font-bold tracking-wide text-white">Inventory Snapshot</h2>
                     <Link href="/admin/products" className="text-oceanic-blue hover:text-white text-sm font-bold tracking-wide transition-colors">
-                        Manage Products ΓåÆ
+                        Manage Products →
                     </Link>
                 </div>
                 <div className="overflow-x-auto">
@@ -256,7 +256,7 @@ export default function AdminDashboard() {
                                 const prices = p.sizes?.map(s => s.price) || [p.price]
                                 const min = Math.min(...prices)
                                 const max = Math.max(...prices)
-                                const priceStr = min === max ? `Γé╣${min}` : `Γé╣${min}ΓÇô${max}`
+                                const priceStr = min === max ? `₹${min}` : `₹${min}–${max}`
                                 return (
                                     <tr key={p.id} className="hover:bg-white/5 transition-colors">
                                         <td className="py-3 pr-4 text-white font-medium">{p.name}</td>

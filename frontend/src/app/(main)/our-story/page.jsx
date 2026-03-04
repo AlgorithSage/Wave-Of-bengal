@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -171,7 +171,7 @@ function StoryHero() {
             className="relative z-10 pt-16"
             style={{ height: `${numFrames * 100}vh` }}
         >
-            {/* Sticky wrapper ΓÇö left and right both stick */}
+            {/* Sticky wrapper — left and right both stick */}
             <div className="sticky top-0 h-screen flex overflow-hidden">
 
                 {/* LEFT: constant boat image */}
@@ -247,39 +247,39 @@ function StoryHero() {
 
 const values = [
     {
-        icon: "≡ƒªÉ",
+        icon: "🦐",
         title: "Uncompromising Quality",
-        description: "Complete quality control at every stage ΓÇö from farm to processing to delivery. Our state-of-the-art facility with international accreditation ensures only the finest shrimp reaches you.",
+        description: "Complete quality control at every stage — from farm to processing to delivery. Our state-of-the-art facility with international accreditation ensures only the finest shrimp reaches you.",
         accent: "from-amber-400 to-orange-500"
     },
     {
-        icon: "≡ƒîè",
+        icon: "🌊",
         title: "Sustainable Aquaculture",
         description: "We champion environmental sustainability by certifying our aquaculture shrimp farms through independent bodies like ASC and BAP, promoting responsible farming practices.",
         accent: "from-cyan-400 to-blue-500"
     },
     {
-        icon: "≡ƒñ¥",
+        icon: "🤝",
         title: "Farmer Partnerships",
-        description: "Over 40 years of engaging with our farmers ΓÇö providing financial support, buyback arrangements, and building a supply chain rooted in trust and mutual growth.",
+        description: "Over 40 years of engaging with our farmers — providing financial support, buyback arrangements, and building a supply chain rooted in trust and mutual growth.",
         accent: "from-emerald-400 to-green-500"
     },
     {
-        icon: "Γ¥ä∩╕Å",
+        icon: "❄️",
         title: "Modern Processing",
-        description: "Our state-of-the-art facility at Rajarhat, Kolkata ΓÇö within 30 minutes of the airport ΓÇö features advanced infrastructure with BSCI-approved social compliances and accommodation for 500 workers.",
+        description: "Our state-of-the-art facility at Rajarhat, Kolkata — within 30 minutes of the airport — features advanced infrastructure with BSCI-approved social compliances and accommodation for 500 workers.",
         accent: "from-sky-400 to-indigo-500"
     },
     {
-        icon: "≡ƒöì",
+        icon: "🔍",
         title: "Certified Excellence",
         description: "International accreditations including ASC and BAP certifications ensure our shrimp meets the highest global standards for quality, sustainability, and traceability.",
         accent: "from-violet-400 to-purple-500"
     },
     {
-        icon: "≡ƒÆÜ",
+        icon: "💚",
         title: "Serving Kolkata",
-        description: "Now bringing Eastern India's finest sustainably sourced shrimp directly to consumers in Kolkata ΓÇö premium quality from the Bay of Bengal to your doorstep.",
+        description: "Now bringing Eastern India's finest sustainably sourced shrimp directly to consumers in Kolkata — premium quality from the Bay of Bengal to your doorstep.",
         accent: "from-rose-400 to-pink-500"
     }
 ];
@@ -291,7 +291,7 @@ export default function OurStory() {
     return (
         <div className="relative min-h-screen bg-[#0a1628] text-white">
 
-            {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ STICKY LEFT / PARALLAX RIGHT ΓÇö full journey ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+            {/* ═══════════ STICKY LEFT / PARALLAX RIGHT — full journey ═══════════ */}
             <StoryHero />
 
 
@@ -309,7 +309,7 @@ export default function OurStory() {
 
 
 
-            {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ VALUES SECTION ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+            {/* ═══════════ VALUES SECTION ═══════════ */}
             <div className="relative z-10 bg-white/2 py-24 border-y border-white/5">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
                     <h2 className="text-4xl font-fraunces font-black text-white uppercase tracking-widest">Our Guiding Values</h2>

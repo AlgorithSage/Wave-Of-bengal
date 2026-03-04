@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect } from 'react'
 import ProductForm from '@/components/admin/ProductForm'
@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const DEFAULT_PRODUCTS = [
     { id: 'black-tiger-prawns', name: 'Black Tiger Prawns', category: 'Prawns', price: 680, stock: 100, weight: '250g', description: 'Our flagship variety - large, succulent prawns with distinctive black stripes.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '250g', label: '250g', price: 680, stock: 40 }, { id: '500g', label: '500g', price: 1200, stock: 35 }, { id: '1kg', label: '1 Kg', price: 2200, stock: 25 }] },
-    { id: 'butter-prawns', name: 'Butter Prawns', category: 'Prawns', price: 500, stock: 80, weight: '250g', description: 'Marinated in rich garlic butter and aromatic herbs. Ready to saut├⌐ or grill.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 4, sizes: [{ id: '250g', label: '250g', price: 500, stock: 30 }, { id: '500g', label: '500g', price: 950, stock: 30 }, { id: '1kg', label: '1 Kg', price: 1800, stock: 20 }] },
+    { id: 'butter-prawns', name: 'Butter Prawns', category: 'Prawns', price: 500, stock: 80, weight: '250g', description: 'Marinated in rich garlic butter and aromatic herbs. Ready to sauté or grill.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 4, sizes: [{ id: '250g', label: '250g', price: 500, stock: 30 }, { id: '500g', label: '500g', price: 950, stock: 30 }, { id: '1kg', label: '1 Kg', price: 1800, stock: 20 }] },
     { id: 'prawn-skewers', name: 'Prawn Skewers', category: 'Ready-to-Cook', price: 450, stock: 60, weight: '200g', description: 'Expertly threaded and seasoned prawns on bamboo skewers for BBQ & grilling.', status: 'active', image: '/images/skewers.jpeg', rating: 5, sizes: [{ id: '200g', label: '200g', price: 450, stock: 30 }, { id: '400g', label: '400g', price: 850, stock: 20 }, { id: '800g', label: '800g', price: 1600, stock: 10 }] },
     { id: 'vannamei-prawns', name: 'Vannamei Prawns', category: 'Prawns', price: 400, stock: 120, weight: '250g', description: 'Premium white prawns with delicate, sweet flavor for all cooking methods.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 4, sizes: [{ id: '250g', label: '250g', price: 400, stock: 50 }, { id: '500g', label: '500g', price: 750, stock: 40 }, { id: '1kg', label: '1 Kg', price: 1400, stock: 30 }] },
     { id: 'headless-peeled-shrimp', name: 'Headless Peeled Shrimp', category: 'Prawns', price: 430, stock: 90, weight: '250g', description: 'Cleaned, deveined and ready to cook. Saves prep time with premium freshness.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 3, sizes: [{ id: '250g', label: '250g', price: 430, stock: 30 }, { id: '500g', label: '500g', price: 800, stock: 35 }, { id: '1kg', label: '1 Kg', price: 1500, stock: 25 }] },
@@ -17,7 +17,7 @@ const DEFAULT_PRODUCTS = [
     { id: 'trial-prawn-sampler', name: 'Trial Prawn Sampler', category: 'Trial Packs', price: 499, stock: 100, weight: '300g', description: 'Try our best-sellers: Black Tiger (100g), Vannamei (100g), Butter Prawns (100g). Perfect for first-time buyers.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '300g', label: '300g', price: 499, stock: 100 }] },
     { id: 'trial-ready-to-cook', name: 'Trial Ready-to-Cook Box', category: 'Trial Packs', price: 449, stock: 80, weight: '300g', description: 'Mini portions of Ebi Fry (150g) and Prawn Skewers (150g). Taste before you commit!', status: 'active', image: '/images/skewers.jpeg', rating: 4, sizes: [{ id: '300g', label: '300g', price: 449, stock: 80 }] },
     { id: 'chefs-bengali-special', name: "Chef's Bengali Special", category: "Chef's Special", price: 1100, stock: 35, weight: '500g', description: 'Authentic Bengali-style marinated prawns with mustard, turmeric & green chili. A true Kolkata delicacy.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 5, sizes: [{ id: '500g', label: '500g', price: 1100, stock: 35 }] },
-    { id: 'signature-bay-platter', name: 'Bay of Bengal Platter', category: 'Signature Dishes', price: 2200, stock: 25, weight: '1 Kg', description: 'Our crown jewel ΓÇö hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '1kg', label: '1 Kg', price: 2200, stock: 25 }] },
+    { id: 'signature-bay-platter', name: 'Bay of Bengal Platter', category: 'Signature Dishes', price: 2200, stock: 25, weight: '1 Kg', description: 'Our crown jewel — hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '1kg', label: '1 Kg', price: 2200, stock: 25 }] },
 ]
 
 const CATEGORIES = ['All', 'Prawns', 'Ready-to-Cook', 'Trial Packs', 'Signature Dishes', "Chef's Special"]
@@ -82,11 +82,11 @@ export default function AdminProductsPage() {
     const getTotalStock = (p) => p.sizes?.reduce((s, v) => s + (v.stock || 0), 0) ?? p.stock ?? 0
 
     const getPriceRange = (p) => {
-        if (!p.sizes?.length) return `Γé╣${p.price}`
+        if (!p.sizes?.length) return `₹${p.price}`
         const prices = p.sizes.map(s => s.price)
         const min = Math.min(...prices)
         const max = Math.max(...prices)
-        return min === max ? `Γé╣${min}` : `Γé╣${min} ΓÇô Γé╣${max}`
+        return min === max ? `₹${min}` : `₹${min} – ₹${max}`
     }
 
     const filtered = products.filter(p => {
@@ -259,7 +259,7 @@ export default function AdminProductsPage() {
                                                                             {product.sizes.map((s, i) => (
                                                                                 <tr key={i}>
                                                                                     <td className="py-2 pr-6 text-white font-medium">{s.label}</td>
-                                                                                    <td className="py-2 pr-6 text-white">Γé╣{s.price}</td>
+                                                                                    <td className="py-2 pr-6 text-white">₹{s.price}</td>
                                                                                     <td className="py-2">
                                                                                         <span className={`${(s.stock || 0) === 0 ? 'text-rose-400' : (s.stock || 0) <= 10 ? 'text-amber-400' : 'text-emerald-400'}`}>
                                                                                             {s.stock || 0}

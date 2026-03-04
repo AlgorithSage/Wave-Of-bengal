@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export async function POST(req) {
     try {
@@ -28,7 +28,7 @@ Category: ${category || 'Seafood'}
 Description: ${description || ''}${personalizationBlock}
 
 Please provide a personalized recipe taking into account all the preferences above:
-1. A featured signature recipe using this product ΓÇö include dish name, a short intro, ingredients (as a bulleted list), and clear step-by-step cooking instructions.
+1. A featured signature recipe using this product — include dish name, a short intro, ingredients (as a bulleted list), and clear step-by-step cooking instructions.
 2. 4 other quick dish recommendations using this product (just dish name + 1-line description each).
 3. One pro chef tip specific to this product.
 

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -52,7 +52,7 @@ const certifications = [
             {
                 name: "AEO",
                 subtitle: "Authorized Economic Operator",
-                desc: "AEO certification by Indian Customs recognises Wave of Bengal as a trusted, compliant, and secure trade partner ΓÇö enabling faster clearances and streamlined export operations.",
+                desc: "AEO certification by Indian Customs recognises Wave of Bengal as a trusted, compliant, and secure trade partner — enabling faster clearances and streamlined export operations.",
                 image: aeoImg,
                 features: ["Customs-trusted operator", "Faster export clearances", "Secure supply chain", "Trade compliance excellence"]
             }
@@ -62,27 +62,27 @@ const certifications = [
 
 const qualityNumbers = [
     { number: "98%", label: "Freshness Score", text: "Average freshness rating based on lab tests" },
-    { number: "0-4┬░C", label: "Cold Chain", text: "Temperature maintained from catch to delivery" },
+    { number: "0-4°C", label: "Cold Chain", text: "Temperature maintained from catch to delivery" },
     { number: "24hr", label: "Catch to Table", text: "Maximum time from ocean to your doorstep" },
     { number: "100%", label: "Traceable", text: "Every product tracked from source" }
 ];
 
 const traceSteps = [
-    { icon: "≡ƒôà", title: "Catch Date & Time", desc: "Know exactly when your seafood was caught ΓÇö often the same morning it reaches you." },
-    { icon: "≡ƒôì", title: "Catch Location", desc: "GPS coordinates of the fishing zone, including the specific waters of the Bay of Bengal." },
-    { icon: "≡ƒÄú", title: "Fishing Method", desc: "Details on whether it was line-caught, net-caught, or harvested ΓÇö and always sustainable." },
-    { icon: "≡ƒÜó", title: "Vessel Information", desc: "Licensed boat details and crew information for complete transparency." },
-    { icon: "≡ƒºè", title: "Storage Conditions", desc: "Temperature logs throughout the journey ensuring cold chain integrity." },
-    { icon: "≡ƒö¼", title: "Lab Test Results", desc: "Bacterial counts, freshness scores, and safety verification for every batch." }
+    { icon: "📅", title: "Catch Date & Time", desc: "Know exactly when your seafood was caught — often the same morning it reaches you." },
+    { icon: "📍", title: "Catch Location", desc: "GPS coordinates of the fishing zone, including the specific waters of the Bay of Bengal." },
+    { icon: "🎣", title: "Fishing Method", desc: "Details on whether it was line-caught, net-caught, or harvested — and always sustainable." },
+    { icon: "🚢", title: "Vessel Information", desc: "Licensed boat details and crew information for complete transparency." },
+    { icon: "🧊", title: "Storage Conditions", desc: "Temperature logs throughout the journey ensuring cold chain integrity." },
+    { icon: "🔬", title: "Lab Test Results", desc: "Bacterial counts, freshness scores, and safety verification for every batch." }
 ];
 
 const labTests = [
-    { icon: "≡ƒªá", title: "Bacterial Count", desc: "Testing for harmful bacteria levels" },
-    { icon: "ΓÜù∩╕Å", title: "Heavy Metals", desc: "Mercury, lead, and cadmium screening" },
-    { icon: "≡ƒÆè", title: "Antibiotics", desc: "Zero antibiotic residue guaranteed" },
-    { icon: "≡ƒº¬", title: "Freshness Index", desc: "TVB-N and other freshness markers" },
-    { icon: "≡ƒîí∩╕Å", title: "Temperature Log", desc: "Continuous cold chain verification" },
-    { icon: "Γ£à", title: "Final QC Check", desc: "Visual & sensory quality approval" }
+    { icon: "🦠", title: "Bacterial Count", desc: "Testing for harmful bacteria levels" },
+    { icon: "⚗️", title: "Heavy Metals", desc: "Mercury, lead, and cadmium screening" },
+    { icon: "💊", title: "Antibiotics", desc: "Zero antibiotic residue guaranteed" },
+    { icon: "🧪", title: "Freshness Index", desc: "TVB-N and other freshness markers" },
+    { icon: "🌡️", title: "Temperature Log", desc: "Continuous cold chain verification" },
+    { icon: "✅", title: "Final QC Check", desc: "Visual & sensory quality approval" }
 ];
 
 export default function Certifications() {
@@ -105,7 +105,7 @@ export default function Certifications() {
             {/* Content Layer */}
             <div className="relative z-10">
 
-                {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ HERO HEADER ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+                {/* ═══════════ HERO HEADER ═══════════ */}
                 <div className="relative py-28 overflow-hidden mb-16">
                     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         {/* Decorative accent */}
@@ -138,7 +138,7 @@ export default function Certifications() {
                             className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-medium drop-shadow-md italic leading-relaxed"
                         >
                             Industry-leading standards that guarantee quality, safety, and sustainability in every product.
-                            <span className="block mt-4 text-lg text-white/70 italic">At Wave of Bengal, we don't just promise quality ΓÇö we prove it. Every product we deliver meets rigorous international standards, verified by independent certification bodies.</span>
+                            <span className="block mt-4 text-lg text-white/70 italic">At Wave of Bengal, we don't just promise quality — we prove it. Every product we deliver meets rigorous international standards, verified by independent certification bodies.</span>
                         </motion.p>
                         <motion.div
                             initial={{ scaleX: 0 }}
@@ -149,7 +149,7 @@ export default function Certifications() {
                     </div>
                 </div>
 
-                {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ CERTIFICATIONS ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+                {/* ═══════════ CERTIFICATIONS ═══════════ */}
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-24">
                         {certifications.map((section, sectionIdx) => (
@@ -197,7 +197,7 @@ export default function Certifications() {
                                                     <ul className="space-y-2">
                                                         {item.features.map((feature, fIdx) => (
                                                             <li key={fIdx} className="flex items-start gap-2 text-sm text-white/60 group-hover:text-white/75 transition-colors">
-                                                                <span className="text-white shrink-0 mt-0.5">Γ£ô</span>
+                                                                <span className="text-white shrink-0 mt-0.5">✓</span>
                                                                 <span>{feature}</span>
                                                             </li>
                                                         ))}
@@ -211,7 +211,7 @@ export default function Certifications() {
                         ))}
                     </div>
 
-                    {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ QUALITY BY NUMBERS ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+                    {/* ═══════════ QUALITY BY NUMBERS ═══════════ */}
                     <div className="relative py-20 mt-20">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function Certifications() {
                         </div>
                     </div>
 
-                    {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ FULL TRACEABILITY ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+                    {/* ═══════════ FULL TRACEABILITY ═══════════ */}
                     <div className="relative py-20 mt-10">
                         <div className="mb-16">
                             <motion.div
@@ -286,7 +286,7 @@ export default function Certifications() {
                         </div>
                     </div>
 
-                    {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ LAB TESTING STANDARDS ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+                    {/* ═══════════ LAB TESTING STANDARDS ═══════════ */}
                     <div className="relative py-24 mt-16">
                         <div className="max-w-6xl mx-auto">
                             <div className="mb-16">
@@ -329,7 +329,7 @@ export default function Certifications() {
                         </div>
                     </div>
 
-                    {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ GUARANTEE SECTION ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+                    {/* ═══════════ GUARANTEE SECTION ═══════════ */}
                     <div className="relative py-24 mt-10 overflow-hidden">
                         <div className="absolute inset-0 bg-white/5 backdrop-blur-xl border-y border-gold/15 rounded-2xl-3xl" />
                         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.06)_0%,transparent_70%)] rounded-2xl-3xl" />

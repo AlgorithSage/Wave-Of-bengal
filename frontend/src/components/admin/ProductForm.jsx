@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -184,7 +184,7 @@ export default function ProductForm({ onClose, editProduct, onSave }) {
                                         <input type="text" value={v.label} onChange={(e) => updateVariant(idx, 'label', e.target.value)} placeholder="e.g. 250g" required className={inputClass} />
                                     </div>
                                     <div className="flex-1 space-y-1 w-full sm:w-auto">
-                                        <label className="text-xs font-bold text-ocean-deep/80 uppercase">Price (Γé╣)</label>
+                                        <label className="text-xs font-bold text-ocean-deep/80 uppercase">Price (₹)</label>
                                         <input type="number" value={v.price} onChange={(e) => updateVariant(idx, 'price', e.target.value)} placeholder="680" required min="0" className={inputClass} />
                                     </div>
                                     <div className="flex-1 space-y-1 w-full sm:w-auto">

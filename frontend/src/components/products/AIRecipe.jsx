@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -97,7 +97,7 @@ export default function AIRecipe({ product }) {
                 <div className="grow h-px bg-stone-200" />
             </div>
 
-            {/* CTA card ΓÇö before generation */}
+            {/* CTA card — before generation */}
             {!generated && (
                 <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-8 md:p-10 shadow-xl space-y-8">
                     <div>
@@ -131,7 +131,7 @@ export default function AIRecipe({ product }) {
                             <div className="flex flex-wrap gap-1.5 mt-2">
                                 {allergies.filter(a => !allergyOptions.includes(a)).map(a => (
                                     <span key={a} className="px-2.5 py-1 rounded-full text-xs bg-red-500/20 text-red-300 border border-red-500/40 flex items-center gap-1.5">
-                                        {a} <button onClick={() => toggleAllergy(a)} className="hover:text-white">├ù</button>
+                                        {a} <button onClick={() => toggleAllergy(a)} className="hover:text-white">×</button>
                                     </span>
                                 ))}
                             </div>
