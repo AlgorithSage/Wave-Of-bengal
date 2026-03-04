@@ -1,6 +1,5 @@
-'use client'
+﻿'use client'
 
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
 import ProductForm from '@/components/admin/ProductForm'
 import Image from 'next/image'
@@ -8,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const DEFAULT_PRODUCTS = [
     { id: 'black-tiger-prawns', name: 'Black Tiger Prawns', category: 'Prawns', price: 680, stock: 100, weight: '250g', description: 'Our flagship variety - large, succulent prawns with distinctive black stripes.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '250g', label: '250g', price: 680, stock: 40 }, { id: '500g', label: '500g', price: 1200, stock: 35 }, { id: '1kg', label: '1 Kg', price: 2200, stock: 25 }] },
-    { id: 'butter-prawns', name: 'Butter Prawns', category: 'Prawns', price: 500, stock: 80, weight: '250g', description: 'Marinated in rich garlic butter and aromatic herbs. Ready to sauté or grill.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 4, sizes: [{ id: '250g', label: '250g', price: 500, stock: 30 }, { id: '500g', label: '500g', price: 950, stock: 30 }, { id: '1kg', label: '1 Kg', price: 1800, stock: 20 }] },
+    { id: 'butter-prawns', name: 'Butter Prawns', category: 'Prawns', price: 500, stock: 80, weight: '250g', description: 'Marinated in rich garlic butter and aromatic herbs. Ready to saut├⌐ or grill.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 4, sizes: [{ id: '250g', label: '250g', price: 500, stock: 30 }, { id: '500g', label: '500g', price: 950, stock: 30 }, { id: '1kg', label: '1 Kg', price: 1800, stock: 20 }] },
     { id: 'prawn-skewers', name: 'Prawn Skewers', category: 'Ready-to-Cook', price: 450, stock: 60, weight: '200g', description: 'Expertly threaded and seasoned prawns on bamboo skewers for BBQ & grilling.', status: 'active', image: '/images/skewers.jpeg', rating: 5, sizes: [{ id: '200g', label: '200g', price: 450, stock: 30 }, { id: '400g', label: '400g', price: 850, stock: 20 }, { id: '800g', label: '800g', price: 1600, stock: 10 }] },
     { id: 'vannamei-prawns', name: 'Vannamei Prawns', category: 'Prawns', price: 400, stock: 120, weight: '250g', description: 'Premium white prawns with delicate, sweet flavor for all cooking methods.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 4, sizes: [{ id: '250g', label: '250g', price: 400, stock: 50 }, { id: '500g', label: '500g', price: 750, stock: 40 }, { id: '1kg', label: '1 Kg', price: 1400, stock: 30 }] },
     { id: 'headless-peeled-shrimp', name: 'Headless Peeled Shrimp', category: 'Prawns', price: 430, stock: 90, weight: '250g', description: 'Cleaned, deveined and ready to cook. Saves prep time with premium freshness.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 3, sizes: [{ id: '250g', label: '250g', price: 430, stock: 30 }, { id: '500g', label: '500g', price: 800, stock: 35 }, { id: '1kg', label: '1 Kg', price: 1500, stock: 25 }] },
@@ -18,7 +17,7 @@ const DEFAULT_PRODUCTS = [
     { id: 'trial-prawn-sampler', name: 'Trial Prawn Sampler', category: 'Trial Packs', price: 499, stock: 100, weight: '300g', description: 'Try our best-sellers: Black Tiger (100g), Vannamei (100g), Butter Prawns (100g). Perfect for first-time buyers.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '300g', label: '300g', price: 499, stock: 100 }] },
     { id: 'trial-ready-to-cook', name: 'Trial Ready-to-Cook Box', category: 'Trial Packs', price: 449, stock: 80, weight: '300g', description: 'Mini portions of Ebi Fry (150g) and Prawn Skewers (150g). Taste before you commit!', status: 'active', image: '/images/skewers.jpeg', rating: 4, sizes: [{ id: '300g', label: '300g', price: 449, stock: 80 }] },
     { id: 'chefs-bengali-special', name: "Chef's Bengali Special", category: "Chef's Special", price: 1100, stock: 35, weight: '500g', description: 'Authentic Bengali-style marinated prawns with mustard, turmeric & green chili. A true Kolkata delicacy.', status: 'active', image: '/images/butter%20prawns%20.jpeg', rating: 5, sizes: [{ id: '500g', label: '500g', price: 1100, stock: 35 }] },
-    { id: 'signature-bay-platter', name: 'Bay of Bengal Platter', category: 'Signature Dishes', price: 2200, stock: 25, weight: '1 Kg', description: 'Our crown jewel — hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '1kg', label: '1 Kg', price: 2200, stock: 25 }] },
+    { id: 'signature-bay-platter', name: 'Bay of Bengal Platter', category: 'Signature Dishes', price: 2200, stock: 25, weight: '1 Kg', description: 'Our crown jewel ΓÇö hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.', status: 'active', image: '/images/black%20tiger.jpeg', rating: 5, sizes: [{ id: '1kg', label: '1 Kg', price: 2200, stock: 25 }] },
 ]
 
 const CATEGORIES = ['All', 'Prawns', 'Ready-to-Cook', 'Trial Packs', 'Signature Dishes', "Chef's Special"]
@@ -83,11 +82,11 @@ export default function AdminProductsPage() {
     const getTotalStock = (p) => p.sizes?.reduce((s, v) => s + (v.stock || 0), 0) ?? p.stock ?? 0
 
     const getPriceRange = (p) => {
-        if (!p.sizes?.length) return `₹${p.price}`
+        if (!p.sizes?.length) return `Γé╣${p.price}`
         const prices = p.sizes.map(s => s.price)
         const min = Math.min(...prices)
         const max = Math.max(...prices)
-        return min === max ? `₹${min}` : `₹${min} – ₹${max}`
+        return min === max ? `Γé╣${min}` : `Γé╣${min} ΓÇô Γé╣${max}`
     }
 
     const filtered = products.filter(p => {
@@ -115,44 +114,11 @@ export default function AdminProductsPage() {
                     <button onClick={() => { setEditingProduct(null); setShowForm(true); }}
                         className="bg-oceanic-blue text-white font-bold py-3 px-8 rounded-full shadow-[0_4px_14px_rgba(56,189,248,0.4)] hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(56,189,248,0.5)] transition-all duration-300 uppercase tracking-wider flex items-center gap-2">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
-=======
-import { useState } from 'react'
-import ProductForm from '@/components/admin/ProductForm'
-import { motion, AnimatePresence } from 'framer-motion'
-
-const MOCK_PRODUCTS = [
-    { id: 1, name: 'Premium Padma Ilish', category: 'Fresh Water', price: 1800, stock: 45, status: 'Active' },
-    { id: 2, name: 'Jumbo Tiger Prawns', category: 'Shellfish', price: 1200, stock: 12, status: 'Low Stock' },
-    { id: 3, name: 'Rui Maach (Rohu)', category: 'Fresh Water', price: 400, stock: 85, status: 'Active' },
-    { id: 4, name: 'Bhetki', category: 'Sea Water', price: 900, stock: 0, status: 'Out of Stock' },
-]
-
-export default function AdminProductsPage() {
-    const [showForm, setShowForm] = useState(false)
-
-    return (
-        <div className="space-y-8 mb-20 md:mb-0">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-                <header>
-                    <h1 className="text-4xl font-heading font-bold text-ocean-deep">Product Management</h1>
-                    <p className="text-ocean-muted mt-2">Add, edit, and organize your fresh catch inventory.</p>
-                </header>
-
-                {!showForm && (
-                    <button
-                        onClick={() => setShowForm(true)}
-                        className="bg-oceanic-blue text-white font-bold py-3 px-8 rounded-full shadow-[0_4px_14px_rgba(56,189,248,0.4)] hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(56,189,248,0.5)] transition-all duration-300 uppercase tracking-wider flex items-center gap-2"
-                    >
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                        </svg>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                         Add Product
                     </button>
                 )}
             </div>
 
-<<<<<<< HEAD
             {/* Quick Stats */}
             {!showForm && (
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -293,7 +259,7 @@ export default function AdminProductsPage() {
                                                                             {product.sizes.map((s, i) => (
                                                                                 <tr key={i}>
                                                                                     <td className="py-2 pr-6 text-white font-medium">{s.label}</td>
-                                                                                    <td className="py-2 pr-6 text-white">₹{s.price}</td>
+                                                                                    <td className="py-2 pr-6 text-white">Γé╣{s.price}</td>
                                                                                     <td className="py-2">
                                                                                         <span className={`${(s.stock || 0) === 0 ? 'text-rose-400' : (s.stock || 0) <= 10 ? 'text-amber-400' : 'text-emerald-400'}`}>
                                                                                             {s.stock || 0}
@@ -320,78 +286,6 @@ export default function AdminProductsPage() {
                                     <p className="text-sm mt-1">Adjust your search or category filter</p>
                                 </div>
                             )}
-=======
-            <AnimatePresence mode="wait">
-                {showForm ? (
-                    <motion.div
-                        key="form"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <ProductForm onClose={() => setShowForm(false)} />
-                    </motion.div>
-                ) : (
-                    <motion.div
-                        key="list"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="glass-card bg-white/40 rounded-2xl overflow-hidden"
-                    >
-                        <div className="p-6 border-b border-white/30 flex gap-4">
-                            {/* Simple mock search input for styling */}
-                            <div className="relative flex-1 max-w-md">
-                                <input
-                                    type="text"
-                                    placeholder="Search products..."
-                                    className="w-full bg-white/60 border border-white/40 rounded-full pl-12 pr-4 py-3 text-ocean-deep focus:outline-none focus:ring-2 focus:ring-oceanic-blue/50 placeholder:text-ocean-muted/60 transition-all font-medium"
-                                />
-                                <svg className="w-5 h-5 text-ocean-muted absolute left-4 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-white/20 text-ocean-muted text-sm uppercase tracking-wider">
-                                        <th className="px-6 py-4 font-medium">Name</th>
-                                        <th className="px-6 py-4 font-medium">Category</th>
-                                        <th className="px-6 py-4 font-medium">Price</th>
-                                        <th className="px-6 py-4 font-medium">Stock</th>
-                                        <th className="px-6 py-4 font-medium">Status</th>
-                                        <th className="px-6 py-4 font-medium text-right">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-white/20">
-                                    {MOCK_PRODUCTS.map((product) => (
-                                        <tr key={product.id} className="hover:bg-white/30 transition-colors">
-                                            <td className="px-6 py-4 font-bold text-ocean-deep">{product.name}</td>
-                                            <td className="px-6 py-4 text-ocean-muted">{product.category}</td>
-                                            <td className="px-6 py-4 font-medium text-ocean-deep">₹ {product.price}</td>
-                                            <td className="px-6 py-4 font-medium text-ocean-deep">{product.stock} kg</td>
-                                            <td className="px-6 py-4">
-                                                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${product.status === 'Active' ? 'bg-green-100 text-green-700' :
-                                                        product.status === 'Low Stock' ? 'bg-yellow-100 text-yellow-700' :
-                                                            'bg-red-100 text-red-700'
-                                                    }`}>
-                                                    {product.status}
-                                                </span>
-                                            </td>
-                                            <td className="px-6 py-4 text-right">
-                                                <button className="text-oceanic-blue hover:text-ocean-deep transition-colors p-2 bg-white/40 rounded-lg hover:bg-white/60">
-                                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                         </div>
                     </motion.div>
                 )}

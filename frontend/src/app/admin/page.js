@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-'use client'
+﻿'use client'
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
@@ -168,48 +167,27 @@ export default function AdminDashboard() {
     products.forEach(p => { categories[p.category] = (categories[p.category] || 0) + 1 })
     const categoryData = Object.entries(categories).map(([label, value]) => ({ label: label.slice(0, 8), value }))
 
-=======
-import StatCard from '@/components/admin/StatCard'
-import OrdersTable from '@/components/admin/OrdersTable'
-import AnalyticsPanel from '@/components/admin/AnalyticsPanel'
-import Link from 'next/link'
-
-export default function AdminDashboard() {
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
     return (
         <div className="space-y-8 mb-20 md:mb-0">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
                 <header>
                     <h1 className="text-4xl font-heading font-medium tracking-wide text-white drop-shadow-md">Dashboard Overview</h1>
-<<<<<<< HEAD
                     <p className="text-white/60 mt-2 text-lg">Real-time store performance at a glance.</p>
                 </header>
                 <Link href="/"
                     className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full font-semibold tracking-wide text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-=======
-                    <p className="text-white/60 mt-2 text-lg">Welcome back. Here is what is happening today.</p>
-                </header>
-                <Link
-                    href="/"
-                    className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full font-semibold tracking-wide text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                     Return to Homepage
                 </Link>
             </div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<<<<<<< HEAD
                 <LiveStatCard title="Total Products" value={totalProducts} trend={`${totalProducts} active`} trendUp={true}
                     icon="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 <LiveStatCard title="Total Stock" value={totalStock.toLocaleString()} trend={`${lowStockCount} low stock`} trendUp={lowStockCount === 0}
                     icon="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                <LiveStatCard title="Catalog Value" value={`₹${totalCatalogValue.toLocaleString()}`} trend="+8.3%" trendUp={true}
+                <LiveStatCard title="Catalog Value" value={`Γé╣${totalCatalogValue.toLocaleString()}`} trend="+8.3%" trendUp={true}
                     icon="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 <LiveStatCard title="Page Views" value={traffic.pageViews.toLocaleString()} trend={`${traffic.visitors} visitors`} trendUp={true} pulse={true}
                     icon="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -257,7 +235,7 @@ export default function AdminDashboard() {
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-xl font-bold tracking-wide text-white">Inventory Snapshot</h2>
                     <Link href="/admin/products" className="text-oceanic-blue hover:text-white text-sm font-bold tracking-wide transition-colors">
-                        Manage Products →
+                        Manage Products ΓåÆ
                     </Link>
                 </div>
                 <div className="overflow-x-auto">
@@ -278,7 +256,7 @@ export default function AdminDashboard() {
                                 const prices = p.sizes?.map(s => s.price) || [p.price]
                                 const min = Math.min(...prices)
                                 const max = Math.max(...prices)
-                                const priceStr = min === max ? `₹${min}` : `₹${min}–${max}`
+                                const priceStr = min === max ? `Γé╣${min}` : `Γé╣${min}ΓÇô${max}`
                                 return (
                                     <tr key={p.id} className="hover:bg-white/5 transition-colors">
                                         <td className="py-3 pr-4 text-white font-medium">{p.name}</td>
@@ -293,23 +271,6 @@ export default function AdminDashboard() {
                             })}
                         </tbody>
                     </table>
-=======
-                <StatCard title="Total Revenue" value="₹ 1,24,500" trend="+14.5%" trendUp={true} icon="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                <StatCard title="Total Orders" value="342" trend="+5.2%" trendUp={true} icon="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                <StatCard title="Active Users" value="1,204" trend="-2.4%" trendUp={false} icon="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                <StatCard title="Avg. Order Value" value="₹ 645" trend="+1.2%" trendUp={true} icon="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Recent Orders - Spans 2 columns on large screens */}
-                <div className="lg:col-span-2">
-                    <OrdersTable />
-                </div>
-
-                {/* Top Search Analytics */}
-                <div>
-                    <AnalyticsPanel />
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                 </div>
             </div>
         </div>

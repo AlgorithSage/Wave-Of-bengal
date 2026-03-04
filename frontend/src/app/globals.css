@@ -161,7 +161,6 @@
     transform: translateY(0) scale(0.97);
     box-shadow: 0 2px 10px rgba(197, 160, 97, 0.3);
   }
-<<<<<<< HEAD
 
   /* ═══ Cinematic Lighthouse Hero ═══ */
   .hero-lighthouse {
@@ -171,6 +170,4 @@
   .hero-lighthouse-img {
     filter: contrast(1.1) saturate(1.15) brightness(0.95);
   }
-=======
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
 }

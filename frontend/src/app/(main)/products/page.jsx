@@ -1,15 +1,12 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '@/contexts/CartContext';
 import Image from 'next/image';
 import Link from 'next/link';
-<<<<<<< HEAD
 import lighthouseImg from '@/lighthouse.png';
 import waveImg from '@/wave.png';
-=======
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
 
 // Product Data
 const DEFAULT_PRODUCTS = [
@@ -28,7 +25,7 @@ const DEFAULT_PRODUCTS = [
     {
         id: 'butter-prawns',
         name: 'Butter Prawns',
-        description: 'Marinated in rich garlic butter and aromatic herbs. Ready to sauté or grill.',
+        description: 'Marinated in rich garlic butter and aromatic herbs. Ready to saut├⌐ or grill.',
         weight: '500g',
         price: 950,
         category: 'Prawns',
@@ -91,11 +88,7 @@ const DEFAULT_PRODUCTS = [
         description: 'Experience our signature trio: Black Tiger (250g), Vannamei (250g), Butter Prawns (250g).',
         weight: '750g Total',
         price: 1350,
-<<<<<<< HEAD
         category: 'Signature Dishes',
-=======
-        category: 'Fish',
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         stock: 50,
         status: 'active',
         image: '/images/black%20tiger.jpeg',
@@ -107,16 +100,11 @@ const DEFAULT_PRODUCTS = [
         description: 'Ready-to-cook premium selections: Butterfly Cut (250g), Marinated Shrimp (250g), Skewers (200g).',
         weight: '700g Total',
         price: 1250,
-<<<<<<< HEAD
         category: "Chef's Special",
-=======
-        category: 'Fish',
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         stock: 40,
         status: 'active',
         image: '/images/butter%20prawns%20.jpeg',
         rating: 4
-<<<<<<< HEAD
     },
     {
         id: 'trial-prawn-sampler',
@@ -157,7 +145,7 @@ const DEFAULT_PRODUCTS = [
     {
         id: 'signature-bay-platter',
         name: 'Bay of Bengal Platter',
-        description: 'Our crown jewel — hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.',
+        description: 'Our crown jewel ΓÇö hand-picked jumbo Black Tiger, Vannamei, and seasoned Scampi in one premium box.',
         weight: '1 Kg Total',
         price: 2200,
         category: 'Signature Dishes',
@@ -169,12 +157,6 @@ const DEFAULT_PRODUCTS = [
 ];
 
 const CATEGORIES = ['All', 'Prawns', 'Ready-to-Cook', 'Trial Packs', 'Signature Dishes', "Chef's Special"];
-=======
-    }
-];
-
-const CATEGORIES = ['All', 'Prawns', 'Fish', 'Ready-to-Cook'];
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
 
 // Star rating component
 function StarRating({ rating }) {
@@ -226,20 +208,12 @@ export default function ProductsPage() {
     };
 
     const handleAddToCart = (product) => {
-<<<<<<< HEAD
         const firstSize = product.sizes?.[0]
         addToCart({
             id: product.id,
             name: product.name,
             size: firstSize?.label || product.weight,
             price: firstSize?.price || product.price
-=======
-        addToCart({
-            id: product.id,
-            name: product.name,
-            size: product.weight,
-            price: product.price
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
         }, 1);
         triggerToast(`${product.name} added to cart!`);
     };
@@ -251,7 +225,6 @@ export default function ProductsPage() {
 
     return (
         <div className="min-h-screen relative">
-<<<<<<< HEAD
             {/* Ocean Wave Background */}
             <div className="fixed inset-0 z-0">
                 <Image
@@ -331,64 +304,13 @@ export default function ProductsPage() {
 
                 {/* Category Filter Pills */}
                 <div className="flex justify-center gap-3 mb-14 px-4 flex-wrap">
-=======
-            {/* Paper Texture Background */}
-            <div
-                className="fixed inset-0 z-0"
-                style={{
-                    backgroundImage: "url('/bg/overall-background.png')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundAttachment: 'fixed'
-                }}
-            />
-            {/* Subtle warm overlay for consistency */}
-            <div className="fixed inset-0 bg-amber-50/20 z-0" />
-
-            {/* Content */}
-            <div className="relative z-10 pt-28">
-
-                {/* Hero Header */}
-                <div className="text-center mb-12 px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        {/* Decorative line */}
-                        <div className="flex items-center justify-center gap-4 mb-6">
-                            <div className="w-16 h-px bg-amber-800/30" />
-                            <svg className="w-6 h-6 text-amber-700/60" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                            </svg>
-                            <div className="w-16 h-px bg-amber-800/30" />
-                        </div>
-
-                        <h1 className="font-cinzel text-4xl md:text-5xl lg:text-6xl text-stone-800 mb-4 uppercase tracking-widest font-bold">
-                            Our Signature Selection
-                        </h1>
-
-                        <p className="text-stone-500 text-base md:text-lg max-w-xl mx-auto italic font-light">
-                            Explore our finest selection of export-grade seafood, instantly frozen lock in time.
-                        </p>
-                    </motion.div>
-                </div>
-
-                {/* Category Filter Pills */}
-                <div className="flex justify-center gap-3 mb-14 px-4">
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                     {CATEGORIES.map(category => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 border ${activeCategory === category
                                 ? 'btn-gold border-[#c5a061] shadow-md'
-<<<<<<< HEAD
                                 : 'bg-white/10 text-white/80 border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm'
-=======
-                                : 'bg-white/70 text-stone-600 border-stone-300 hover:bg-stone-100 hover:border-stone-400'
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                                 }`}
                         >
                             {category}
@@ -412,7 +334,6 @@ export default function ProductsPage() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 20 }}
                                         transition={{ duration: 0.4 }}
-<<<<<<< HEAD
                                         className="group bg-white/10 backdrop-blur-lg rounded-2xl border border-white/15 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:bg-white/15 transition-all duration-400 overflow-hidden"
                                     >
                                         {/* Product Image */}
@@ -429,38 +350,17 @@ export default function ProductsPage() {
                                                     unoptimized
                                                 />
                                             )}
-=======
-                                        className="group bg-white/90 backdrop-blur-md rounded-2xl border border-stone-200 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-400 overflow-hidden"
-                                    >
-                                        {/* Product Image */}
-                                        <div className="relative h-64 overflow-hidden bg-stone-100">
-                                            <Image
-                                                src={product.image}
-                                                alt={product.name}
-                                                fill
-                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                            />
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                                             <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         </div>
 
                                         {/* Product Info */}
                                         <div className="p-5">
-<<<<<<< HEAD
                                             <h3 className="text-lg font-bold text-white mb-1">
                                                 {product.name}
                                             </h3>
 
                                             <p className="text-white/60 text-xs mb-3 font-medium">
-                                                Starting at <span className="text-[#C8A96A] font-bold">₹{product.price.toLocaleString('en-IN')}</span>
-=======
-                                            <h3 className="text-lg font-bold text-stone-800 mb-1">
-                                                {product.name}
-                                            </h3>
-
-                                            <p className="text-stone-500 text-xs mb-3 font-medium">
-                                                Starting at <span className="text-stone-800 font-bold">₹{product.price.toLocaleString('en-IN')}</span>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
+                                                Starting at <span className="text-[#C8A96A] font-bold">Γé╣{product.price.toLocaleString('en-IN')}</span>
                                             </p>
 
                                             {/* Star Rating */}
@@ -497,19 +397,11 @@ export default function ProductsPage() {
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-<<<<<<< HEAD
                             className="text-center py-20 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/15"
                         >
                             <svg className="w-16 h-16 text-white/30 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             <h3 className="text-2xl text-white mb-3 font-bold">No products found</h3>
                             <p className="text-white/50 mb-8">Try selecting a different category.</p>
-=======
-                            className="text-center py-20 bg-white/50 backdrop-blur-sm rounded-2xl border border-stone-200"
-                        >
-                            <svg className="w-16 h-16 text-stone-300 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            <h3 className="text-2xl text-stone-700 mb-3 font-bold">No products found</h3>
-                            <p className="text-stone-400 mb-8">Try selecting a different category.</p>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                             <button
                                 onClick={() => setActiveCategory('All')}
                                 className="btn-gold px-8 py-3 rounded-full"
@@ -520,7 +412,6 @@ export default function ProductsPage() {
                     )}
                 </div>
 
-<<<<<<< HEAD
                 </div>
 
                 {/* Trust Badges - Inline Bar */}
@@ -535,81 +426,35 @@ export default function ProductsPage() {
                             <div>
                                 <span className="text-sm font-bold text-white tracking-wide">IQF</span>
                                 <p className="text-[11px] text-white/50 italic">Individually Quick Frozen</p>
-=======
-                {/* Trust Badges - Inline Bar */}
-                <div className="max-w-5xl mx-auto mt-20 px-4">
-                    <div className="flex items-center justify-center flex-wrap divide-x divide-stone-300">
-
-                        {/* IQF */}
-                        <div className="flex items-center gap-2 px-6 py-2">
-                            <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                            </svg>
-                            <div>
-                                <span className="text-sm font-bold text-stone-700 tracking-wide">IQF</span>
-                                <p className="text-[11px] text-stone-400 italic">Individually Quick Frozen</p>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                             </div>
                         </div>
 
                         {/* Export Quality */}
                         <div className="flex items-center gap-2 px-6 py-2">
-<<<<<<< HEAD
                             <svg className="w-5 h-5 text-[#C8A96A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                             <div>
                                 <span className="text-sm font-bold text-white tracking-wide">Export Quality</span>
                                 <p className="text-[11px] text-white/50 italic">Only the best export-grade seafood</p>
-=======
-                            <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                            <div>
-                                <span className="text-sm font-bold text-stone-700 tracking-wide">Export Quality</span>
-                                <p className="text-[11px] text-stone-400 italic">Only the best export-grade seafood</p>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                             </div>
                         </div>
 
                         {/* Cold Chain */}
                         <div className="flex items-center gap-2 px-6 py-2">
-<<<<<<< HEAD
                             <svg className="w-5 h-5 text-[#C8A96A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                             </svg>
                             <div>
                                 <span className="text-sm font-bold text-white tracking-wide">Cold Chain</span>
                                 <p className="text-[11px] text-white/50 italic">Maintained at optimal temperatures</p>
-=======
-                            <svg className="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                            </svg>
-                            <div>
-                                <span className="text-sm font-bold text-stone-700 tracking-wide">Cold Chain</span>
-                                <p className="text-[11px] text-stone-400 italic">Maintained at optimal temperatures</p>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-<<<<<<< HEAD
 
-=======
-                {/* Footer Image */}
-                <div className="relative w-full">
-                    <Image
-                        src="/images/footer image.png"
-                        alt="Wave of Bengal Footer"
-                        width={1920}
-                        height={400}
-                        className="w-full object-cover"
-                        priority={false}
-                    />
-                </div>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
             </div>
 
             {/* Toast Notification */}

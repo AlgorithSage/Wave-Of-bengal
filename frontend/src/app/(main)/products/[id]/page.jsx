@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
@@ -99,7 +99,7 @@ const ALL_PRODUCTS = [
         image: '/images/butter%20prawns%20.jpeg',
         rating: 4,
         whatYouReceive: 'Carefully cleaned and frozen at peak freshness.',
-        whatYouReceiveDetail: 'Headless, peeled, and deveined — zero prep required. Simply thaw and cook. Each piece is individually frozen for easy portioning.',
+        whatYouReceiveDetail: 'Headless, peeled, and deveined ΓÇö zero prep required. Simply thaw and cook. Each piece is individually frozen for easy portioning.',
         sizes: [
             { id: '250g', label: '250g', price: 430 },
             { id: '500g', label: '500g', price: 800 },
@@ -158,7 +158,6 @@ export default function ProductDetailPage() {
                     const parsed = JSON.parse(stored);
                     const storedProduct = parsed.find(p => p.id === params.id);
                     if (storedProduct) {
-<<<<<<< HEAD
                         const hasSizes = storedProduct.sizes?.length > 0;
                         found = {
                             ...storedProduct,
@@ -168,15 +167,6 @@ export default function ProductDetailPage() {
                             whatYouReceiveDetail: storedProduct.whatYouReceiveDetail || 'Premium export-grade seafood, individually quick-frozen to lock in freshness.',
                             image: storedProduct.images?.[0] || storedProduct.image || '/images/black%20tiger.jpeg',
                             sizes: hasSizes ? storedProduct.sizes : [
-=======
-                        found = {
-                            ...storedProduct,
-                            displayName: `${storedProduct.name} (${storedProduct.weight || '500g'})`,
-                            subtitle: storedProduct.category || 'Premium Selection',
-                            whatYouReceive: 'Carefully cleaned and frozen at peak freshness.',
-                            whatYouReceiveDetail: 'Premium export-grade seafood, individually quick-frozen to lock in freshness.',
-                            sizes: [
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                                 { id: '250g', label: '250g', price: Math.round(storedProduct.price * 0.55) },
                                 { id: '500g', label: '500g', price: storedProduct.price },
                                 { id: '1kg', label: '1 Kg', price: Math.round(storedProduct.price * 1.8) }
@@ -236,14 +226,13 @@ export default function ProductDetailPage() {
 
             <div className="relative z-10 pt-28">
 
-                {/* ═══════════════════════════════════════════
+                {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
                     ROW 1: Hero (Image Left, Details Right)
-                ═══════════════════════════════════════════ */}
+                ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
                 <div className="w-full mb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-stretch">
                         {/* Left: Large Product Image */}
                         <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-[70vh] rounded-2xl overflow-hidden">
-<<<<<<< HEAD
                             {(product.image || '').startsWith('data:') ? (
                                 // eslint-disable-next-line @next/next/no-img-element
                                 <img src={product.image} alt={product.name} className="w-full h-full object-cover absolute inset-0" />
@@ -257,15 +246,6 @@ export default function ProductDetailPage() {
                                     unoptimized
                                 />
                             )}
-=======
-                            <Image
-                                src={product.image}
-                                alt={product.name}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                         </div>
 
                         {/* Right: Product Details */}
@@ -308,7 +288,7 @@ export default function ProductDetailPage() {
                                         onClick={() => setQuantity(q => Math.max(1, q - 1))}
                                         className="w-10 h-10 flex items-center justify-center text-white bg-[#2A3547] hover:bg-[#1f2836] transition-colors text-lg font-bold"
                                     >
-                                        −
+                                        ΓêÆ
                                     </button>
                                     <span className="w-12 h-10 flex items-center justify-center text-stone-800 font-bold text-sm">
                                         {quantity}
@@ -331,16 +311,16 @@ export default function ProductDetailPage() {
                                 </motion.button>
 
                                 <p className="ml-auto text-xl font-bold text-stone-800">
-                                    ₹{(currentPrice * quantity).toLocaleString('en-IN')}
+                                    Γé╣{(currentPrice * quantity).toLocaleString('en-IN')}
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* ═══════════════════════════════════════════
+                {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
                     ROW 2: What You Receive (Text Left, Image Right)
-                ═══════════════════════════════════════════ */}
+                ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
                 <div className="w-full mb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-stretch">
                         <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 order-2 md:order-1 bg-stone-50/80 backdrop-blur-md rounded-2xl">
@@ -364,9 +344,9 @@ export default function ProductDetailPage() {
                 </div>
 
 
-                {/* ═══════════════════════════════════════════
+                {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
                     ROW 3: AI Recipe Section
-                ═══════════════════════════════════════════ */}
+                ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
                 <div className="w-full mb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="w-full bg-white/60 backdrop-blur-md rounded-2xl px-10 py-12">
                         <AIRecipe product={product} />

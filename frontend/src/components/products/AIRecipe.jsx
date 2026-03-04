@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -34,7 +34,6 @@ export default function AIRecipe({ product }) {
     const [error, setError] = useState(null);
     const [generated, setGenerated] = useState(false);
 
-<<<<<<< HEAD
     // Personalization state
     const [allergies, setAllergies] = useState([]);
     const [cuisinePreference, setCuisinePreference] = useState('');
@@ -59,8 +58,6 @@ export default function AIRecipe({ product }) {
         }
     };
 
-=======
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
     const generateRecipe = async () => {
         setLoading(true);
         setError(null);
@@ -72,13 +69,10 @@ export default function AIRecipe({ product }) {
                     productName: product.name,
                     category: product.category,
                     description: product.description,
-<<<<<<< HEAD
                     allergies,
                     cuisinePreference,
                     spiceLevel,
                     cookingStyle,
-=======
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                 }),
             });
             if (!res.ok) throw new Error('Failed to generate recipe');
@@ -101,28 +95,17 @@ export default function AIRecipe({ product }) {
                     AI Chef Recipes
                 </h2>
                 <div className="grow h-px bg-stone-200" />
-<<<<<<< HEAD
-=======
-                <span className="text-[11px] text-stone-400 uppercase tracking-widest font-semibold whitespace-nowrap">Powered by Groq · llama-3.3-70b</span>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
             </div>
 
-            {/* CTA card — before generation */}
+            {/* CTA card ΓÇö before generation */}
             {!generated && (
-<<<<<<< HEAD
                 <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-8 md:p-10 shadow-xl space-y-8">
                     <div>
                         <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">Personalized Culinary Intelligence</p>
-=======
-                <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-10 flex flex-col lg:flex-row items-center gap-8 shadow-xl">
-                    <div className="flex-1">
-                        <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">AI-Powered Culinary Intelligence</p>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                         <h3 className="text-white font-fraunces text-2xl font-bold italic mb-2">
                             What can you cook with {product.name}?
                         </h3>
                         <p className="text-stone-400 text-sm leading-relaxed">
-<<<<<<< HEAD
                             Tell us your preferences and we&apos;ll create a recipe tailored just for you.
                         </p>
                     </div>
@@ -148,7 +131,7 @@ export default function AIRecipe({ product }) {
                             <div className="flex flex-wrap gap-1.5 mt-2">
                                 {allergies.filter(a => !allergyOptions.includes(a)).map(a => (
                                     <span key={a} className="px-2.5 py-1 rounded-full text-xs bg-red-500/20 text-red-300 border border-red-500/40 flex items-center gap-1.5">
-                                        {a} <button onClick={() => toggleAllergy(a)} className="hover:text-white">×</button>
+                                        {a} <button onClick={() => toggleAllergy(a)} className="hover:text-white">├ù</button>
                                     </span>
                                 ))}
                             </div>
@@ -216,33 +199,6 @@ export default function AIRecipe({ product }) {
                             )}
                         </motion.button>
                     </div>
-=======
-                            Get a personalized recipe with step-by-step cooking instructions, dish recommendations, and pro chef tips — generated specifically for {product.name}.
-                        </p>
-                    </div>
-                    <motion.button
-                        whileHover={{ scale: 1.04 }}
-                        whileTap={{ scale: 0.97 }}
-                        onClick={generateRecipe}
-                        disabled={loading}
-                        className="flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-widest shadow-lg transition-colors whitespace-nowrap disabled:opacity-60"
-                    >
-                        {loading ? (
-                            <>
-                                <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
-                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-                                </svg>
-                                Generating...
-                            </>
-                        ) : (
-                            <>
-                                <SparkleIcon />
-                                Generate AI Recipe
-                            </>
-                        )}
-                    </motion.button>
->>>>>>> 407d5a0bd9f5778742f3cabd8cf45dbde1d78f2c
                 </div>
             )}
 
