@@ -15,11 +15,21 @@ export default function LandingPage({ onEnter }) {
 
             {/* Background Video */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                <video autoPlay loop muted playsInline
-                    className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover object-center scale-105">
-                    <source src="/videos/Realistic_Sunset_Video_Generation.mp4" type="video/mp4" />
+                <video
+                    autoPlay loop muted playsInline
+                    style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        minWidth: '100vw',
+                        minHeight: '100vh',
+                        width: 'auto',
+                        height: 'auto',
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                >
+                    <source src="/videos/Background.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-linear-to-t from-[#0b0704]/90 via-[#0b0704]/60 to-[#0b0704]/70 z-10" />
             </div>
 
             {/* Central Content — glassmorphic card */}
@@ -30,7 +40,7 @@ export default function LandingPage({ onEnter }) {
                 className="relative z-20 flex flex-col items-center"
             >
                 {/* Glass Card */}
-                <div className="flex flex-col items-center bg-black/5 backdrop-blur-[2px] rounded-2xl-3xl border border-white/10 shadow-2xl px-10 py-8">
+                <div className="flex flex-col items-center">
 
                     {/* Logo */}
                     <div className="w-full max-w-sm sm:max-w-md md:max-w-lg px-2 flex justify-center">

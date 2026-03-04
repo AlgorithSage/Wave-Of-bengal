@@ -360,6 +360,18 @@ export default function ProductsPage() {
 
                     </div>
                 </div>
+
+                {/* Footer Image */}
+                <div className="relative w-full mt-16">
+                    <Image
+                        src="/images/footer image.png"
+                        alt="Wave of Bengal Footer"
+                        width={1920}
+                        height={400}
+                        className="w-full object-cover"
+                        priority={false}
+                    />
+                </div>
             </div>
 
             {/* Toast Notification */}

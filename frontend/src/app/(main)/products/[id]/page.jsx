@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useCart } from '@/contexts/CartContext';
+import AIRecipe from '@/components/products/AIRecipe';
 
 const ALL_PRODUCTS = [
     {
@@ -226,7 +227,7 @@ export default function ProductDetailPage() {
                 {/* ═══════════════════════════════════════════
                     ROW 1: Hero (Image Left, Details Right)
                 ═══════════════════════════════════════════ */}
-                <div className="w-full mb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div className="w-full mb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-stretch">
                         {/* Left: Large Product Image */}
                         <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-[70vh] rounded-2xl overflow-hidden">
@@ -312,7 +313,7 @@ export default function ProductDetailPage() {
                 {/* ═══════════════════════════════════════════
                     ROW 2: What You Receive (Text Left, Image Right)
                 ═══════════════════════════════════════════ */}
-                <div className="w-full mb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div className="w-full mb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-stretch">
                         <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 order-2 md:order-1 bg-stone-50/80 backdrop-blur-md rounded-2xl">
                             <h2 className="font-fraunces text-3xl md:text-4xl text-stone-800 mb-6">What You Receive</h2>
@@ -334,30 +335,16 @@ export default function ProductDetailPage() {
                     </div>
                 </div>
 
+
                 {/* ═══════════════════════════════════════════
-                    ROW 3: Recipes / Premium (Image Left, Text Right)
+                    ROW 3: AI Recipe Section
                 ═══════════════════════════════════════════ */}
                 <div className="w-full mb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-stretch">
-                        <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-[70vh] rounded-2xl overflow-hidden">
-                            <Image
-                                src={product.id === 'headless-peeled-shrimp' ? '/images/black tiger.jpeg' : '/images/skewers.jpeg'}
-                                alt="Premium seafood"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 bg-white/40 backdrop-blur-md rounded-2xl">
-                            <h2 className="font-fraunces text-3xl md:text-4xl text-stone-800 mb-6">Recipes & Preparation</h2>
-                            <p className="text-stone-600 font-medium mb-6 text-lg">
-                                Perfectly portioned for your favorite culinary creations.
-                            </p>
-                            <p className="text-stone-500 text-base leading-relaxed mb-6 max-w-lg">
-                                Bring restaurant-quality dining to your home. Simply thaw under cold running water, pat dry, and cook! Whether you are grilling skewers, tossing prawns in garlic butter, or creating a rich Bengali style curry, our pristine seafood ensures every meal is extraordinary.
-                            </p>
-                        </div>
+                    <div className="w-full bg-white/60 backdrop-blur-md rounded-2xl px-10 py-12">
+                        <AIRecipe product={product} />
                     </div>
                 </div>
+
 
                 {/* Go Back to Products */}
                 <div className="text-center pb-8 border-t border-stone-200/60 pt-12 max-w-6xl mx-auto">
@@ -368,6 +355,17 @@ export default function ProductDetailPage() {
                         <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                         Go Back to Products
                     </Link>
+                </div>
+
+                {/* Footer Image */}
+                <div className="relative w-full mt-8">
+                    <Image
+                        src="/images/footer image.png"
+                        alt="Wave of Bengal Footer"
+                        width={1920}
+                        height={400}
+                        className="w-full object-cover"
+                    />
                 </div>
             </div>
 

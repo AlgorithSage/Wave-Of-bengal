@@ -59,9 +59,9 @@ export default function AIRecipe({ product }) {
     };
 
     return (
-        <div className="mb-14">
+        <div className="mb-16">
             {/* Section header */}
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-10">
                 <h2 className="font-fraunces text-2xl text-stone-800 font-bold italic whitespace-nowrap flex items-center gap-2">
                     <span className="text-amber-600"><SparkleIcon /></span>
                     AI Chef Recipes
@@ -72,7 +72,7 @@ export default function AIRecipe({ product }) {
 
             {/* CTA card — before generation */}
             {!generated && (
-                <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-8 flex flex-col lg:flex-row items-center gap-6 shadow-xl">
+                <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-10 flex flex-col lg:flex-row items-center gap-8 shadow-xl">
                     <div className="flex-1">
                         <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">AI-Powered Culinary Intelligence</p>
                         <h3 className="text-white font-fraunces text-2xl font-bold italic mb-2">
@@ -157,7 +157,7 @@ export default function AIRecipe({ product }) {
                             {/* Ingredients + Steps */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-stone-100">
                                 {/* Ingredients */}
-                                <div className="p-6">
+                                <div className="p-8">
                                     <h4 className="font-semibold text-stone-700 text-sm uppercase tracking-widest mb-4">Ingredients</h4>
                                     <ul className="space-y-2">
                                         {recipeData.featuredRecipe?.ingredients?.map((ing, i) => (
@@ -170,7 +170,7 @@ export default function AIRecipe({ product }) {
                                 </div>
 
                                 {/* Steps */}
-                                <div className="p-6">
+                                <div className="p-8">
                                     <h4 className="font-semibold text-stone-700 text-sm uppercase tracking-widest mb-4">Cooking Instructions</h4>
                                     <ol className="space-y-3">
                                         {recipeData.featuredRecipe?.steps?.map((step, i) => (
