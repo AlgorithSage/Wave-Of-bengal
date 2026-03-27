@@ -22,7 +22,7 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [profile, setProfile] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(!!auth);
 
     // Helper: fetch or create a Firestore profile, return the role
     const fetchOrCreateProfile = async (firebaseUser) => {
@@ -62,6 +62,9 @@ export function AuthProvider({ children }) {
     };
 
     useEffect(() => {
+        // Guard: if Firebase auth isn't initialized (missing env vars during build), skip
+        if (!auth) return;
+
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
             setLoading(true);
             if (firebaseUser) {
