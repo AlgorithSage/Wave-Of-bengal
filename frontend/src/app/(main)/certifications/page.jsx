@@ -3,37 +3,58 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import fssaiImg from '@/fssai.jpg';
+import fdaImg from '@/fda.jpg';
+import haccpImg from '@/haccp.jpg';
+import mpedaImg from '@/mpeda.jpg';
+import eiaImg from '@/eia.jpg';
+import aeoImg from '@/aeo.jpg';
+
 const certifications = [
     {
         category: "Certifications",
         items: [
             {
-                name: "Marine Stewardship Council",
-                subtitle: "Sustainable Fishing Certification",
-                desc: "The MSC blue fish label is the world's most recognized certification for sustainable seafood. It guarantees that our fish comes from well-managed, sustainable fisheries.",
-                icon: "🐟",
-                features: ["Sustainable fish stocks maintained", "Minimal environmental impact", "Effective fishery management", "Full chain of custody traceability"]
-            },
-            {
-                name: "Food Safety & Standards Authority",
-                subtitle: "Government Food Safety Certification",
-                desc: "FSSAI certification ensures that all our products meet the food safety and hygiene standards mandated by the Government of India. Your health is our priority.",
-                icon: "🛡️",
+                name: "FSSAI",
+                subtitle: "Food Safety & Standards Authority of India",
+                desc: "FSSAI certification ensures that all our products meet the food safety and hygiene standards mandated by the Government of India. Every product we deliver is safe, properly labelled, and regularly audited.",
+                image: fssaiImg,
                 features: ["Safe for human consumption", "No harmful contaminants", "Proper labeling standards", "Regular quality audits"]
             },
             {
-                name: "Hazard Analysis Critical Control",
-                subtitle: "International Quality Management",
+                name: "FDA",
+                subtitle: "U.S. Food & Drug Administration",
+                desc: "FDA registration and compliance enables Wave of Bengal to meet the stringent food safety requirements of the United States market, ensuring our seafood is globally trusted.",
+                image: fdaImg,
+                features: ["Meets U.S. food safety standards", "Proper hazard controls", "International market compliance", "Rigorous inspection protocols"]
+            },
+            {
+                name: "HACCP",
+                subtitle: "Hazard Analysis Critical Control Points",
                 desc: "HACCP certification demonstrates our commitment to identifying and preventing hazards throughout the food production process, from catch to delivery.",
-                icon: "🔬",
+                image: haccpImg,
                 features: ["Systematic hazard prevention", "Critical control point monitoring", "Documentation & verification", "Continuous improvement"]
             },
             {
-                name: "International Food Safety Standard",
-                subtitle: "Global Quality Management",
-                desc: "ISO 22000 integrates food safety management with business processes, ensuring that food safety is embedded in every aspect of our operations.",
-                icon: "🏆",
-                features: ["Interactive communication", "System management", "Prerequisite programs", "HACCP principles integrated"]
+                name: "MPEDA",
+                subtitle: "Marine Products Export Development Authority",
+                desc: "MPEDA registration certifies Wave of Bengal as an approved seafood processor and exporter under the Government of India, enabling us to serve international markets with confidence.",
+                image: mpedaImg,
+                features: ["Government-approved exporter", "Marine product quality standards", "Export facilitation support", "Regular compliance audits"]
+            },
+            {
+                name: "EIA / EIC",
+                subtitle: "Export Inspection Agency / Council, Govt. of India",
+                desc: "EIC approval including our competent in-house lab ensures that every batch of seafood processed by Wave of Bengal meets international export quality and safety standards mandated by the Government of India.",
+                image: eiaImg,
+                features: ["Approved in-house laboratory", "Export quality assurance", "Government of India certified", "Batch-level quality testing"]
+            },
+            {
+                name: "AEO",
+                subtitle: "Authorized Economic Operator",
+                desc: "AEO certification by Indian Customs recognises Wave of Bengal as a trusted, compliant, and secure trade partner — enabling faster clearances and streamlined export operations.",
+                image: aeoImg,
+                features: ["Customs-trusted operator", "Faster export clearances", "Secure supply chain", "Trade compliance excellence"]
             }
         ]
     }
@@ -157,8 +178,14 @@ export default function Certifications() {
                                             className="flex flex-col sm:flex-row gap-8 glass-card p-10 hover:border-gold/25 hover:-translate-y-2 transition-all duration-500 group"
                                         >
                                             <div className="shrink-0">
-                                                <div className="w-32 h-32 rounded-2xl bg-linear-to-br from-white/15 via-white/5 to-transparent border border-white/15 flex items-center text-6xl justify-center group-hover:border-gold/30 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-500">
-                                                    {item.icon}
+                                                <div className="w-32 h-32 rounded-2xl bg-white/90 border border-white/15 flex items-center justify-center group-hover:border-gold/30 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-500 overflow-hidden p-2">
+                                                    <Image
+                                                        src={item.image}
+                                                        alt={item.name}
+                                                        width={112}
+                                                        height={112}
+                                                        className="object-contain w-full h-full"
+                                                    />
                                                 </div>
                                             </div>
                                             <div>

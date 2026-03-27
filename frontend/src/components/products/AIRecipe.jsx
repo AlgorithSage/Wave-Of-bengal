@@ -34,6 +34,30 @@ export default function AIRecipe({ product }) {
     const [error, setError] = useState(null);
     const [generated, setGenerated] = useState(false);
 
+    // Personalization state
+    const [allergies, setAllergies] = useState([]);
+    const [cuisinePreference, setCuisinePreference] = useState('');
+    const [spiceLevel, setSpiceLevel] = useState('');
+    const [cookingStyle, setCookingStyle] = useState('');
+    const [customAllergy, setCustomAllergy] = useState('');
+
+    const allergyOptions = ['Gluten', 'Dairy', 'Nuts', 'Soy', 'Eggs', 'Mustard', 'Sesame'];
+    const cuisineOptions = ['Bengali', 'South Indian', 'North Indian', 'Indo-Chinese', 'Continental', 'Japanese', 'Thai'];
+    const spiceOptions = ['Mild', 'Medium', 'Spicy', 'Extra Spicy'];
+    const cookingOptions = ['Quick (Under 30 min)', 'Grilled / BBQ', 'Deep-Fried / Crispy', 'Curry / Gravy', 'Steamed / Healthy', 'Stir-Fry'];
+
+    const toggleAllergy = (allergy) => {
+        setAllergies(prev => prev.includes(allergy) ? prev.filter(a => a !== allergy) : [...prev, allergy]);
+    };
+
+    const addCustomAllergy = () => {
+        const trimmed = customAllergy.trim();
+        if (trimmed && !allergies.includes(trimmed)) {
+            setAllergies(prev => [...prev, trimmed]);
+            setCustomAllergy('');
+        }
+    };
+
     const generateRecipe = async () => {
         setLoading(true);
         setError(null);
@@ -45,6 +69,10 @@ export default function AIRecipe({ product }) {
                     productName: product.name,
                     category: product.category,
                     description: product.description,
+                    allergies,
+                    cuisinePreference,
+                    spiceLevel,
+                    cookingStyle,
                 }),
             });
             if (!res.ok) throw new Error('Failed to generate recipe');
@@ -67,43 +95,110 @@ export default function AIRecipe({ product }) {
                     AI Chef Recipes
                 </h2>
                 <div className="grow h-px bg-stone-200" />
-                <span className="text-[11px] text-stone-400 uppercase tracking-widest font-semibold whitespace-nowrap">Powered by Groq · llama-3.3-70b</span>
             </div>
 
             {/* CTA card — before generation */}
             {!generated && (
-                <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-10 flex flex-col lg:flex-row items-center gap-8 shadow-xl">
-                    <div className="flex-1">
-                        <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">AI-Powered Culinary Intelligence</p>
+                <div className="bg-linear-to-br from-stone-900 to-stone-800 rounded-2xl p-8 md:p-10 shadow-xl space-y-8">
+                    <div>
+                        <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">Personalized Culinary Intelligence</p>
                         <h3 className="text-white font-fraunces text-2xl font-bold italic mb-2">
                             What can you cook with {product.name}?
                         </h3>
                         <p className="text-stone-400 text-sm leading-relaxed">
-                            Get a personalized recipe with step-by-step cooking instructions, dish recommendations, and pro chef tips — generated specifically for {product.name}.
+                            Tell us your preferences and we&apos;ll create a recipe tailored just for you.
                         </p>
                     </div>
-                    <motion.button
-                        whileHover={{ scale: 1.04 }}
-                        whileTap={{ scale: 0.97 }}
-                        onClick={generateRecipe}
-                        disabled={loading}
-                        className="flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-widest shadow-lg transition-colors whitespace-nowrap disabled:opacity-60"
-                    >
-                        {loading ? (
-                            <>
-                                <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
-                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
-                                </svg>
-                                Generating...
-                            </>
-                        ) : (
-                            <>
-                                <SparkleIcon />
-                                Generate AI Recipe
-                            </>
+
+                    {/* Allergies */}
+                    <div>
+                        <p className="text-stone-300 text-xs font-bold uppercase tracking-widest mb-3">Any Allergies?</p>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                            {allergyOptions.map(a => (
+                                <button key={a} onClick={() => toggleAllergy(a)}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all border ${allergies.includes(a) ? 'bg-red-500/20 text-red-300 border-red-500/40' : 'bg-white/5 text-stone-400 border-white/10 hover:border-white/30'}`}
+                                >{a}</button>
+                            ))}
+                        </div>
+                        <div className="flex gap-2">
+                            <input type="text" value={customAllergy} onChange={e => setCustomAllergy(e.target.value)} onKeyDown={e => e.key === 'Enter' && addCustomAllergy()}
+                                placeholder="Other allergy..."
+                                className="bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-xs text-white placeholder:text-stone-500 focus:outline-none focus:border-white/30 w-40"
+                            />
+                            {customAllergy.trim() && <button onClick={addCustomAllergy} className="text-amber-400 text-xs font-bold">+ Add</button>}
+                        </div>
+                        {allergies.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5 mt-2">
+                                {allergies.filter(a => !allergyOptions.includes(a)).map(a => (
+                                    <span key={a} className="px-2.5 py-1 rounded-full text-xs bg-red-500/20 text-red-300 border border-red-500/40 flex items-center gap-1.5">
+                                        {a} <button onClick={() => toggleAllergy(a)} className="hover:text-white">×</button>
+                                    </span>
+                                ))}
+                            </div>
                         )}
-                    </motion.button>
+                    </div>
+
+                    {/* Cuisine Preference */}
+                    <div>
+                        <p className="text-stone-300 text-xs font-bold uppercase tracking-widest mb-3">Cuisine Style</p>
+                        <div className="flex flex-wrap gap-2">
+                            {cuisineOptions.map(c => (
+                                <button key={c} onClick={() => setCuisinePreference(cuisinePreference === c ? '' : c)}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all border ${cuisinePreference === c ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' : 'bg-white/5 text-stone-400 border-white/10 hover:border-white/30'}`}
+                                >{c}</button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Spice Level */}
+                    <div>
+                        <p className="text-stone-300 text-xs font-bold uppercase tracking-widest mb-3">Spice Level</p>
+                        <div className="flex flex-wrap gap-2">
+                            {spiceOptions.map(s => (
+                                <button key={s} onClick={() => setSpiceLevel(spiceLevel === s ? '' : s)}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all border ${spiceLevel === s ? 'bg-orange-500/20 text-orange-300 border-orange-500/40' : 'bg-white/5 text-stone-400 border-white/10 hover:border-white/30'}`}
+                                >{s}</button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Cooking Style */}
+                    <div>
+                        <p className="text-stone-300 text-xs font-bold uppercase tracking-widest mb-3">Cooking Style</p>
+                        <div className="flex flex-wrap gap-2">
+                            {cookingOptions.map(c => (
+                                <button key={c} onClick={() => setCookingStyle(cookingStyle === c ? '' : c)}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all border ${cookingStyle === c ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' : 'bg-white/5 text-stone-400 border-white/10 hover:border-white/30'}`}
+                                >{c}</button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Generate Button */}
+                    <div className="pt-2">
+                        <motion.button
+                            whileHover={{ scale: 1.04 }}
+                            whileTap={{ scale: 0.97 }}
+                            onClick={generateRecipe}
+                            disabled={loading}
+                            className="flex items-center gap-2.5 bg-amber-500 hover:bg-amber-400 text-white font-bold px-7 py-3.5 rounded-full text-sm uppercase tracking-widest shadow-lg transition-colors whitespace-nowrap disabled:opacity-60"
+                        >
+                            {loading ? (
+                                <>
+                                    <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                                    </svg>
+                                    Generating Your Personalized Recipe...
+                                </>
+                            ) : (
+                                <>
+                                    <SparkleIcon />
+                                    Generate My Recipe
+                                </>
+                            )}
+                        </motion.button>
+                    </div>
                 </div>
             )}
 
